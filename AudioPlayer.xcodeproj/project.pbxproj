@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13527395B9FF79093B35FB11 /* Pods_AudioPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C5742BB923FE82E6F50B70 /* Pods_AudioPlayer.framework */; };
 		7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */; };
 		7E3BEBFE21F0B92B005F9529 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFD21F0B92B005F9529 /* ViewController.swift */; };
 		7E3BEC0121F0B92B005F9529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFF21F0B92B005F9529 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 		7E3BEC0921F0B930005F9529 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BEC0721F0B930005F9529 /* LaunchScreen.storyboard */; };
 		7E3BEC1421F0B930005F9529 /* AudioPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEC1321F0B930005F9529 /* AudioPlayerTests.swift */; };
 		7E3BEC1F21F0B930005F9529 /* AudioPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEC1E21F0B930005F9529 /* AudioPlayerUITests.swift */; };
+		C367196A95B0A9C0DEEE6B67 /* Pods_AudioPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59D28ACC197F348A30673C51 /* Pods_AudioPlayerTests.framework */; };
+		E6E357D79C34A0FDFAD172EE /* Pods_AudioPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6FA3C5B25159F8DD5CDF72 /* Pods_AudioPlayerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A805AA8953CC0E07DA85F6B /* Pods-AudioPlayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayerTests/Pods-AudioPlayerTests.release.xcconfig"; sourceTree = "<group>"; };
+		1C6FA3C5B25159F8DD5CDF72 /* Pods_AudioPlayerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioPlayerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		357C8DF0511531EA4827679B /* Pods-AudioPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		58B0DCE64A9786156BBF64D4 /* Pods-AudioPlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayerTests/Pods-AudioPlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		59D28ACC197F348A30673C51 /* Pods_AudioPlayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioPlayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64908F7665E38E8E57EF9032 /* Pods-AudioPlayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayerUITests/Pods-AudioPlayerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6A9B72C6CD2AEAA32CFF094A /* Pods-AudioPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		7E3BEBF821F0B92B005F9529 /* AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E3BEBFD21F0B92B005F9529 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +59,8 @@
 		7E3BEC1A21F0B930005F9529 /* AudioPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3BEC1E21F0B930005F9529 /* AudioPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerUITests.swift; sourceTree = "<group>"; };
 		7E3BEC2021F0B930005F9529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B755F5EFA0AAEAD4E56EA3D /* Pods-AudioPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayerUITests/Pods-AudioPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B6C5742BB923FE82E6F50B70 /* Pods_AudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13527395B9FF79093B35FB11 /* Pods_AudioPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C367196A95B0A9C0DEEE6B67 /* Pods_AudioPlayerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6E357D79C34A0FDFAD172EE /* Pods_AudioPlayerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0716D56B0F82F6CD3DA53530 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				357C8DF0511531EA4827679B /* Pods-AudioPlayer.debug.xcconfig */,
+				6A9B72C6CD2AEAA32CFF094A /* Pods-AudioPlayer.release.xcconfig */,
+				58B0DCE64A9786156BBF64D4 /* Pods-AudioPlayerTests.debug.xcconfig */,
+				1A805AA8953CC0E07DA85F6B /* Pods-AudioPlayerTests.release.xcconfig */,
+				8B755F5EFA0AAEAD4E56EA3D /* Pods-AudioPlayerUITests.debug.xcconfig */,
+				64908F7665E38E8E57EF9032 /* Pods-AudioPlayerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7E3BEBEF21F0B92A005F9529 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +111,8 @@
 				7E3BEC1221F0B930005F9529 /* AudioPlayerTests */,
 				7E3BEC1D21F0B930005F9529 /* AudioPlayerUITests */,
 				7E3BEBF921F0B92B005F9529 /* Products */,
+				0716D56B0F82F6CD3DA53530 /* Pods */,
+				E4EB0103FD610489053FC328 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +158,16 @@
 			path = AudioPlayerUITests;
 			sourceTree = "<group>";
 		};
+		E4EB0103FD610489053FC328 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6C5742BB923FE82E6F50B70 /* Pods_AudioPlayer.framework */,
+				59D28ACC197F348A30673C51 /* Pods_AudioPlayerTests.framework */,
+				1C6FA3C5B25159F8DD5CDF72 /* Pods_AudioPlayerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E3BEC2321F0B930005F9529 /* Build configuration list for PBXNativeTarget "AudioPlayer" */;
 			buildPhases = (
+				AD24A78B2C18768DD41764E7 /* [CP] Check Pods Manifest.lock */,
 				7E3BEBF421F0B92B005F9529 /* Sources */,
 				7E3BEBF521F0B92B005F9529 /* Frameworks */,
 				7E3BEBF621F0B92B005F9529 /* Resources */,
+				3A8530D2AE87A2CF13A3F3BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E3BEC2621F0B930005F9529 /* Build configuration list for PBXNativeTarget "AudioPlayerTests" */;
 			buildPhases = (
+				32423BC77000CFAC29C0B1B5 /* [CP] Check Pods Manifest.lock */,
 				7E3BEC0B21F0B930005F9529 /* Sources */,
 				7E3BEC0C21F0B930005F9529 /* Frameworks */,
 				7E3BEC0D21F0B930005F9529 /* Resources */,
@@ -170,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E3BEC2921F0B930005F9529 /* Build configuration list for PBXNativeTarget "AudioPlayerUITests" */;
 			buildPhases = (
+				540CF9D16BBD0F1AC5449C47 /* [CP] Check Pods Manifest.lock */,
 				7E3BEC1621F0B930005F9529 /* Sources */,
 				7E3BEC1721F0B930005F9529 /* Frameworks */,
 				7E3BEC1821F0B930005F9529 /* Resources */,
@@ -253,6 +297,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32423BC77000CFAC29C0B1B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AudioPlayerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A8530D2AE87A2CF13A3F3BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		540CF9D16BBD0F1AC5449C47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AudioPlayerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD24A78B2C18768DD41764E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AudioPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7E3BEBF421F0B92B005F9529 /* Sources */ = {
@@ -434,6 +553,7 @@
 		};
 		7E3BEC2421F0B930005F9529 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 357C8DF0511531EA4827679B /* Pods-AudioPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +572,7 @@
 		};
 		7E3BEC2521F0B930005F9529 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A9B72C6CD2AEAA32CFF094A /* Pods-AudioPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +591,7 @@
 		};
 		7E3BEC2721F0B930005F9529 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58B0DCE64A9786156BBF64D4 /* Pods-AudioPlayerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +613,7 @@
 		};
 		7E3BEC2821F0B930005F9529 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A805AA8953CC0E07DA85F6B /* Pods-AudioPlayerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +635,7 @@
 		};
 		7E3BEC2A21F0B930005F9529 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B755F5EFA0AAEAD4E56EA3D /* Pods-AudioPlayerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +656,7 @@
 		};
 		7E3BEC2B21F0B930005F9529 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64908F7665E38E8E57EF9032 /* Pods-AudioPlayerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

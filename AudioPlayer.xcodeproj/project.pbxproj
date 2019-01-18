@@ -150,8 +150,7 @@
 				7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */,
 				7E3FE73321F1666400DCE676 /* AudioPlayViewController.swift */,
 				7E3FE73921F16F3300DCE676 /* AudioListSectionController.swift */,
-				7E3FE74121F17BB500DCE676 /* AudioListCollectionViewCell.swift */,
-				7E3FE74221F17BB500DCE676 /* AudioListCollectionViewCell.xib */,
+				7E970CF621F1A80B0007612F /* AudioListCollectionViewCell */,
 				7E3BEBFF21F0B92B005F9529 /* Main.storyboard */,
 				7E3BEC0521F0B930005F9529 /* Assets.xcassets */,
 				7E3BEC0721F0B930005F9529 /* LaunchScreen.storyboard */,
@@ -177,6 +176,15 @@
 				7E3BEC2021F0B930005F9529 /* Info.plist */,
 			);
 			path = AudioPlayerUITests;
+			sourceTree = "<group>";
+		};
+		7E970CF621F1A80B0007612F /* AudioListCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7E3FE74121F17BB500DCE676 /* AudioListCollectionViewCell.swift */,
+				7E3FE74221F17BB500DCE676 /* AudioListCollectionViewCell.xib */,
+			);
+			path = AudioListCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		E4EB0103FD610489053FC328 /* Frameworks */ = {

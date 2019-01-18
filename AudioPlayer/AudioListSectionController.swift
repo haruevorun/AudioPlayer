@@ -24,4 +24,13 @@ class AudioListSectionController: ListSectionController {
     override func didUpdate(to object: Any) {
         item = object as? AudioItem
     }
+    override func didSelectItem(at index: Int) {
+        guard let cell = cellForItem(at: index) as? AudioListCollectionViewCell, let viewController = self.viewController as? AudioListViewController else {
+            return
+        }
+        guard let item = cell.item else {
+            return
+        }
+        viewController.presentAudioView(item: item.item)
+    }
 }

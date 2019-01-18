@@ -8,13 +8,28 @@
 
 import Foundation
 import UIKit
+import MediaPlayer
 
 class AudioPlayViewController: UIViewController {
     
+    var item: MPMediaItem? {
+        didSet {
+            if let item = self.item {
+                self.items.append(item)
+            }
+        }
+    }
+    var items: [MPMediaItem] = [] {
+        didSet {
+            player.setQueue(with: MPMediaItemCollection(items: items))
+        }
+    }
+    var player = MPMusicPlayerController.applicationMusicPlayer
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
     @IBAction func play(_ sender: Any) {
+        player.play()
     }
     @IBAction func skip(_ sender: Any) {
     }

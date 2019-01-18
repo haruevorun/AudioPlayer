@@ -15,7 +15,9 @@ class AudioItem {
     let url: URL?
     let title: String
     let artist: String
+    let item: MPMediaItem
     init(media: MPMediaItem) {
+        self.item = media
         self.id = media.persistentID
         self.url = media.assetURL
         self.title = media.title ?? "Unknown"

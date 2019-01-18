@@ -8,6 +8,7 @@
 
 import UIKit
 import IGListKit
+import MediaPlayer
 
 class AudioListViewController: UIViewController {
 
@@ -29,6 +30,13 @@ class AudioListViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    func presentAudioView(item: MPMediaItem) {
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "AudioPlayer") as? AudioPlayViewController else {
+            return
+        }
+        viewController.item = item
+        self.navigationController?.show(viewController, sender: nil)
     }
 
 }

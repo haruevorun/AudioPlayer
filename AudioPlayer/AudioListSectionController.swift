@@ -8,9 +8,10 @@
 
 import Foundation
 import IGListKit
+import MediaPlayer
 
 class AudioListSectionController: ListSectionController {
-    private var item: AudioItem?
+    private var item: MPMediaItem?
     override func sizeForItem(at index: Int) -> CGSize {
         return CGSize(width: collectionContext!.containerSize.width, height: 60)
     }
@@ -22,7 +23,7 @@ class AudioListSectionController: ListSectionController {
         return cell
     }
     override func didUpdate(to object: Any) {
-        item = object as? AudioItem
+        item = object as? MPMediaItem
     }
     override func didSelectItem(at index: Int) {
         guard let cell = cellForItem(at: index) as? AudioListCollectionViewCell, let viewController = self.viewController as? AudioListViewController else {
@@ -31,6 +32,6 @@ class AudioListSectionController: ListSectionController {
         guard let item = cell.item else {
             return
         }
-        viewController.presentAudioView(item: item.item)
+        viewController.presentAudioView(item: item)
     }
 }

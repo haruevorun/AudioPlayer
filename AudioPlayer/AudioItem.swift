@@ -10,32 +10,18 @@ import Foundation
 import IGListKit
 import MediaPlayer
 
-class AudioItem {
-    let id: MPMediaEntityPersistentID
-    let url: URL?
-    let title: String
-    let artist: String
-    let item: MPMediaItem
-    init(media: MPMediaItem) {
-        self.item = media
-        self.id = media.persistentID
-        self.url = media.assetURL
-        self.title = media.title ?? "Unknown"
-        self.artist = media.artist ?? "Unknown"
-    }
-}
-extension AudioItem: ListDiffable {
-    func diffIdentifier() -> NSObjectProtocol {
-        return id as NSObjectProtocol
+extension MPMediaItem: ListDiffable {
+    public func diffIdentifier() -> NSObjectProtocol {
+        return persistentID as NSObjectProtocol
     }
     
-    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+    public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
         guard self !== object else {
             return true
         }
-        guard let object = object as? AudioItem else {
+        guard let object = object as? MPMediaItem else {
             return false
         }
-        return self.url == object.url && self.title == object.title && self.artist == object.artist
+        return self.playCount == object.playCount && self.skipCount == object.skipCount
     }
 }

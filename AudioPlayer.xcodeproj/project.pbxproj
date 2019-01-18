@@ -20,6 +20,9 @@
 		7E3FE73621F16B8D00DCE676 /* AudioListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FE73521F16B8D00DCE676 /* AudioListDataSource.swift */; };
 		7E3FE73821F16C7D00DCE676 /* AudioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FE73721F16C7D00DCE676 /* AudioItem.swift */; };
 		7E3FE73A21F16F3300DCE676 /* AudioListSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FE73921F16F3300DCE676 /* AudioListSectionController.swift */; };
+		7E3FE74021F1749700DCE676 /* MediaItemCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FE73F21F1749700DCE676 /* MediaItemCreater.swift */; };
+		7E3FE74321F17BB500DCE676 /* AudioListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FE74121F17BB500DCE676 /* AudioListCollectionViewCell.swift */; };
+		7E3FE74421F17BB500DCE676 /* AudioListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E3FE74221F17BB500DCE676 /* AudioListCollectionViewCell.xib */; };
 		C367196A95B0A9C0DEEE6B67 /* Pods_AudioPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59D28ACC197F348A30673C51 /* Pods_AudioPlayerTests.framework */; };
 		E6E357D79C34A0FDFAD172EE /* Pods_AudioPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6FA3C5B25159F8DD5CDF72 /* Pods_AudioPlayerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +70,9 @@
 		7E3FE73521F16B8D00DCE676 /* AudioListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListDataSource.swift; sourceTree = "<group>"; };
 		7E3FE73721F16C7D00DCE676 /* AudioItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioItem.swift; sourceTree = "<group>"; };
 		7E3FE73921F16F3300DCE676 /* AudioListSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListSectionController.swift; sourceTree = "<group>"; };
+		7E3FE73F21F1749700DCE676 /* MediaItemCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemCreater.swift; sourceTree = "<group>"; };
+		7E3FE74121F17BB500DCE676 /* AudioListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListCollectionViewCell.swift; sourceTree = "<group>"; };
+		7E3FE74221F17BB500DCE676 /* AudioListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioListCollectionViewCell.xib; sourceTree = "<group>"; };
 		8B755F5EFA0AAEAD4E56EA3D /* Pods-AudioPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayerUITests/Pods-AudioPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6C5742BB923FE82E6F50B70 /* Pods_AudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -139,10 +145,13 @@
 			children = (
 				7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */,
 				7E3FE73521F16B8D00DCE676 /* AudioListDataSource.swift */,
+				7E3FE73F21F1749700DCE676 /* MediaItemCreater.swift */,
 				7E3FE73721F16C7D00DCE676 /* AudioItem.swift */,
 				7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */,
 				7E3FE73321F1666400DCE676 /* AudioPlayViewController.swift */,
 				7E3FE73921F16F3300DCE676 /* AudioListSectionController.swift */,
+				7E3FE74121F17BB500DCE676 /* AudioListCollectionViewCell.swift */,
+				7E3FE74221F17BB500DCE676 /* AudioListCollectionViewCell.xib */,
 				7E3BEBFF21F0B92B005F9529 /* Main.storyboard */,
 				7E3BEC0521F0B930005F9529 /* Assets.xcassets */,
 				7E3BEC0721F0B930005F9529 /* LaunchScreen.storyboard */,
@@ -289,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E3BEC0921F0B930005F9529 /* LaunchScreen.storyboard in Resources */,
+				7E3FE74421F17BB500DCE676 /* AudioListCollectionViewCell.xib in Resources */,
 				7E3BEC0621F0B930005F9529 /* Assets.xcassets in Resources */,
 				7E3BEC0121F0B92B005F9529 /* Main.storyboard in Resources */,
 			);
@@ -393,9 +403,11 @@
 				7E3BEBFE21F0B92B005F9529 /* AudioListViewController.swift in Sources */,
 				7E3FE73A21F16F3300DCE676 /* AudioListSectionController.swift in Sources */,
 				7E3FE73621F16B8D00DCE676 /* AudioListDataSource.swift in Sources */,
+				7E3FE74321F17BB500DCE676 /* AudioListCollectionViewCell.swift in Sources */,
 				7E3BEC0421F0B92B005F9529 /* AudioPlayer.xcdatamodeld in Sources */,
 				7E3FE73821F16C7D00DCE676 /* AudioItem.swift in Sources */,
 				7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */,
+				7E3FE74021F1749700DCE676 /* MediaItemCreater.swift in Sources */,
 				7E3FE73421F1666400DCE676 /* AudioPlayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

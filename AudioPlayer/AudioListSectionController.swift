@@ -10,5 +10,18 @@ import Foundation
 import IGListKit
 
 class AudioListSectionController: ListSectionController {
-    
+    private var item: AudioItem?
+    override func sizeForItem(at index: Int) -> CGSize {
+        return CGSize(width: collectionContext!.containerSize.width, height: 60)
+    }
+    override func cellForItem(at index: Int) -> UICollectionViewCell {
+        guard let cell = collectionContext?.dequeueReusableCell(withNibName: "AudioListCollectionViewCell", bundle: nil, for: self, at: index) as? AudioListCollectionViewCell else {
+            fatalError()
+        }
+        cell.item = self.item
+        return cell
+    }
+    override func didUpdate(to object: Any) {
+        item = object as? AudioItem
+    }
 }

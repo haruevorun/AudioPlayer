@@ -19,11 +19,22 @@ class AudioListViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dataSource.delegate = self
+        dataSource.request()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        adapter.collectionView = self.audioListView
+        self.adapter.collectionView = self.audioListView
+        self.adapter.dataSource = self.dataSource
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
+}
+extension AudioListViewController: AudioListDataSourceDelegate {
+    func updateItem() {
+        self.adapter.performUpdates(animated: true, completion: nil)
+    }
 }
 

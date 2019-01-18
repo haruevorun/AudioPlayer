@@ -7,12 +7,19 @@
 //
 
 import UIKit
+protocol AudioControllProtocol {
+    func play()
+    func skip()
+    func back()
+}
 
 class AudioControllerCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var skipButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

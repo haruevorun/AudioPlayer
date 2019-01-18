@@ -25,6 +25,9 @@ class AudioPlayViewController: UIViewController {
         }
     }
     var player = MPMusicPlayerController.applicationMusicPlayer
+    @IBOutlet weak var artworkView: UIImageView!
+    @IBOutlet weak var volumeSlider: UISlider!
+    @IBOutlet weak var timeSlider: UISlider!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!

@@ -20,5 +20,4 @@ class AudioListCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

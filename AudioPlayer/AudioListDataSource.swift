@@ -50,6 +50,5 @@ class AudioListDataSource: NSObject, ListAdapterDataSource {
                 self.delegate?.updateItem()
             }
         }
-        //delegate?.updateItem()
     }
 }

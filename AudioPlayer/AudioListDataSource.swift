@@ -15,7 +15,7 @@ protocol AudioListDataSourceDelegate {
 }
 
 class AudioListDataSource: NSObject, ListAdapterDataSource {
-    private var items: [AudioItem] = []
+    private var items: [MPMediaItem] = []
     var delegate: AudioListDataSourceDelegate?
     func request() {
         MPMediaLibrary.requestAuthorization { (state) in
@@ -44,7 +44,7 @@ class AudioListDataSource: NSObject, ListAdapterDataSource {
         }
         DispatchQueue.global().async {
             for collection in collections {
-                self.items.append(contentsOf: collection.items.map { AudioItem(media: $0) } )
+                self.items.append(contentsOf: collection.items )
             }
             DispatchQueue.main.async {
                 self.delegate?.updateItem()

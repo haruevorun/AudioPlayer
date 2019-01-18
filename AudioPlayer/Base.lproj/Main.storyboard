@@ -160,6 +160,36 @@
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="26.53673163418291"/>
         </scene>
+        <!--Modal Audio Play View Controller-->
+        <scene sceneID="9zk-aQ-Hq6">
+            <objects>
+                <viewController storyboardIdentifier="modal" modalPresentationStyle="overCurrentContext" id="TMe-Jj-N2r" customClass="ModalAudioPlayViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0wO-Mz-Zxp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0R0-4d-0YT">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0R0-4d-0YT" firstAttribute="leading" secondItem="GgY-Ff-U6R" secondAttribute="leading" id="4py-BC-8Cv"/>
+                            <constraint firstItem="0R0-4d-0YT" firstAttribute="bottom" secondItem="GgY-Ff-U6R" secondAttribute="bottom" id="7Ax-yh-rF1"/>
+                            <constraint firstItem="0R0-4d-0YT" firstAttribute="trailing" secondItem="GgY-Ff-U6R" secondAttribute="trailing" id="SDc-Gm-Gdh"/>
+                            <constraint firstItem="0R0-4d-0YT" firstAttribute="top" secondItem="GgY-Ff-U6R" secondAttribute="top" constant="50" id="kDV-aO-JOx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GgY-Ff-U6R"/>
+                    </view>
+                    <connections>
+                        <outlet property="modalView" destination="0R0-4d-0YT" id="esA-DD-Elg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5A-JC-Z3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880.8" y="29.23538230884558"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="gqr-Iv-bqq">
             <objects>

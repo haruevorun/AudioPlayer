@@ -93,7 +93,7 @@ class AudioListViewController: UIViewController {
             defer {
                 self.initializePoint = CGPoint.zero
             }
-            guard len > self.view.frame.height / 3 else {
+            guard len > self.view.frame.height * 0.2 else {
                 UIView.animate(withDuration: 0.5) {
                     self.modalPlayerContainer.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.height * (1.0 - self.modalViewRatio))
                 }

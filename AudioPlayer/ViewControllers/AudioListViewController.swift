@@ -54,9 +54,11 @@ class AudioListViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     func presentAudioView(item: MPMediaItem) {
+        self.modalPlayerContainer.removeFromSuperview()
         let modalView = self.modalPlayerContainer
         audioPlayerController.collection = MPMediaItemCollection(items: [item])
         //audioPlayerController.delegate = self
+        self.hideContentController(content: self.audioPlayerController)
         displayContentController(content: audioPlayerController, container: modalView)
         modalView.frame.origin = CGPoint(x: 0, y: self.view.frame.height)
         let pangesture = UIPanGestureRecognizer(target: self, action: #selector(verticalSwipe(_:)))
@@ -85,25 +87,20 @@ class AudioListViewController: UIViewController {
             guard len > 0 else {
                 return
             }
-            view.frame.origin = CGPoint(x: view.frame.origin.x, y: (UIScreen.main.bounds.height * (1.0 - self.modalViewRatio)) + len)
+            self.modalPlayerContainer.frame.origin = CGPoint(x: view.frame.origin.x, y: (UIScreen.main.bounds.height * (1.0 - self.modalViewRatio)) + len / 2)
         case .cancelled, .ended:
             let len = point.y  - self.initializePoint.y
             defer {
                 self.initializePoint = CGPoint.zero
             }
             guard len > self.view.frame.height / 3 else {
-                UIView.animate(withDuration: 0.8) {
-                    view.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.height * (1.0 - self.modalViewRatio))
+                UIView.animate(withDuration: 0.5) {
+                    self.modalPlayerContainer.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.height * (1.0 - self.modalViewRatio))
                 }
                 return
             }
-            UIView.animate(withDuration: 0.8, animations: {
-                view.frame.origin = CGPoint(x: 0, y: self.view.frame.height)
-            }, completion: { (bool) in
-                if bool {
-                    sender.view?.removeFromSuperview()
-                    self.hideContentController(content: self.audioPlayerController)
-                }
+            UIView.animate(withDuration: 0.5, animations: {
+                self.modalPlayerContainer.frame.origin = CGPoint(x: 0, y: self.view.frame.height)
             })
         default:
             return

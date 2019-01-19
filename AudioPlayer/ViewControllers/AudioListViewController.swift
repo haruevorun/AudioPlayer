@@ -66,7 +66,7 @@ class AudioListViewController: UIViewController {
         modalView.addGestureRecognizer(pangesture)
         modalView.backgroundColor = UIColor.cyan
         self.view.addSubview(modalView)
-        UIView.animate(withDuration: 1.2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             modalView.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.height * (1.0 - self.modalViewRatio))
         }, completion: nil)
     }

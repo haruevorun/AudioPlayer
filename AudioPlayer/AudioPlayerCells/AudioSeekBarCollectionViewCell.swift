@@ -14,5 +14,4 @@ class AudioSeekBarCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

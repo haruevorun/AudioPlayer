@@ -28,6 +28,11 @@ class AudioListViewController: UIViewController {
         let view = UIView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height * (1.0 - self.modalViewRatio), width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * modalViewRatio))
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalSwipe(_:))))
         view.backgroundColor = UIColor.white
+        view.layer.cornerRadius = 10
+        view.clipsToBounds = true
+        view.layer.shadowOffset = CGSize(width: 2, height: 2)
+        view.layer.shadowRadius = 4
+        view.layer.shadowOpacity = 0.8
         return view
     }()
     
@@ -49,25 +54,21 @@ class AudioListViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     func presentAudioView(item: MPMediaItem) {
-        showModalAudioPlayer()
-        
-        /*guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "AudioPlayer") as? AudioPlayViewController else {
-            return
-        }
-        viewController.item = item
-        self.navigationController?.show(viewController, sender: nil)*/
-    }
-    func showModalAudioPlayer() {
         let modalView = self.modalPlayerContainer
+        audioPlayerController.collection = MPMediaItemCollection(items: [item])
+        //audioPlayerController.delegate = self
         displayContentController(content: audioPlayerController, container: modalView)
         modalView.frame.origin = CGPoint(x: 0, y: self.view.frame.height)
-        modalView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalSwipe(_:))))
+        let pangesture = UIPanGestureRecognizer(target: self, action: #selector(verticalSwipe(_:)))
+        pangesture.delegate = self
+        modalView.addGestureRecognizer(pangesture)
         modalView.backgroundColor = UIColor.cyan
         self.view.addSubview(modalView)
         UIView.animate(withDuration: 1.2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             modalView.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.height * (1.0 - self.modalViewRatio))
         }, completion: nil)
     }
+    
     @objc private func verticalSwipe(_ sender: UIPanGestureRecognizer) {
         guard let view = sender.view else {
             return
@@ -77,8 +78,10 @@ class AudioListViewController: UIViewController {
         case .began:
             self.initializePoint = point
         case .changed:
+            guard self.audioPlayerController.collectionView.contentOffset.y == 0 else {
+                return
+            }
             let len = point.y - self.initializePoint.y
-            print(len)
             guard len > 0 else {
                 return
             }
@@ -89,16 +92,18 @@ class AudioListViewController: UIViewController {
                 self.initializePoint = CGPoint.zero
             }
             guard len > self.view.frame.height / 3 else {
-                UIView.animate(withDuration: 0.5) {
+                UIView.animate(withDuration: 0.8) {
                     view.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.height * (1.0 - self.modalViewRatio))
                 }
                 return
             }
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.8, animations: {
                 view.frame.origin = CGPoint(x: 0, y: self.view.frame.height)
             }, completion: { (bool) in
-                sender.view?.removeFromSuperview()
-                self.hideContentController(content: self.audioPlayerController)
+                if bool {
+                    sender.view?.removeFromSuperview()
+                    self.hideContentController(content: self.audioPlayerController)
+                }
             })
         default:
             return
@@ -116,6 +121,11 @@ extension AudioListViewController {
         content.willMove(toParent: self)
         content.view.removeFromSuperview()
         content.removeFromParent()
+    }
+}
+extension AudioListViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
 extension AudioListViewController: AudioListDataSourceDelegate {

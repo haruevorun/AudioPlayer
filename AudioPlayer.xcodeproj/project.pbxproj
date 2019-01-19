@@ -34,6 +34,10 @@
 		7E970D1921F20EF40007612F /* AudioDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E970D1721F20EF40007612F /* AudioDescriptionCollectionViewCell.swift */; };
 		7E970D1A21F20EF40007612F /* AudioDescriptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E970D1821F20EF40007612F /* AudioDescriptionCollectionViewCell.xib */; };
 		7E970D1C21F21FF20007612F /* AudioPlayerSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E970D1B21F21FF20007612F /* AudioPlayerSectionController.swift */; };
+		7E970D1F21F2BAF90007612F /* AudioQueueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E970D1D21F2BAF90007612F /* AudioQueueCollectionViewCell.swift */; };
+		7E970D2021F2BAF90007612F /* AudioQueueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E970D1E21F2BAF90007612F /* AudioQueueCollectionViewCell.xib */; };
+		7E970D2421F2BBB60007612F /* AudioQueueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E970D2221F2BBB60007612F /* AudioQueueTableViewCell.swift */; };
+		7E970D2521F2BBB60007612F /* AudioQueueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E970D2321F2BBB60007612F /* AudioQueueTableViewCell.xib */; };
 		C367196A95B0A9C0DEEE6B67 /* Pods_AudioPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59D28ACC197F348A30673C51 /* Pods_AudioPlayerTests.framework */; };
 		E6E357D79C34A0FDFAD172EE /* Pods_AudioPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6FA3C5B25159F8DD5CDF72 /* Pods_AudioPlayerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -95,6 +99,10 @@
 		7E970D1721F20EF40007612F /* AudioDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E970D1821F20EF40007612F /* AudioDescriptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioDescriptionCollectionViewCell.xib; sourceTree = "<group>"; };
 		7E970D1B21F21FF20007612F /* AudioPlayerSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerSectionController.swift; sourceTree = "<group>"; };
+		7E970D1D21F2BAF90007612F /* AudioQueueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioQueueCollectionViewCell.swift; sourceTree = "<group>"; };
+		7E970D1E21F2BAF90007612F /* AudioQueueCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioQueueCollectionViewCell.xib; sourceTree = "<group>"; };
+		7E970D2221F2BBB60007612F /* AudioQueueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioQueueTableViewCell.swift; sourceTree = "<group>"; };
+		7E970D2321F2BBB60007612F /* AudioQueueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioQueueTableViewCell.xib; sourceTree = "<group>"; };
 		8B755F5EFA0AAEAD4E56EA3D /* Pods-AudioPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayerUITests/Pods-AudioPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6C5742BB923FE82E6F50B70 /* Pods_AudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -220,6 +228,9 @@
 				7E970D1421F20EDD0007612F /* AudioSeekBarCollectionViewCell.xib */,
 				7E970D1721F20EF40007612F /* AudioDescriptionCollectionViewCell.swift */,
 				7E970D1821F20EF40007612F /* AudioDescriptionCollectionViewCell.xib */,
+				7E970D1D21F2BAF90007612F /* AudioQueueCollectionViewCell.swift */,
+				7E970D1E21F2BAF90007612F /* AudioQueueCollectionViewCell.xib */,
+				7E970D2121F2BB850007612F /* AudioQueueCell */,
 			);
 			path = AudioPlayerCells;
 			sourceTree = "<group>";
@@ -266,6 +277,15 @@
 				7E970D0921F1D9C40007612F /* DismissModalViewAnimation.swift */,
 			);
 			path = TransitionController;
+			sourceTree = "<group>";
+		};
+		7E970D2121F2BB850007612F /* AudioQueueCell */ = {
+			isa = PBXGroup;
+			children = (
+				7E970D2221F2BBB60007612F /* AudioQueueTableViewCell.swift */,
+				7E970D2321F2BBB60007612F /* AudioQueueTableViewCell.xib */,
+			);
+			path = AudioQueueCell;
 			sourceTree = "<group>";
 		};
 		E4EB0103FD610489053FC328 /* Frameworks */ = {
@@ -392,8 +412,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E3BEC0921F0B930005F9529 /* LaunchScreen.storyboard in Resources */,
+				7E970D2021F2BAF90007612F /* AudioQueueCollectionViewCell.xib in Resources */,
 				7E3FE74421F17BB500DCE676 /* AudioListCollectionViewCell.xib in Resources */,
 				7E970D1621F20EDD0007612F /* AudioSeekBarCollectionViewCell.xib in Resources */,
+				7E970D2521F2BBB60007612F /* AudioQueueTableViewCell.xib in Resources */,
 				7E970CFB21F1CF0A0007612F /* AudioArtworkCollectionViewCell.xib in Resources */,
 				7E970D1A21F20EF40007612F /* AudioDescriptionCollectionViewCell.xib in Resources */,
 				7E3BEC0621F0B930005F9529 /* Assets.xcassets in Resources */,
@@ -505,6 +527,7 @@
 				7E3FE73621F16B8D00DCE676 /* AudioListDataSource.swift in Sources */,
 				7E3FE74321F17BB500DCE676 /* AudioListCollectionViewCell.swift in Sources */,
 				7E970D1921F20EF40007612F /* AudioDescriptionCollectionViewCell.swift in Sources */,
+				7E970D1F21F2BAF90007612F /* AudioQueueCollectionViewCell.swift in Sources */,
 				7E970CFE21F1CF310007612F /* AudioControllerCollectionViewCell.swift in Sources */,
 				7E3BEC0421F0B92B005F9529 /* AudioPlayer.xcdatamodeld in Sources */,
 				7E970D1C21F21FF20007612F /* AudioPlayerSectionController.swift in Sources */,
@@ -513,6 +536,7 @@
 				7E3FE74021F1749700DCE676 /* MediaItemCreater.swift in Sources */,
 				7E3FE73421F1666400DCE676 /* AudioPlayViewController.swift in Sources */,
 				7E970D0A21F1D9C40007612F /* DismissModalViewAnimation.swift in Sources */,
+				7E970D2421F2BBB60007612F /* AudioQueueTableViewCell.swift in Sources */,
 				7E970D1521F20EDD0007612F /* AudioSeekBarCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

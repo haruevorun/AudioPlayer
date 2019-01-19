@@ -163,27 +163,34 @@
         <!--Modal Audio Play View Controller-->
         <scene sceneID="9zk-aQ-Hq6">
             <objects>
-                <viewController storyboardIdentifier="modal" modalPresentationStyle="overCurrentContext" id="TMe-Jj-N2r" customClass="ModalAudioPlayViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="modal" id="TMe-Jj-N2r" customClass="ModalAudioPlayViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0wO-Mz-Zxp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0R0-4d-0YT">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QEZ-v1-ARd">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OTD-0A-nYH">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0R0-4d-0YT" firstAttribute="leading" secondItem="GgY-Ff-U6R" secondAttribute="leading" id="4py-BC-8Cv"/>
-                            <constraint firstItem="0R0-4d-0YT" firstAttribute="bottom" secondItem="GgY-Ff-U6R" secondAttribute="bottom" id="7Ax-yh-rF1"/>
-                            <constraint firstItem="0R0-4d-0YT" firstAttribute="trailing" secondItem="GgY-Ff-U6R" secondAttribute="trailing" id="SDc-Gm-Gdh"/>
-                            <constraint firstItem="0R0-4d-0YT" firstAttribute="top" secondItem="GgY-Ff-U6R" secondAttribute="top" constant="50" id="kDV-aO-JOx"/>
+                            <constraint firstItem="QEZ-v1-ARd" firstAttribute="leading" secondItem="GgY-Ff-U6R" secondAttribute="leading" id="8M2-ff-irG"/>
+                            <constraint firstItem="GgY-Ff-U6R" firstAttribute="trailing" secondItem="QEZ-v1-ARd" secondAttribute="trailing" id="Fs1-Kl-nig"/>
+                            <constraint firstItem="QEZ-v1-ARd" firstAttribute="top" secondItem="GgY-Ff-U6R" secondAttribute="top" id="ITp-TR-iTA"/>
+                            <constraint firstItem="GgY-Ff-U6R" firstAttribute="bottom" secondItem="QEZ-v1-ARd" secondAttribute="bottom" id="f3I-Ep-QTY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GgY-Ff-U6R"/>
                     </view>
                     <connections>
-                        <outlet property="modalView" destination="0R0-4d-0YT" id="esA-DD-Elg"/>
+                        <outlet property="collectionView" destination="QEZ-v1-ARd" id="0wC-Xh-qn7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5A-JC-Z3I" userLabel="First Responder" sceneMemberID="firstResponder"/>

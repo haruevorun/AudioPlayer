@@ -25,3 +25,19 @@ extension MPMediaItem: ListDiffable {
         return self.playCount == object.playCount && self.skipCount == object.skipCount
     }
 }
+
+extension MPMediaItemCollection: ListDiffable {
+    public func diffIdentifier() -> NSObjectProtocol {
+        return persistentID as NSObjectProtocol
+    }
+    
+    public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard self !== object else {
+            return true
+        }
+        guard let object = object as? MPMediaItemCollection else {
+            return false
+        }
+        return self.items == object.items
+    }
+}

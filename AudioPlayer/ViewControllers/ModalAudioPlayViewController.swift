@@ -8,53 +8,29 @@
 
 import Foundation
 import UIKit
+import MediaPlayer
+import IGListKit
 
 class ModalAudioPlayViewController: UIViewController {
-    @IBOutlet weak var modalView: UIView!
-    let interacter = UIPercentDrivenInteractiveTransition()
-    
+    @IBOutlet weak var collectionView: UICollectionView!
+    var collection: MPMediaItemCollection?
+    lazy var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.modalView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalSwipe(_:))))
-        //self.transitioningDelegate = self
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    @objc private func verticalSwipe(_ sender: UIPanGestureRecognizer) {
-        guard let view = sender.view else { return }
-        switch sender.state {
-        case .began:
-            self.dismiss(animated: true, completion: nil)
-        case .changed:
-            let progress = sender.translation(in: view).y / view.bounds.height
-            interacter.update(progress)
-        case .cancelled, .ended:
-            let progress = sender.translation(in: view).y / view.bounds.height
-            if progress > 0.8 {
-              interacter.finish()
-            } else {
-              interacter.cancel()
-            }
-        default: return
-        }
+        self.adapter.collectionView = collectionView
+        self.adapter.dataSource = self
     }
 }
-extension ModalAudioPlayViewController: NavigationTransitionerDelegate {
-    func shouldBeginGesture(gesture: UIGestureRecognizer) -> Bool {
-        return true
+extension ModalAudioPlayViewController: ListAdapterDataSource {
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        return [collection!]
     }
     
-    func pop() {
-        self.dismiss(animated: true, completion: nil)
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        return AudioPlayerSectionController()
     }
-}
-extension ModalAudioPlayViewController: UIViewControllerTransitioningDelegate {
-    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return interacter
-    }
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return DismissModalViewAnimation()
+    
+    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+        return nil
     }
 }

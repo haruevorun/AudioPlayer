@@ -16,13 +16,13 @@ class AudioPlayerSectionController: ListSectionController {
     private var player: MPMusicPlayerController = MPMusicPlayerController.applicationMusicPlayer
     
     override func numberOfItems() -> Int {
-        return 4
+        return 3
     }
     override func sizeForItem(at index: Int) -> CGSize {
         guard index != 0 else {
             return CGSize(width: collectionContext!.containerSize.width, height: collectionContext!.containerSize.width + 20)
         }
-        return CGSize(width: collectionContext!.containerSize.width, height: 50)
+        return CGSize(width: collectionContext!.containerSize.width, height: 200)
     }
     override func cellForItem(at index: Int) -> UICollectionViewCell {
         guard index != 0 else {
@@ -38,6 +38,10 @@ class AudioPlayerSectionController: ListSectionController {
             }
             return cell
         }
+        guard let cell = collectionContext?.dequeueReusableCell(withNibName: "AudioDescriptionCollectionViewCell", bundle: nil, for: self, at: index) as? AudioDescriptionCollectionViewCell else {
+            fatalError()
+        }
+        return cell
     }
     override func didUpdate(to object: Any) {
         self.mediaCollection = object as? MPMediaItemCollection

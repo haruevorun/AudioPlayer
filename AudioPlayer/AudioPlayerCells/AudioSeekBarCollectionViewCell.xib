@@ -61,6 +61,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="308" height="56"/>
+            <connections>
+                <outlet property="playTimeLabel" destination="WE4-jn-7oh" id="nJc-Z5-Ls4"/>
+                <outlet property="remainingTimeLabel" destination="75S-hC-09h" id="wno-le-cpL"/>
+                <outlet property="seekBar" destination="DU2-x9-Oni" id="sds-WE-pJY"/>
+            </connections>
             <point key="canvasLocation" x="116.8" y="155.62218890554723"/>
         </collectionViewCell>
     </objects>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		13527395B9FF79093B35FB11 /* Pods_AudioPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C5742BB923FE82E6F50B70 /* Pods_AudioPlayer.framework */; };
+		7E3A3F8921F359D900DDFD40 /* ModalViewPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A3F8821F359D900DDFD40 /* ModalViewPresentationController.swift */; };
+		7E3A3F8B21F35A4B00DDFD40 /* ModalViewAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A3F8A21F35A4B00DDFD40 /* ModalViewAnimatedTransitioning.swift */; };
 		7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */; };
 		7E3BEBFE21F0B92B005F9529 /* AudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */; };
 		7E3BEC0121F0B92B005F9529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFF21F0B92B005F9529 /* Main.storyboard */; };
@@ -37,6 +39,7 @@
 		7E970D2021F2BAF90007612F /* AudioQueueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E970D1E21F2BAF90007612F /* AudioQueueCollectionViewCell.xib */; };
 		7E970D2421F2BBB60007612F /* AudioQueueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E970D2221F2BBB60007612F /* AudioQueueTableViewCell.swift */; };
 		7E970D2521F2BBB60007612F /* AudioQueueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E970D2321F2BBB60007612F /* AudioQueueTableViewCell.xib */; };
+		7E970D2821F2FBE50007612F /* TestTransitionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E970D2721F2FBE50007612F /* TestTransitionModalViewController.swift */; };
 		C367196A95B0A9C0DEEE6B67 /* Pods_AudioPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59D28ACC197F348A30673C51 /* Pods_AudioPlayerTests.framework */; };
 		E6E357D79C34A0FDFAD172EE /* Pods_AudioPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6FA3C5B25159F8DD5CDF72 /* Pods_AudioPlayerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +69,8 @@
 		59D28ACC197F348A30673C51 /* Pods_AudioPlayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioPlayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64908F7665E38E8E57EF9032 /* Pods-AudioPlayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayerUITests/Pods-AudioPlayerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6A9B72C6CD2AEAA32CFF094A /* Pods-AudioPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		7E3A3F8821F359D900DDFD40 /* ModalViewPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewPresentationController.swift; sourceTree = "<group>"; };
+		7E3A3F8A21F35A4B00DDFD40 /* ModalViewAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		7E3BEBF821F0B92B005F9529 /* AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +106,7 @@
 		7E970D1E21F2BAF90007612F /* AudioQueueCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioQueueCollectionViewCell.xib; sourceTree = "<group>"; };
 		7E970D2221F2BBB60007612F /* AudioQueueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioQueueTableViewCell.swift; sourceTree = "<group>"; };
 		7E970D2321F2BBB60007612F /* AudioQueueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioQueueTableViewCell.xib; sourceTree = "<group>"; };
+		7E970D2721F2FBE50007612F /* TestTransitionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransitionModalViewController.swift; sourceTree = "<group>"; };
 		8B755F5EFA0AAEAD4E56EA3D /* Pods-AudioPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayerUITests/Pods-AudioPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6C5742BB923FE82E6F50B70 /* Pods_AudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -235,6 +241,7 @@
 		7E970D0221F1D0190007612F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7E970D2621F2FA800007612F /* TestTransition */,
 				7E3FE73321F1666400DCE676 /* AudioPlayViewController.swift */,
 				7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */,
 				7E970D0021F1CF740007612F /* ModalAudioPlayViewController.swift */,
@@ -275,6 +282,16 @@
 				7E970D2321F2BBB60007612F /* AudioQueueTableViewCell.xib */,
 			);
 			path = AudioQueueCell;
+			sourceTree = "<group>";
+		};
+		7E970D2621F2FA800007612F /* TestTransition */ = {
+			isa = PBXGroup;
+			children = (
+				7E970D2721F2FBE50007612F /* TestTransitionModalViewController.swift */,
+				7E3A3F8821F359D900DDFD40 /* ModalViewPresentationController.swift */,
+				7E3A3F8A21F35A4B00DDFD40 /* ModalViewAnimatedTransitioning.swift */,
+			);
+			path = TestTransition;
 			sourceTree = "<group>";
 		};
 		E4EB0103FD610489053FC328 /* Frameworks */ = {
@@ -514,14 +531,17 @@
 				7E3BEBFE21F0B92B005F9529 /* AudioListViewController.swift in Sources */,
 				7E3FE73A21F16F3300DCE676 /* AudioListSectionController.swift in Sources */,
 				7E3FE73621F16B8D00DCE676 /* AudioListDataSource.swift in Sources */,
+				7E3A3F8921F359D900DDFD40 /* ModalViewPresentationController.swift in Sources */,
 				7E3FE74321F17BB500DCE676 /* AudioListCollectionViewCell.swift in Sources */,
 				7E970D1921F20EF40007612F /* AudioDescriptionCollectionViewCell.swift in Sources */,
 				7E970D1F21F2BAF90007612F /* AudioQueueCollectionViewCell.swift in Sources */,
 				7E970CFE21F1CF310007612F /* AudioControllerCollectionViewCell.swift in Sources */,
 				7E3BEC0421F0B92B005F9529 /* AudioPlayer.xcdatamodeld in Sources */,
 				7E970D1C21F21FF20007612F /* AudioPlayerSectionController.swift in Sources */,
+				7E970D2821F2FBE50007612F /* TestTransitionModalViewController.swift in Sources */,
 				7E3FE73821F16C7D00DCE676 /* AudioItem.swift in Sources */,
 				7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */,
+				7E3A3F8B21F35A4B00DDFD40 /* ModalViewAnimatedTransitioning.swift in Sources */,
 				7E3FE74021F1749700DCE676 /* MediaItemCreater.swift in Sources */,
 				7E3FE73421F1666400DCE676 /* AudioPlayViewController.swift in Sources */,
 				7E970D2421F2BBB60007612F /* AudioQueueTableViewCell.swift in Sources */,

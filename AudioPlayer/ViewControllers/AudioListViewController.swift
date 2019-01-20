@@ -15,7 +15,7 @@ class AudioListViewController: UIViewController {
     @IBOutlet weak var audioListView: UICollectionView!
     
     private let modalViewRatio: CGFloat = 0.8
-    private var initializePoint: CGPoint = CGPoint.zero
+    private var initializePoint: CGFloat = 0
     
     private var audioPlayerController: ModalAudioPlayViewController = {
         guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "modal") as? ModalAudioPlayViewController else {
@@ -54,10 +54,10 @@ class AudioListViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     func presentAudioView(item: MPMediaItem) {
+        
         self.modalPlayerContainer.removeFromSuperview()
         let modalView = self.modalPlayerContainer
         audioPlayerController.collection = MPMediaItemCollection(items: [item])
-        //audioPlayerController.delegate = self
         self.hideContentController(content: self.audioPlayerController)
         displayContentController(content: audioPlayerController, container: modalView)
         modalView.frame.origin = CGPoint(x: 0, y: self.view.frame.height)
@@ -75,25 +75,21 @@ class AudioListViewController: UIViewController {
         guard let view = sender.view else {
             return
         }
-        let point = sender.translation(in: self.view)
+        let point = sender.translation(in: self.view).y
+        
         switch sender.state {
-        case .began:
-            self.initializePoint = point
         case .changed:
-            guard self.audioPlayerController.collectionView.contentOffset.y == 0 else {
+            let minMove = min(0,self.audioPlayerController.collectionView.contentOffset.y)
+            let maxMove = max(0, self.audioPlayerController.collectionView.contentOffset.y)
+            guard self.modalPlayerContainer.frame.origin.y >= UIScreen.main.bounds.height * (1.0 - self.modalViewRatio) else {
                 return
             }
-            let len = point.y - self.initializePoint.y
-            guard len > 0 else {
-                return
-            }
-            self.modalPlayerContainer.frame.origin = CGPoint(x: view.frame.origin.x, y: (UIScreen.main.bounds.height * (1.0 - self.modalViewRatio)) + len * 0.9)
+            self.modalPlayerContainer.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.height * (1.0 - modalViewRatio) - minMove)
         case .cancelled, .ended:
-            let len = point.y  - self.initializePoint.y
             defer {
-                self.initializePoint = CGPoint.zero
+                self.initializePoint = 0
             }
-            guard len > self.view.frame.height * 0.2 else {
+            guard self.modalPlayerContainer.frame.origin.y > self.view.frame.height * 0.3 else {
                 UIView.animate(withDuration: 0.3) {
                     self.modalPlayerContainer.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.height * (1.0 - self.modalViewRatio))
                 }

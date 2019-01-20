@@ -55,6 +55,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="348" height="68"/>
+            <connections>
+                <outlet property="albamLabel" destination="RYo-Sa-5lx" id="tiO-Nb-ncU"/>
+                <outlet property="titleLabel" destination="rpx-MX-0OO" id="8oR-Td-CmW"/>
+            </connections>
             <point key="canvasLocation" x="104" y="209.59520239880061"/>
         </collectionViewCell>
     </objects>

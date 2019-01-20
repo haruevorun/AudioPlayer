@@ -38,6 +38,12 @@ class AudioPlayerSectionController: ListSectionController {
             }
             return cell
         }
+        guard index != 2 else {
+            guard let cell = collectionContext?.dequeueReusableCell(withNibName: "AudioControllerCollectionViewCell", bundle: nil, for: self, at: index) as? AudioControllerCollectionViewCell else {
+                fatalError()
+            }
+            return cell
+        }
         guard let cell = collectionContext?.dequeueReusableCell(withNibName: "AudioDescriptionCollectionViewCell", bundle: nil, for: self, at: index) as? AudioDescriptionCollectionViewCell else {
             fatalError()
         }

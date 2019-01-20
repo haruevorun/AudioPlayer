@@ -10,8 +10,14 @@ import UIKit
 
 class AudioSeekBarCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var seekBar: UISlider!
+    @IBOutlet weak var remainingTimeLabel: UILabel!
+    @IBOutlet weak var playTimeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        seekBar.setValue(0, animated: true)
+        remainingTimeLabel.text = "- 3:00"
+        playTimeLabel.text = "0:00"
     }
 }

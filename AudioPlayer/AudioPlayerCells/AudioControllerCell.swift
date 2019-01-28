@@ -18,6 +18,8 @@ protocol AudioControlProtocol: class {
 
 class AudioControllerCell: UITableViewCell {
 
+    @IBOutlet weak var remainingTimeLabel: UILabel!
+    @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet private weak var seekbar: UISlider!
     @IBOutlet private weak var playbackButton: UIButton!
     @IBOutlet private weak var skipNextButton: UIButton!
@@ -25,6 +27,8 @@ class AudioControllerCell: UITableViewCell {
     var maximumValue: Float = 0 {
         didSet {
             self.seekbar.maximumValue = maximumValue
+            self.currentTimeLabel.text = "00:00"
+            self.remainingTimeLabel.text = "- \(self.timeToString(time: maximumValue))"
         }
     }
     var currentPlayBackValue: Float {
@@ -33,6 +37,8 @@ class AudioControllerCell: UITableViewCell {
         }
         set(value) {
             self.seekbar.setValue(value, animated: true)
+            self.currentTimeLabel.text = self.timeToString(time: value)
+            self.remainingTimeLabel.text = "- \(self.timeToString(time: maximumValue - value))"
         }
     }
     var isPlay: Bool = false {
@@ -61,5 +67,12 @@ class AudioControllerCell: UITableViewCell {
     }
     @IBAction func seek(_ sender: UISlider) {
         delegate?.seek(value: sender.value)
+    }
+    private func timeToString(time: Float) -> String {
+        let second: Int
+        let minute: Int
+        second = Int(time) % 60
+        minute = Int(time) / 60
+        return "\(minute):\(NSString(format: "%02d", second))"
     }
 }

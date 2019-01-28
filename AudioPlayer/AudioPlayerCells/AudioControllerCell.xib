@@ -105,7 +105,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="currentTimeLabel" destination="d6v-X5-EPF" id="Ky1-ul-uu2"/>
                 <outlet property="playbackButton" destination="iUq-pk-F4P" id="4M1-nd-bTb"/>
+                <outlet property="remainingTimeLabel" destination="TNf-tf-piY" id="kfZ-qH-DvU"/>
                 <outlet property="seekbar" destination="25D-nL-i9L" id="ME3-Y4-NFj"/>
                 <outlet property="skipNextButton" destination="xSx-cv-VbW" id="FKz-tY-KUc"/>
                 <outlet property="skipPreviousButton" destination="2xN-y4-w5B" id="gFg-ND-yUN"/>

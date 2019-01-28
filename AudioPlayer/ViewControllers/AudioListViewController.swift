@@ -17,13 +17,6 @@ class AudioListViewController: UIViewController {
     private let modalViewRatio: CGFloat = 0.8
     private var initializePoint: CGPoint = CGPoint.zero
     
-    private var audioPlayerController: ModalAudioPlayViewController = {
-        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "modal") as? ModalAudioPlayViewController else {
-            fatalError()
-        }
-        return viewController
-    }()
-    
     private lazy var modalPlayerContainer: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height * (1.0 - self.modalViewRatio), width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * modalViewRatio))
         view.backgroundColor = UIColor.white

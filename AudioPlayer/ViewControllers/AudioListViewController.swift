@@ -17,16 +17,8 @@ class AudioListViewController: UIViewController {
     private let modalViewRatio: CGFloat = 0.8
     private var initializePoint: CGPoint = CGPoint.zero
     
-    private var audioPlayerController: ModalAudioPlayViewController = {
-        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "modal") as? ModalAudioPlayViewController else {
-            fatalError()
-        }
-        return viewController
-    }()
-    
     private lazy var modalPlayerContainer: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height * (1.0 - self.modalViewRatio), width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * modalViewRatio))
-        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalSwipe(_:))))
         view.backgroundColor = UIColor.white
         return view
     }()
@@ -49,60 +41,12 @@ class AudioListViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     func presentAudioView(item: MPMediaItem) {
-        showModalAudioPlayer()
         
-        /*guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "AudioPlayer") as? AudioPlayViewController else {
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MusicPlayer") as? MusicPlayer else {
             return
         }
         viewController.item = item
-        self.navigationController?.show(viewController, sender: nil)*/
-    }
-    func showModalAudioPlayer() {
-        let modalView = self.modalPlayerContainer
-        displayContentController(content: audioPlayerController, container: modalView)
-        modalView.frame.origin = CGPoint(x: 0, y: self.view.frame.height)
-        modalView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalSwipe(_:))))
-        modalView.backgroundColor = UIColor.cyan
-        self.view.addSubview(modalView)
-        UIView.animate(withDuration: 1.2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-            modalView.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.height * (1.0 - self.modalViewRatio))
-        }, completion: nil)
-    }
-    @objc private func verticalSwipe(_ sender: UIPanGestureRecognizer) {
-        guard let view = sender.view else {
-            return
-        }
-        let point = sender.translation(in: self.view)
-        switch sender.state {
-        case .began:
-            self.initializePoint = point
-        case .changed:
-            let len = point.y - self.initializePoint.y
-            print(len)
-            guard len > 0 else {
-                return
-            }
-            view.frame.origin = CGPoint(x: view.frame.origin.x, y: (UIScreen.main.bounds.height * (1.0 - self.modalViewRatio)) + len)
-        case .cancelled, .ended:
-            let len = point.y  - self.initializePoint.y
-            defer {
-                self.initializePoint = CGPoint.zero
-            }
-            guard len > self.view.frame.height / 3 else {
-                UIView.animate(withDuration: 0.5) {
-                    view.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.height * (1.0 - self.modalViewRatio))
-                }
-                return
-            }
-            UIView.animate(withDuration: 0.5, animations: {
-                view.frame.origin = CGPoint(x: 0, y: self.view.frame.height)
-            }, completion: { (bool) in
-                sender.view?.removeFromSuperview()
-                self.hideContentController(content: self.audioPlayerController)
-            })
-        default:
-            return
-        }
+        self.navigationController?.show(viewController, sender: nil)
     }
 }
 extension AudioListViewController {

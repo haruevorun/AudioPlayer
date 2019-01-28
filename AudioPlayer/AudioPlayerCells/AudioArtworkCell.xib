@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="365" id="7qh-4V-y6e" customClass="AudioArtworkCell" customModule="AudioPlayer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="365"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7qh-4V-y6e" id="8cb-S1-qdZ">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="364.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdE-0C-TqK">
+                        <rect key="frame" x="37.5" y="32.5" width="300" height="300"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PXQ-ql-byX">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="kdE-0C-TqK" secondAttribute="height" multiplier="1:1" id="5g5-gn-Zr0"/>
+                            <constraint firstAttribute="bottom" secondItem="PXQ-ql-byX" secondAttribute="bottom" id="HtA-aK-Sif"/>
+                            <constraint firstItem="PXQ-ql-byX" firstAttribute="top" secondItem="kdE-0C-TqK" secondAttribute="top" id="WBg-Vy-b5s"/>
+                            <constraint firstItem="PXQ-ql-byX" firstAttribute="leading" secondItem="kdE-0C-TqK" secondAttribute="leading" id="b7f-mP-5Dl"/>
+                            <constraint firstAttribute="trailing" secondItem="PXQ-ql-byX" secondAttribute="trailing" id="oj9-31-LST"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kdE-0C-TqK" firstAttribute="centerX" secondItem="8cb-S1-qdZ" secondAttribute="centerX" id="8xv-MH-TYK"/>
+                    <constraint firstItem="kdE-0C-TqK" firstAttribute="centerY" secondItem="8cb-S1-qdZ" secondAttribute="centerY" id="CDh-I0-oDK"/>
+                    <constraint firstItem="kdE-0C-TqK" firstAttribute="width" secondItem="8cb-S1-qdZ" secondAttribute="width" multiplier="8:10" id="ORl-qX-HL4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="artworkShadowView" destination="kdE-0C-TqK" id="w7I-8c-to0"/>
+                <outlet property="artworkView" destination="PXQ-ql-byX" id="wno-78-UT9"/>
+            </connections>
+            <point key="canvasLocation" x="141.59999999999999" y="133.5832083958021"/>
+        </tableViewCell>
+    </objects>
+</document>

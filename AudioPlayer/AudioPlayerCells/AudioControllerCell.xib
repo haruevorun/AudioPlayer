@@ -33,6 +33,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iUq-pk-F4P" secondAttribute="height" multiplier="1:1" id="Urh-gQ-PfO"/>
                                 </constraints>
+                                <state key="normal" image="play_icon"/>
                                 <connections>
                                     <action selector="playback:" destination="w3J-Yy-qYa" eventType="touchUpInside" id="ZUb-Aq-jRg"/>
                                 </connections>
@@ -116,6 +117,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="play_icon" width="172" height="172"/>
         <image name="skip_next_icon" width="197" height="197"/>
         <image name="skip_previous_icon" width="197" height="197"/>
     </resources>

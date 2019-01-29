@@ -45,7 +45,6 @@ class AudioListViewController: UIViewController {
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MusicPlayer") as? MusicPlayer else {
             return
         }
-        viewController.item = item
         self.navigationController?.show(viewController, sender: nil)
     }
 }

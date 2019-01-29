@@ -165,7 +165,7 @@ extension MusicPlayer: UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: "ArtworkCell", for: artworkCellIndexPath) as? AudioArtworkCell else {
                 fatalError()
             }
-            cell.artworkImage = self.items[0].artwork?.image(at: CGSize(width: 300, height: 300))
+            cell.artworkImage = self.items[0].artwork?.image(at: MPMediaItem.albamJacketSize)
             return cell
         case 1:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: "ControllCell", for: controllerCellIndexPath) as? AudioControllerCell else {

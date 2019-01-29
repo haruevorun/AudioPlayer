@@ -25,3 +25,7 @@ extension MPMediaItem: ListDiffable {
         return self.playCount == object.playCount && self.skipCount == object.skipCount
     }
 }
+extension MPMediaItem {
+    static let albamJacketThumbnailSize = CGSize(width: 100, height: 100)
+    static let albamJacketSize = CGSize(width: 300, height: 300)
+}

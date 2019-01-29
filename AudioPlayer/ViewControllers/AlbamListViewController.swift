@@ -19,6 +19,7 @@ class AlbamListViewController: UIViewController {
         super.viewDidLoad()
         self.albamTable.register(UINib(nibName: "AlbamListCell", bundle: nil), forCellReuseIdentifier: "AlbamCell")
         self.albamTable.dataSource = self.datasource
+        self.albamTable.delegate = self
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -29,5 +30,10 @@ class AlbamListViewController: UIViewController {
             return
         }
         self.albamTable.reloadData()
+    }
+}
+extension AlbamListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
 }

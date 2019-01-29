@@ -13,4 +13,7 @@ class MediaItemCreater {
     static func create() -> [MPMediaItemCollection]? {
         return MPMediaQuery.songs().collections
     }
+    static func fetchAlbam() -> [MPMediaItemCollection]? {
+        return MPMediaQuery.albums().collections
+    }
 }

@@ -31,6 +31,10 @@
 		7E63ED2021FEE35000B4FF83 /* AudioQueueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E63ED1E21FEE35000B4FF83 /* AudioQueueCell.xib */; };
 		7E63ED2721FF0F2C00B4FF83 /* AudioQueueSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E63ED2621FF0F2C00B4FF83 /* AudioQueueSectionHeader.xib */; };
 		7E63ED2921FF11B200B4FF83 /* AudioQueueSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E63ED2821FF11B100B4FF83 /* AudioQueueSectionHeader.swift */; };
+		7E63ED2B21FFDF9600B4FF83 /* AlbamListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E63ED2A21FFDF9600B4FF83 /* AlbamListDataSource.swift */; };
+		7E63ED2F21FFE16D00B4FF83 /* AlbamListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E63ED2D21FFE16D00B4FF83 /* AlbamListCell.swift */; };
+		7E63ED3021FFE16D00B4FF83 /* AlbamListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E63ED2E21FFE16D00B4FF83 /* AlbamListCell.xib */; };
+		7E63ED3221FFE1ED00B4FF83 /* AlbamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E63ED3121FFE1ED00B4FF83 /* AlbamListViewController.swift */; };
 		7E970CFA21F1CF0A0007612F /* AudioArtworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E970CF821F1CF0A0007612F /* AudioArtworkCell.swift */; };
 		7E970CFB21F1CF0A0007612F /* AudioArtworkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E970CF921F1CF0A0007612F /* AudioArtworkCell.xib */; };
 		7E970CFE21F1CF310007612F /* AudioControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E970CFC21F1CF310007612F /* AudioControllerCell.swift */; };
@@ -93,6 +97,10 @@
 		7E63ED1E21FEE35000B4FF83 /* AudioQueueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioQueueCell.xib; sourceTree = "<group>"; };
 		7E63ED2621FF0F2C00B4FF83 /* AudioQueueSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioQueueSectionHeader.xib; sourceTree = "<group>"; };
 		7E63ED2821FF11B100B4FF83 /* AudioQueueSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioQueueSectionHeader.swift; sourceTree = "<group>"; };
+		7E63ED2A21FFDF9600B4FF83 /* AlbamListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamListDataSource.swift; sourceTree = "<group>"; };
+		7E63ED2D21FFE16D00B4FF83 /* AlbamListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamListCell.swift; sourceTree = "<group>"; };
+		7E63ED2E21FFE16D00B4FF83 /* AlbamListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbamListCell.xib; sourceTree = "<group>"; };
+		7E63ED3121FFE1ED00B4FF83 /* AlbamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamListViewController.swift; sourceTree = "<group>"; };
 		7E970CF821F1CF0A0007612F /* AudioArtworkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioArtworkCell.swift; sourceTree = "<group>"; };
 		7E970CF921F1CF0A0007612F /* AudioArtworkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioArtworkCell.xib; sourceTree = "<group>"; };
 		7E970CFC21F1CF310007612F /* AudioControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioControllerCell.swift; sourceTree = "<group>"; };
@@ -224,9 +232,19 @@
 			path = AudioQueue;
 			sourceTree = "<group>";
 		};
+		7E63ED2C21FFE14900B4FF83 /* Albams */ = {
+			isa = PBXGroup;
+			children = (
+				7E63ED2D21FFE16D00B4FF83 /* AlbamListCell.swift */,
+				7E63ED2E21FFE16D00B4FF83 /* AlbamListCell.xib */,
+			);
+			path = Albams;
+			sourceTree = "<group>";
+		};
 		7E970CF621F1A80B0007612F /* AudioListCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				7E63ED2C21FFE14900B4FF83 /* Albams */,
 				7E3FE74121F17BB500DCE676 /* AudioListCollectionViewCell.swift */,
 				7E3FE74221F17BB500DCE676 /* AudioListCollectionViewCell.xib */,
 			);
@@ -250,6 +268,7 @@
 			children = (
 				7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */,
 				7E63ED1B21FED91A00B4FF83 /* MusicPlayer.swift */,
+				7E63ED3121FFE1ED00B4FF83 /* AlbamListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -267,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				7E3FE73521F16B8D00DCE676 /* AudioListDataSource.swift */,
+				7E63ED2A21FFDF9600B4FF83 /* AlbamListDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -412,6 +432,7 @@
 				7E3BEC0621F0B930005F9529 /* Assets.xcassets in Resources */,
 				7E3BEC0121F0B92B005F9529 /* Main.storyboard in Resources */,
 				7E63ED2721FF0F2C00B4FF83 /* AudioQueueSectionHeader.xib in Resources */,
+				7E63ED3021FFE16D00B4FF83 /* AlbamListCell.xib in Resources */,
 				7E63ED1A21FEC9CC00B4FF83 /* pause_icon.pdf in Resources */,
 				7E970CFF21F1CF310007612F /* AudioControllerCell.xib in Resources */,
 			);
@@ -513,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E63ED3221FFE1ED00B4FF83 /* AlbamListViewController.swift in Sources */,
 				7E970CFA21F1CF0A0007612F /* AudioArtworkCell.swift in Sources */,
 				7E3BEBFE21F0B92B005F9529 /* AudioListViewController.swift in Sources */,
 				7E3FE73A21F16F3300DCE676 /* AudioListSectionController.swift in Sources */,
@@ -525,6 +547,8 @@
 				7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */,
 				7E3FE74021F1749700DCE676 /* MediaItemCreater.swift in Sources */,
 				7E63ED2921FF11B200B4FF83 /* AudioQueueSectionHeader.swift in Sources */,
+				7E63ED2F21FFE16D00B4FF83 /* AlbamListCell.swift in Sources */,
+				7E63ED2B21FFDF9600B4FF83 /* AlbamListDataSource.swift in Sources */,
 				7E63ED1C21FED91A00B4FF83 /* MusicPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

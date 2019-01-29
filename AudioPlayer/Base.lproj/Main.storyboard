@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2VB-Wx-jqn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ScR-v6-hAk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -237,6 +237,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1B-IC-hlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-812" y="22.938530734632685"/>
+        </scene>
+        <!--Albam List View Controller-->
+        <scene sceneID="y44-Cu-6Xl">
+            <objects>
+                <viewController storyboardIdentifier="AlbamList" id="ScR-v6-hAk" customClass="AlbamListViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UOg-Ce-Tc3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CgA-Ki-eMI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CgA-Ki-eMI" firstAttribute="leading" secondItem="xDv-ww-ls0" secondAttribute="leading" id="JKf-b6-hK9"/>
+                            <constraint firstItem="xDv-ww-ls0" firstAttribute="bottom" secondItem="CgA-Ki-eMI" secondAttribute="bottom" id="eHA-UO-Tws"/>
+                            <constraint firstItem="xDv-ww-ls0" firstAttribute="trailing" secondItem="CgA-Ki-eMI" secondAttribute="trailing" id="igo-R3-BtT"/>
+                            <constraint firstItem="CgA-Ki-eMI" firstAttribute="top" secondItem="xDv-ww-ls0" secondAttribute="top" id="vBo-0A-cOj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xDv-ww-ls0"/>
+                    </view>
+                    <connections>
+                        <outlet property="albamTable" destination="CgA-Ki-eMI" id="EKc-tV-Umw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dnn-dC-X3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-834" y="840"/>
         </scene>
     </scenes>
 </document>

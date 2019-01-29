@@ -11,13 +11,11 @@ import MediaPlayer
 
 class AlbamListCell: UITableViewCell {
 
-    
     @IBOutlet private weak var artworkImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var artistLabel: UILabel!
     @IBOutlet private weak var genreLabel: UILabel!
     @IBOutlet weak var playCountLabel: UILabel!
-    
     
     var collection: MPMediaItemCollection? {
         didSet {
@@ -39,7 +37,7 @@ class AlbamListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     private func setupView(representativeItem: MPMediaItem) {
-        self.artworkImageView.image = representativeItem.artwork?.image(at: CGSize(width: 100, height: 100))
+        self.artworkImageView.image = representativeItem.artwork?.image(at: MPMediaItem.albamJacketThumbnailSize)
         self.titleLabel.text = representativeItem.albumTitle
         self.artistLabel.text = representativeItem.artist
         self.genreLabel.text = representativeItem.genre

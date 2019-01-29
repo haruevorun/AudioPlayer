@@ -33,7 +33,7 @@ class AlbamListDataSource: NSObject, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AlbamCell", for: indexPath) as? AlbamListCell else {
             fatalError()
         }
-        cell.titleLabel.text = albams[indexPath.item].representativeItem?.albumTitle
+        cell.collection = albams[indexPath.item]
         return cell
     }
 }

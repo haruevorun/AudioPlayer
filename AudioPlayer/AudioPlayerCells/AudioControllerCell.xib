@@ -33,6 +33,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iUq-pk-F4P" secondAttribute="height" multiplier="1:1" id="Urh-gQ-PfO"/>
                                 </constraints>
+                                <state key="normal" image="play_icon"/>
                                 <connections>
                                     <action selector="playback:" destination="w3J-Yy-qYa" eventType="touchUpInside" id="ZUb-Aq-jRg"/>
                                 </connections>
@@ -57,14 +58,14 @@
                                     <action selector="skip:" destination="w3J-Yy-qYa" eventType="touchUpInside" id="ZtI-ek-OXO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-tf-piY">
-                                <rect key="frame" x="324" y="68.5" width="42" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-tf-piY">
+                                <rect key="frame" x="308" y="68.5" width="58" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6v-X5-EPF">
-                                <rect key="frame" x="8" y="68.5" width="42" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6v-X5-EPF">
+                                <rect key="frame" x="8" y="68.5" width="46" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -116,6 +117,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="play_icon" width="172" height="172"/>
         <image name="skip_next_icon" width="197" height="197"/>
         <image name="skip_previous_icon" width="197" height="197"/>
     </resources>

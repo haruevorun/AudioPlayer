@@ -18,17 +18,15 @@ protocol AudioControlProtocol: class {
 
 class AudioControllerCell: UITableViewCell {
 
-    @IBOutlet weak var remainingTimeLabel: UILabel!
-    @IBOutlet weak var currentTimeLabel: UILabel!
+    @IBOutlet private weak var remainingTimeLabel: UILabel!
+    @IBOutlet private weak var currentTimeLabel: UILabel!
     @IBOutlet private weak var seekbar: UISlider!
     @IBOutlet private weak var playbackButton: UIButton!
     @IBOutlet private weak var skipNextButton: UIButton!
     @IBOutlet private weak var skipPreviousButton: UIButton!
-    var maximumValue: Float = 0 {
+    private var maxSeekValue: Float = 0 {
         didSet {
-            self.seekbar.maximumValue = maximumValue
-            self.currentTimeLabel.text = "00:00"
-            self.remainingTimeLabel.text = "- \(self.timeToString(time: maximumValue))"
+            self.seekbar.maximumValue = self.maxSeekValue
         }
     }
     var currentPlayBackValue: Float {
@@ -38,7 +36,7 @@ class AudioControllerCell: UITableViewCell {
         set(value) {
             self.seekbar.setValue(value, animated: true)
             self.currentTimeLabel.text = self.timeToString(time: value)
-            self.remainingTimeLabel.text = "- \(self.timeToString(time: maximumValue - value))"
+            self.remainingTimeLabel.text = "- \(self.timeToString(time: maxSeekValue - value))"
         }
     }
     var isPlay: Bool = false {
@@ -50,10 +48,12 @@ class AudioControllerCell: UITableViewCell {
             }
         }
     }
-    var delegate: AudioControlProtocol?
+    weak var delegate: AudioControlProtocol?
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+    }
+    func updateMaxSeekValue(value: Float) {
+        self.maxSeekValue = value
     }
     
     @IBAction func playback(_ sender: Any) {

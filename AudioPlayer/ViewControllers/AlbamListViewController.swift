@@ -36,4 +36,11 @@ extension AlbamListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        guard let player = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MusicPlayer") as? MusicPlayer else {
+            fatalError()
+        }
+        player.setQueue(collection: self.datasource.requestItem(index: indexPath.item)!)
+        self.navigationController?.show(player, sender: nil)
+    }
 }

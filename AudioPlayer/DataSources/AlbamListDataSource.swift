@@ -36,4 +36,10 @@ class AlbamListDataSource: NSObject, UITableViewDataSource {
         cell.collection = albams[indexPath.item]
         return cell
     }
+    func requestItem(index: Int) -> MPMediaItemCollection? {
+        guard (index <= self.albams.count - 1) else {
+            return nil
+        }
+        return self.albams[index]
+    }
 }

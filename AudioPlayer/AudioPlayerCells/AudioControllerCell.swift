@@ -24,9 +24,9 @@ class AudioControllerCell: UITableViewCell {
     @IBOutlet private weak var playbackButton: UIButton!
     @IBOutlet private weak var skipNextButton: UIButton!
     @IBOutlet private weak var skipPreviousButton: UIButton!
-    private var maximumValue: Float = 0 {
+    private var maxSeekValue: Float = 0 {
         didSet {
-            self.seekbar.maximumValue = self.maximumValue
+            self.seekbar.maximumValue = self.maxSeekValue
         }
     }
     var currentPlayBackValue: Float {
@@ -35,9 +35,8 @@ class AudioControllerCell: UITableViewCell {
         }
         set(value) {
             self.seekbar.setValue(value, animated: true)
-            print(seekbar.maximumValue)
             self.currentTimeLabel.text = self.timeToString(time: value)
-            self.remainingTimeLabel.text = "- \(self.timeToString(time: maximumValue - value))"
+            self.remainingTimeLabel.text = "- \(self.timeToString(time: maxSeekValue - value))"
         }
     }
     var isPlay: Bool = false {
@@ -54,7 +53,7 @@ class AudioControllerCell: UITableViewCell {
         super.awakeFromNib()
     }
     func updateMaximumValue(value: Float) {
-        self.maximumValue = value
+        self.maxSeekValue = value
     }
     
     @IBAction func playback(_ sender: Any) {

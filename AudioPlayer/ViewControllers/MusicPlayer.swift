@@ -20,10 +20,25 @@ class MusicPlayer: UIViewController {
     
     let artworkCellIndexPath: IndexPath = IndexPath(item: 0, section: 0)
     let controllerCellIndexPath: IndexPath = IndexPath(item: 1, section: 0)
+    let artworkCellHeight: CGFloat = 500
     let controllerCellHeight: CGFloat = 150
+    private var collection: MPMediaItemCollection? {
+        didSet {
+            if let collection = collection {
+                self.queue = collection.items
+            }
+        }
+    }
     
-    private var queueStack: [MPMediaItem] = []
+    private var queue: [MPMediaItem] = []
     private var count: Int = 10
+    
+    private var canSkipToPrevious: Bool {
+        guard self.player.nowPlayingItem != nil else {
+            return false
+        }
+        return self.player.currentPlaybackTime <= 2.0 && self.player.indexOfNowPlayingItem > 0
+    }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -50,7 +65,7 @@ class MusicPlayer: UIViewController {
         self.tableView.isEditing = true
         self.tableView.allowsSelectionDuringEditing = true
         self.player.shuffleMode = MPMusicShuffleMode.off
-        self.player.repeatMode = MPMusicRepeatMode.none
+        self.player.repeatMode = MPMusicRepeatMode.all
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -81,13 +96,20 @@ class MusicPlayer: UIViewController {
         }
     }
     @objc private func changePlayItem() {
-        guard let artwork = artworkView(), let controller = controlView() else {
+        guard let artwork = artworkView(), let controller = controlView(), let playItem = self.player.nowPlayingItem else {
             return
         }
-        let nowPlayingItemIndex = self.player.indexOfNowPlayingItem
-        let playItem = self.queueStack[nowPlayingItemIndex]
-        controller.updateMaximumValue(value: Float(playItem.playbackDuration))
-        artwork.artworkImage = playItem.artwork?.image(at: MPMediaItem.albamJacketSize)
+        defer {
+            controller.updateMaximumValue(value: Float(playItem.playbackDuration))
+            let image = playItem.artwork?.image(at: MPMediaItem.albamJacketSize)
+            artwork.setupItem(playItem.title, playItem.artist, image)
+            self.queue = self.queue.filter { $0 != self.player.nowPlayingItem }
+            self.tableView.reloadSections(IndexSet(arrayLiteral: 1), with: .fade)
+        }
+        guard self.queue.isEmpty , let collection = self.collection else {
+            return
+        }
+        self.queue = collection.items
     }
 }
 extension MusicPlayer: UITableViewDelegate {
@@ -111,7 +133,7 @@ extension MusicPlayer: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             if indexPath.item == 0 {
-                return tableView.frame.width
+                return self.artworkCellHeight
             } else {
                 return self.controllerCellHeight
             }
@@ -147,10 +169,9 @@ extension MusicPlayer: UITableViewDataSource {
     
     func setQueue(collection: MPMediaItemCollection) {
         self.player.stop()
-        self.queueStack = collection.items
+        self.collection = collection
         self.player.setQueue(with: collection)
         self.player.nowPlayingItem = collection.items.first!
-        self.queueStack = collection.items
     }
     
     func insertQueue(collection: MPMediaItemCollection) {
@@ -170,7 +191,7 @@ extension MusicPlayer: UITableViewDataSource {
         case 0:
             return 2
         default:
-            return queueStack.count
+            return queue.count
         }
     }
     
@@ -182,7 +203,9 @@ extension MusicPlayer: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "QueueCell", for: indexPath) as? AudioQueueCell else {
                 fatalError()
             }
-            cell.title = queueStack[indexPath.item].title
+            cell.title = queue[indexPath.item].title
+            cell.artworkImage = queue[indexPath.item].artwork?.image(at: MPMediaItem.albamJacketThumbnailSize)
+            cell.artist = queue[indexPath.item].artist
             return cell
         }
     }
@@ -192,10 +215,6 @@ extension MusicPlayer: UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: "ArtworkCell", for: artworkCellIndexPath) as? AudioArtworkCell else {
                 fatalError()
             }
-            guard let artImage = player.nowPlayingItem?.artwork?.image(at: MPMediaItem.albamJacketSize) else {
-                return cell
-            }
-            cell.artworkImage = artImage
             return cell
         case 1:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: "ControllCell", for: controllerCellIndexPath) as? AudioControllerCell else {
@@ -247,11 +266,6 @@ extension MusicPlayer: UITableViewDataSource {
             controlView.isPlay = isPlay
         }
     }
-    func updateMusicjacket(image: UIImage) {
-        if let artworkView = artworkView() {
-            artworkView.artworkImage = image
-        }
-    }
 }
 extension MusicPlayer: AudioControlProtocol {
     
@@ -269,7 +283,11 @@ extension MusicPlayer: AudioControlProtocol {
     }
     
     func backToBeginning() {
-        player.skipToBeginning()
+        guard canSkipToPrevious else {
+            player.skipToBeginning()
+            return
+        }
+        player.skipToPreviousItem()
     }
     
     func seek(value: Float) {

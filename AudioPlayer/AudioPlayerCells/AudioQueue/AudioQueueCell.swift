@@ -26,7 +26,7 @@ class AudioQueueCell: UITableViewCell {
             return self.artistView.text
         }
         set(value) {
-            self.titleView.text = value
+            self.artistView.text = value
         }
     }
     var artworkImage: UIImage? {

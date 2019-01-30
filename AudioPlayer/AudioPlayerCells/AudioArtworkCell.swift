@@ -12,14 +12,9 @@ class AudioArtworkCell: UITableViewCell {
 
     @IBOutlet private weak var artworkShadowView: UIView!
     @IBOutlet private weak var artworkView: UIImageView!
-    var artworkImage: UIImage? {
-        get {
-            return artworkView.image
-        }
-        set(value) {
-            self.artworkView.image = value
-        }
-    }
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var artistLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.artworkShadowView.layer.cornerRadius = 10
@@ -31,5 +26,11 @@ class AudioArtworkCell: UITableViewCell {
         self.artworkShadowView.layer.shadowRadius = 4
         self.artworkShadowView.layer.shadowOpacity = 0.5
         // Initialization code
+    }
+    
+    func setupItem(_ title: String?, _ artist: String?,_ artworkImage: UIImage?) {
+        self.titleLabel.text = title
+        self.artistLabel.text = artist
+        self.artworkView.image = artworkImage
     }
 }

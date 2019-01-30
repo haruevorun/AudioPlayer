@@ -52,7 +52,7 @@ class AudioControllerCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    func updateMaximumValue(value: Float) {
+    func updateMaxSeekValue(value: Float) {
         self.maxSeekValue = value
     }
     

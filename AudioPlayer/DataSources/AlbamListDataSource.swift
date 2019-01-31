@@ -25,7 +25,6 @@ class AlbamListDataSource: NSObject, UITableViewDataSource {
         return true
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(albams.count)
         return albams.count
     }
     

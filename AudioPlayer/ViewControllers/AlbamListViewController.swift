@@ -40,7 +40,7 @@ extension AlbamListViewController: UITableViewDelegate {
         guard let player = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MusicPlayer") as? MusicPlayer else {
             fatalError()
         }
-        player.setQueue(collection: self.datasource.requestItem(index: indexPath.item)!)
+        player.setup(collection: self.datasource.requestItem(index: indexPath.item)!, isShuffle: true)
         self.navigationController?.show(player, sender: nil)
     }
 }

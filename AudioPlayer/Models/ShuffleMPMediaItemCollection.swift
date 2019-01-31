@@ -11,7 +11,7 @@ import UIKit
 import MediaPlayer
 
 extension MPMediaItemCollection {
-    internal static func shuffledCollection(items: [MPMediaItem]) -> MPMediaItemCollection {
+    internal static func shuffle(items: [MPMediaItem]) -> MPMediaItemCollection {
         var swapedItems = items
         let n = items.count
         for i in 0 ..< n {

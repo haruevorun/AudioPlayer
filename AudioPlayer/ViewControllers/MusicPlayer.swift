@@ -155,10 +155,10 @@ extension MusicPlayer: UITableViewDataSource {
     
     private func setQueue(collection: MPMediaItemCollection) {
         self.queue = collection.items
+        self.player.stop()
         self.player.setQueue(with: collection)
         self.player.prepareToPlay()
         self.player.shuffleMode = .off
-        self.player.repeatMode = .default
         self.player.nowPlayingItem = self.queue[0]
     }
     

@@ -149,7 +149,7 @@ extension MusicPlayer: UITableViewDataSource {
     }
     
     private func shuffle(collection: MPMediaItemCollection) {
-        self.collection = MPMediaItemCollection.shuffledCollection(items: collection.items)
+        self.collection = MPMediaItemCollection.shuffle(items: collection.items)
         setQueue(collection: self.collection!)
     }
     

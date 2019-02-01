@@ -32,7 +32,7 @@ class MusicPlayer: UIViewController {
     private var count: Int = 10
     private var isShuffle: Bool = false {
         didSet {
-            print(isShuffle)
+            DebugUtil.log(isShuffle)
         }
     }
     
@@ -45,7 +45,7 @@ class MusicPlayer: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        print("player deinit")
+        DebugUtil.log("player deinit")
         self.player.endGeneratingPlaybackNotifications()
     }
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

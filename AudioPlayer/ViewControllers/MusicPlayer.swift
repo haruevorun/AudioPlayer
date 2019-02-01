@@ -24,8 +24,17 @@ class MusicPlayer: UIViewController {
     let controllerCellHeight: CGFloat = 250
     private var collection: MPMediaItemCollection?
     
-    private var queue: [MPMediaItem] = []
+    private var queue: [MPMediaItem] = [] {
+        didSet {
+            self.tableView?.reloadData()
+        }
+    }
     private var count: Int = 10
+    private var isShuffle: Bool = false {
+        didSet {
+            print(isShuffle)
+        }
+    }
     
     private var canSkipToPrevious: Bool {
         guard self.player.nowPlayingItem != nil else {
@@ -91,17 +100,6 @@ class MusicPlayer: UIViewController {
         let image = playItem.artwork?.image(at: MPMediaItem.albamJacketSize)
         artwork.setupItem(playItem.title, playItem.artist, image)
     }
-    private func insert(item: MPMediaItem, after: Int) {
-        self.player.perform(queueTransaction: { (mutableQueue) in
-            let predicate = MPMediaPropertyPredicate(value: item.persistentID,
-                                                     forProperty: MPMediaItemPropertyPersistentID)
-            let query = MPMediaQuery(filterPredicates: [predicate])
-            let descriptor = MPMusicPlayerMediaItemQueueDescriptor(query: query)
-            mutableQueue.insert(descriptor, after: mutableQueue.items.last!)
-        }) { (queue, error) in
-            print(queue.items.map {$0.title})
-        }
-    }
 }
 extension MusicPlayer: UITableViewDelegate {
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
@@ -119,7 +117,6 @@ extension MusicPlayer: UITableViewDelegate {
         self.player.pause()
         self.player.currentPlaybackTime = 0
         self.player.nowPlayingItem = queue[indexPath.item]
-        print(self.queue[indexPath.item].title as Any)
         self.player.play()
     }
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -142,6 +139,7 @@ extension MusicPlayer: UITableViewDataSource {
     func setup(collection: MPMediaItemCollection, isShuffle: Bool) {
         self.collection = collection
         guard isShuffle else {
+            self.isShuffle = false
             self.setQueue(collection: collection)
             return
         }
@@ -149,8 +147,8 @@ extension MusicPlayer: UITableViewDataSource {
     }
     
     private func shuffle(collection: MPMediaItemCollection) {
-        self.collection = MPMediaItemCollection.shuffle(items: collection.items)
-        setQueue(collection: self.collection!)
+        self.isShuffle = true
+        setQueue(collection: MPMediaItemCollection.shuffle(items: collection.items))
     }
     
     private func setQueue(collection: MPMediaItemCollection) {
@@ -286,5 +284,13 @@ extension MusicPlayer: AudioControlProtocol {
     
     func seek(value: Float) {
         self.player.currentPlaybackTime = TimeInterval(value)
+    }
+    func shuffle() {
+        self.player.stop()
+        guard isShuffle else {
+            setup(collection: self.collection!, isShuffle: true)
+            return
+        }
+        setup(collection: self.collection!, isShuffle: false)
     }
 }

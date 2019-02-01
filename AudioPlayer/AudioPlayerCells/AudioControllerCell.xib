@@ -72,14 +72,17 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jz-Xz-WvG">
                                 <rect key="frame" x="10" y="175.5" width="165.5" height="50"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Shuffle"/>
+                                <connections>
+                                    <action selector="shuffle:" destination="w3J-Yy-qYa" eventType="touchUpInside" id="bs9-mR-sqZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeS-kB-pCe">
                                 <rect key="frame" x="195.5" y="175.5" width="165.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="e0C-46-oqg"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Repeat"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,7 +128,9 @@
                 <outlet property="currentTimeLabel" destination="d6v-X5-EPF" id="Ky1-ul-uu2"/>
                 <outlet property="playbackButton" destination="iUq-pk-F4P" id="4M1-nd-bTb"/>
                 <outlet property="remainingTimeLabel" destination="TNf-tf-piY" id="kfZ-qH-DvU"/>
+                <outlet property="repeatButton" destination="LeS-kB-pCe" id="3tQ-2M-Sxi"/>
                 <outlet property="seekbar" destination="25D-nL-i9L" id="ME3-Y4-NFj"/>
+                <outlet property="shuffleButton" destination="6Jz-Xz-WvG" id="iSl-Gr-iWp"/>
                 <outlet property="skipNextButton" destination="xSx-cv-VbW" id="FKz-tY-KUc"/>
                 <outlet property="skipPreviousButton" destination="2xN-y4-w5B" id="gFg-ND-yUN"/>
             </connections>

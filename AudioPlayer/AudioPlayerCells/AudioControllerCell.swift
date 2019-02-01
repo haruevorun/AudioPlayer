@@ -14,6 +14,7 @@ protocol AudioControlProtocol: class {
     func skip()
     func backToBeginning()
     func seek(value: Float)
+    func shuffle()
 }
 
 class AudioControllerCell: UITableViewCell {
@@ -24,6 +25,8 @@ class AudioControllerCell: UITableViewCell {
     @IBOutlet private weak var playbackButton: UIButton!
     @IBOutlet private weak var skipNextButton: UIButton!
     @IBOutlet private weak var skipPreviousButton: UIButton!
+    @IBOutlet weak var shuffleButton: UIButton!
+    @IBOutlet weak var repeatButton: UIButton!
     private var maxSeekValue: Float = 0 {
         didSet {
             self.seekbar.maximumValue = self.maxSeekValue
@@ -67,6 +70,9 @@ class AudioControllerCell: UITableViewCell {
     }
     @IBAction func seek(_ sender: UISlider) {
         delegate?.seek(value: sender.value)
+    }
+    @IBAction func shuffle(_ sender: Any) {
+        delegate?.shuffle()
     }
     private func timeToString(time: Float) -> String {
         let second: Int

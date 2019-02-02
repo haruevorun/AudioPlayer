@@ -41,6 +41,7 @@
 		7E970CFE21F1CF310007612F /* AudioControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E970CFC21F1CF310007612F /* AudioControllerCell.swift */; };
 		7E970CFF21F1CF310007612F /* AudioControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E970CFD21F1CF310007612F /* AudioControllerCell.xib */; };
 		7EBACEC12203D78C00D790AE /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBACEC02203D78C00D790AE /* DebugPrint.swift */; };
+		7EBAD78B2204A5FE00D790AE /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD78A2204A5FE00D790AE /* AudioPlayer.swift */; };
 		C367196A95B0A9C0DEEE6B67 /* Pods_AudioPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59D28ACC197F348A30673C51 /* Pods_AudioPlayerTests.framework */; };
 		E6E357D79C34A0FDFAD172EE /* Pods_AudioPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6FA3C5B25159F8DD5CDF72 /* Pods_AudioPlayerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -109,6 +110,7 @@
 		7E970CFC21F1CF310007612F /* AudioControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioControllerCell.swift; sourceTree = "<group>"; };
 		7E970CFD21F1CF310007612F /* AudioControllerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioControllerCell.xib; sourceTree = "<group>"; };
 		7EBACEC02203D78C00D790AE /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
+		7EBAD78A2204A5FE00D790AE /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		8B755F5EFA0AAEAD4E56EA3D /* Pods-AudioPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayerUITests/Pods-AudioPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6C5742BB923FE82E6F50B70 /* Pods_AudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				7E3FE73721F16C7D00DCE676 /* AudioItem.swift */,
+				7EBAD78A2204A5FE00D790AE /* AudioPlayer.swift */,
 				7E63ED43220174AD00B4FF83 /* ShuffleMPMediaItemCollection.swift */,
 				7E3FE73F21F1749700DCE676 /* MediaItemCreater.swift */,
 			);
@@ -560,6 +563,7 @@
 				7E3FE73821F16C7D00DCE676 /* AudioItem.swift in Sources */,
 				7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */,
 				7E3FE74021F1749700DCE676 /* MediaItemCreater.swift in Sources */,
+				7EBAD78B2204A5FE00D790AE /* AudioPlayer.swift in Sources */,
 				7E63ED2921FF11B200B4FF83 /* AudioQueueSectionHeader.swift in Sources */,
 				7E63ED2F21FFE16D00B4FF83 /* AlbamListCell.swift in Sources */,
 				7E63ED2B21FFDF9600B4FF83 /* AlbamListDataSource.swift in Sources */,

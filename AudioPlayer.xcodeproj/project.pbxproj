@@ -41,6 +41,18 @@
 		7E970CFE21F1CF310007612F /* AudioControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E970CFC21F1CF310007612F /* AudioControllerCell.swift */; };
 		7E970CFF21F1CF310007612F /* AudioControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E970CFD21F1CF310007612F /* AudioControllerCell.xib */; };
 		7EBACEC12203D78C00D790AE /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBACEC02203D78C00D790AE /* DebugPrint.swift */; };
+		7EBAD7902205C49900D790AE /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD78F2205C49900D790AE /* Presenter.swift */; };
+		7EBAD7922205CEC400D790AE /* MusicFetchItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7912205CEC400D790AE /* MusicFetchItemProtocol.swift */; };
+		7EBAD7952205CF4000D790AE /* MediaItemsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7942205CF4000D790AE /* MediaItemsUseCase.swift */; };
+		7EBAD7972205CF6D00D790AE /* UseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7962205CF6D00D790AE /* UseCaseProtocol.swift */; };
+		7EBAD79A2206B7A200D790AE /* QueueItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7992206B7A200D790AE /* QueueItemModel.swift */; };
+		7EBAD79D2206B8C000D790AE /* ArtistDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD79C2206B8C000D790AE /* ArtistDataStore.swift */; };
+		7EBAD79F2206BCEC00D790AE /* ItemDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD79E2206BCEC00D790AE /* ItemDataStore.swift */; };
+		7EBAD7A12206BE5A00D790AE /* AlbamDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A02206BE5A00D790AE /* AlbamDataStore.swift */; };
+		7EBAD7A32206BF3700D790AE /* ItemDataStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A22206BF3700D790AE /* ItemDataStoreFactory.swift */; };
+		7EBAD7A52206C05D00D790AE /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A42206C05D00D790AE /* ItemRepository.swift */; };
+		7EBAD7A72206C3C900D790AE /* ArtistRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A62206C3C900D790AE /* ArtistRepository.swift */; };
+		7EBAD7A92206CC1700D790AE /* ArtistListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A82206CC1700D790AE /* ArtistListViewController.swift */; };
 		C367196A95B0A9C0DEEE6B67 /* Pods_AudioPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59D28ACC197F348A30673C51 /* Pods_AudioPlayerTests.framework */; };
 		E6E357D79C34A0FDFAD172EE /* Pods_AudioPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6FA3C5B25159F8DD5CDF72 /* Pods_AudioPlayerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -109,6 +121,18 @@
 		7E970CFC21F1CF310007612F /* AudioControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioControllerCell.swift; sourceTree = "<group>"; };
 		7E970CFD21F1CF310007612F /* AudioControllerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioControllerCell.xib; sourceTree = "<group>"; };
 		7EBACEC02203D78C00D790AE /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
+		7EBAD78F2205C49900D790AE /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		7EBAD7912205CEC400D790AE /* MusicFetchItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFetchItemProtocol.swift; sourceTree = "<group>"; };
+		7EBAD7942205CF4000D790AE /* MediaItemsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemsUseCase.swift; sourceTree = "<group>"; };
+		7EBAD7962205CF6D00D790AE /* UseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProtocol.swift; sourceTree = "<group>"; };
+		7EBAD7992206B7A200D790AE /* QueueItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueItemModel.swift; sourceTree = "<group>"; };
+		7EBAD79C2206B8C000D790AE /* ArtistDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDataStore.swift; sourceTree = "<group>"; };
+		7EBAD79E2206BCEC00D790AE /* ItemDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataStore.swift; sourceTree = "<group>"; };
+		7EBAD7A02206BE5A00D790AE /* AlbamDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamDataStore.swift; sourceTree = "<group>"; };
+		7EBAD7A22206BF3700D790AE /* ItemDataStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataStoreFactory.swift; sourceTree = "<group>"; };
+		7EBAD7A42206C05D00D790AE /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
+		7EBAD7A62206C3C900D790AE /* ArtistRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistRepository.swift; sourceTree = "<group>"; };
+		7EBAD7A82206CC1700D790AE /* ArtistListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListViewController.swift; sourceTree = "<group>"; };
 		8B755F5EFA0AAEAD4E56EA3D /* Pods-AudioPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayerUITests/Pods-AudioPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6C5742BB923FE82E6F50B70 /* Pods_AudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -274,6 +298,7 @@
 				7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */,
 				7E63ED1B21FED91A00B4FF83 /* MusicPlayer.swift */,
 				7E63ED3121FFE1ED00B4FF83 /* AlbamListViewController.swift */,
+				7EBAD7A82206CC1700D790AE /* ArtistListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -281,6 +306,10 @@
 		7E970D0321F1D0330007612F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7EBAD7982206B78600D790AE /* Entity */,
+				7EBAD7932205CF1B00D790AE /* UseCase */,
+				7EBAD78E2205C46400D790AE /* Domain */,
+				7EBAD79B2206B89F00D790AE /* Data */,
 				7E3FE73721F16C7D00DCE676 /* AudioItem.swift */,
 				7E63ED43220174AD00B4FF83 /* ShuffleMPMediaItemCollection.swift */,
 				7E3FE73F21F1749700DCE676 /* MediaItemCreater.swift */,
@@ -311,6 +340,45 @@
 				7EBACEC02203D78C00D790AE /* DebugPrint.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		7EBAD78E2205C46400D790AE /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7EBAD78F2205C49900D790AE /* Presenter.swift */,
+				7EBAD7912205CEC400D790AE /* MusicFetchItemProtocol.swift */,
+				7EBAD7A42206C05D00D790AE /* ItemRepository.swift */,
+				7EBAD7A62206C3C900D790AE /* ArtistRepository.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7EBAD7932205CF1B00D790AE /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				7EBAD7942205CF4000D790AE /* MediaItemsUseCase.swift */,
+				7EBAD7962205CF6D00D790AE /* UseCaseProtocol.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		7EBAD7982206B78600D790AE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7EBAD7992206B7A200D790AE /* QueueItemModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		7EBAD79B2206B89F00D790AE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7EBAD79E2206BCEC00D790AE /* ItemDataStore.swift */,
+				7EBAD79C2206B8C000D790AE /* ArtistDataStore.swift */,
+				7EBAD7A02206BE5A00D790AE /* AlbamDataStore.swift */,
+				7EBAD7A22206BF3700D790AE /* ItemDataStoreFactory.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		E4EB0103FD610489053FC328 /* Frameworks */ = {
@@ -551,21 +619,33 @@
 				7E63ED3221FFE1ED00B4FF83 /* AlbamListViewController.swift in Sources */,
 				7E970CFA21F1CF0A0007612F /* AudioArtworkCell.swift in Sources */,
 				7E3BEBFE21F0B92B005F9529 /* AudioListViewController.swift in Sources */,
+				7EBAD7A12206BE5A00D790AE /* AlbamDataStore.swift in Sources */,
 				7E3FE73A21F16F3300DCE676 /* AudioListSectionController.swift in Sources */,
 				7E3FE73621F16B8D00DCE676 /* AudioListDataSource.swift in Sources */,
+				7EBAD7A52206C05D00D790AE /* ItemRepository.swift in Sources */,
 				7E63ED1F21FEE35000B4FF83 /* AudioQueueCell.swift in Sources */,
+				7EBAD7952205CF4000D790AE /* MediaItemsUseCase.swift in Sources */,
+				7EBAD7922205CEC400D790AE /* MusicFetchItemProtocol.swift in Sources */,
 				7E3FE74321F17BB500DCE676 /* AudioListCollectionViewCell.swift in Sources */,
+				7EBAD79A2206B7A200D790AE /* QueueItemModel.swift in Sources */,
 				7E970CFE21F1CF310007612F /* AudioControllerCell.swift in Sources */,
 				7E3BEC0421F0B92B005F9529 /* AudioPlayer.xcdatamodeld in Sources */,
+				7EBAD7902205C49900D790AE /* Presenter.swift in Sources */,
 				7E3FE73821F16C7D00DCE676 /* AudioItem.swift in Sources */,
+				7EBAD79F2206BCEC00D790AE /* ItemDataStore.swift in Sources */,
+				7EBAD7A92206CC1700D790AE /* ArtistListViewController.swift in Sources */,
+				7EBAD7972205CF6D00D790AE /* UseCaseProtocol.swift in Sources */,
 				7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */,
 				7E3FE74021F1749700DCE676 /* MediaItemCreater.swift in Sources */,
 				7E63ED2921FF11B200B4FF83 /* AudioQueueSectionHeader.swift in Sources */,
 				7E63ED2F21FFE16D00B4FF83 /* AlbamListCell.swift in Sources */,
+				7EBAD7A32206BF3700D790AE /* ItemDataStoreFactory.swift in Sources */,
 				7E63ED2B21FFDF9600B4FF83 /* AlbamListDataSource.swift in Sources */,
 				7E63ED44220174AD00B4FF83 /* ShuffleMPMediaItemCollection.swift in Sources */,
 				7E63ED1C21FED91A00B4FF83 /* MusicPlayer.swift in Sources */,
+				7EBAD79D2206B8C000D790AE /* ArtistDataStore.swift in Sources */,
 				7EBACEC12203D78C00D790AE /* DebugPrint.swift in Sources */,
+				7EBAD7A72206C3C900D790AE /* ArtistRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

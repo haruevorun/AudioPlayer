@@ -10,5 +10,5 @@ import Foundation
 import MediaPlayer
 protocol ItemDataStore: class {
     func fetchAllItem() -> MPMediaQuery
-    func serchItem(keyword: String) -> MPMediaQuery
+    func searchItem(keyword: String) -> MPMediaQuery
 }

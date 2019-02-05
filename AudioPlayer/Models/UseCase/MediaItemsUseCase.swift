@@ -11,8 +11,8 @@ import MediaPlayer
 
 class MediaItemUseCase: UseCaseProtocol {
     
-    let repository: ItemRepository
-    init(repository: ItemRepository) {
+    let repository: MediaItemRepository
+    init(repository: MediaItemRepository) {
         self.repository = repository
     }
     func fetch(complition: @escaping ((MPMediaQuery?) -> Void)) {

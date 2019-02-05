@@ -11,13 +11,9 @@ import MediaPlayer
 
 class MediaItemsUseCaseCreator {
     static func createUseCase(group: MPMediaGrouping) -> UseCaseProtocol? {
-        switch group {
-        case .album:
-            return MediaItemUseCase(repository: AlbamRepository.shared)
-        case .artist:
-            return MediaItemUseCase(repository: ArtistRepository.shared)
-        default:
+        guard MediaItemRepositoryCreator.create(group: group) != nil else {
             return nil
         }
+        return MediaItemUseCase(repository: MediaItemRepositoryCreator.create(group: group)!)
     }
 }

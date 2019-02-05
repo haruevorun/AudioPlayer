@@ -9,9 +9,9 @@
 import Foundation
 import MediaPlayer
 
-class AlbamRepository: ItemRepository {
+class AlbamRepository: MediaItemRepository {
     
-    static let shared: ItemRepository = AlbamRepository()
+    static let shared: MediaItemRepository = AlbamRepository()
     
     let dataStore: ItemDataStore?
     

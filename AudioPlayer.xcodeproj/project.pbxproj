@@ -24,6 +24,7 @@
 		7E3FE74421F17BB500DCE676 /* AudioListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E3FE74221F17BB500DCE676 /* AudioListCollectionViewCell.xib */; };
 		7E4E206E22097E4F00C00CAE /* AlbamRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4E206D22097E4F00C00CAE /* AlbamRepository.swift */; };
 		7E4E207022098E2300C00CAE /* MediaItemsUseCaseCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4E206F22098E2300C00CAE /* MediaItemsUseCaseCreater.swift */; };
+		7E4E2073220990B200C00CAE /* MediaItemRepositoryCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4E2072220990B200C00CAE /* MediaItemRepositoryCreator.swift */; };
 		7E63ED1721FEC9CC00B4FF83 /* skip_next_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7E63ED1321FEC9CC00B4FF83 /* skip_next_icon.pdf */; };
 		7E63ED1821FEC9CC00B4FF83 /* skip_previous_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7E63ED1421FEC9CC00B4FF83 /* skip_previous_icon.pdf */; };
 		7E63ED1921FEC9CC00B4FF83 /* play_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7E63ED1521FEC9CC00B4FF83 /* play_icon.pdf */; };
@@ -51,7 +52,7 @@
 		7EBAD79F2206BCEC00D790AE /* ItemDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD79E2206BCEC00D790AE /* ItemDataStore.swift */; };
 		7EBAD7A12206BE5A00D790AE /* AlbamDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A02206BE5A00D790AE /* AlbamDataStore.swift */; };
 		7EBAD7A32206BF3700D790AE /* ItemDataStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A22206BF3700D790AE /* ItemDataStoreFactory.swift */; };
-		7EBAD7A52206C05D00D790AE /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A42206C05D00D790AE /* ItemRepository.swift */; };
+		7EBAD7A52206C05D00D790AE /* MediaItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A42206C05D00D790AE /* MediaItemRepository.swift */; };
 		7EBAD7A72206C3C900D790AE /* ArtistRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A62206C3C900D790AE /* ArtistRepository.swift */; };
 		7EBAD7A92206CC1700D790AE /* ArtistListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A82206CC1700D790AE /* ArtistListViewController.swift */; };
 		C367196A95B0A9C0DEEE6B67 /* Pods_AudioPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59D28ACC197F348A30673C51 /* Pods_AudioPlayerTests.framework */; };
@@ -105,6 +106,7 @@
 		7E3FE74221F17BB500DCE676 /* AudioListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioListCollectionViewCell.xib; sourceTree = "<group>"; };
 		7E4E206D22097E4F00C00CAE /* AlbamRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamRepository.swift; sourceTree = "<group>"; };
 		7E4E206F22098E2300C00CAE /* MediaItemsUseCaseCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItemsUseCaseCreater.swift; sourceTree = "<group>"; };
+		7E4E2072220990B200C00CAE /* MediaItemRepositoryCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemRepositoryCreator.swift; sourceTree = "<group>"; };
 		7E63ED1321FEC9CC00B4FF83 /* skip_next_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = skip_next_icon.pdf; sourceTree = "<group>"; };
 		7E63ED1421FEC9CC00B4FF83 /* skip_previous_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = skip_previous_icon.pdf; sourceTree = "<group>"; };
 		7E63ED1521FEC9CC00B4FF83 /* play_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = play_icon.pdf; sourceTree = "<group>"; };
@@ -132,7 +134,7 @@
 		7EBAD79E2206BCEC00D790AE /* ItemDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataStore.swift; sourceTree = "<group>"; };
 		7EBAD7A02206BE5A00D790AE /* AlbamDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamDataStore.swift; sourceTree = "<group>"; };
 		7EBAD7A22206BF3700D790AE /* ItemDataStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataStoreFactory.swift; sourceTree = "<group>"; };
-		7EBAD7A42206C05D00D790AE /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
+		7EBAD7A42206C05D00D790AE /* MediaItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemRepository.swift; sourceTree = "<group>"; };
 		7EBAD7A62206C3C900D790AE /* ArtistRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistRepository.swift; sourceTree = "<group>"; };
 		7EBAD7A82206CC1700D790AE /* ArtistListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListViewController.swift; sourceTree = "<group>"; };
 		8B755F5EFA0AAEAD4E56EA3D /* Pods-AudioPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayerUITests/Pods-AudioPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -357,9 +359,10 @@
 		7EBAD78E2205C46400D790AE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				7EBAD7A42206C05D00D790AE /* ItemRepository.swift */,
+				7EBAD7A42206C05D00D790AE /* MediaItemRepository.swift */,
 				7EBAD7A62206C3C900D790AE /* ArtistRepository.swift */,
 				7E4E206D22097E4F00C00CAE /* AlbamRepository.swift */,
+				7E4E2072220990B200C00CAE /* MediaItemRepositoryCreator.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -633,10 +636,11 @@
 				7EBAD7A12206BE5A00D790AE /* AlbamDataStore.swift in Sources */,
 				7E3FE73A21F16F3300DCE676 /* AudioListSectionController.swift in Sources */,
 				7E3FE73621F16B8D00DCE676 /* AudioListDataSource.swift in Sources */,
-				7EBAD7A52206C05D00D790AE /* ItemRepository.swift in Sources */,
+				7EBAD7A52206C05D00D790AE /* MediaItemRepository.swift in Sources */,
 				7E63ED1F21FEE35000B4FF83 /* AudioQueueCell.swift in Sources */,
 				7EBAD7952205CF4000D790AE /* MediaItemsUseCase.swift in Sources */,
 				7E3FE74321F17BB500DCE676 /* AudioListCollectionViewCell.swift in Sources */,
+				7E4E2073220990B200C00CAE /* MediaItemRepositoryCreator.swift in Sources */,
 				7EBAD79A2206B7A200D790AE /* BaseItemModel.swift in Sources */,
 				7E4E206E22097E4F00C00CAE /* AlbamRepository.swift in Sources */,
 				7E970CFE21F1CF310007612F /* AudioControllerCell.swift in Sources */,

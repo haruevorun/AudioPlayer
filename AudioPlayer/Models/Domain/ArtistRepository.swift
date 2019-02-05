@@ -8,10 +8,10 @@
 
 import Foundation
 import MediaPlayer
-class ArtistRepository: ItemRepository {
+class ArtistRepository: MediaItemRepository {
     let dataStore: ItemDataStore?
     
-    static let shared: ItemRepository = ArtistRepository()
+    static let shared: MediaItemRepository = ArtistRepository()
     init() {
         self.dataStore = ItemDataStoreFactory.createLibraryDataStore(group: .artist)
     }

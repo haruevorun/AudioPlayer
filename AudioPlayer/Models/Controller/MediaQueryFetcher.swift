@@ -27,4 +27,5 @@ class MediaQueryFetcher {
             self?.output?.finishedFetchQuery(query: query)
         })
     }
+    // TODO: AppleMusicのオンラインアイテム用のフェッチメソッド
 }

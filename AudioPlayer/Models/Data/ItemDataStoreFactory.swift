@@ -7,12 +7,17 @@
 //
 
 import Foundation
+import MediaPlayer
 
 class ItemDataStoreFactory {
-    static func fetchArtist() -> ItemDataStore {
-        return ArtistDataStore()
-    }
-    static func fetchAlbam() -> ItemDataStore {
-        return AlbamDataStore()
+    static func createLibraryDataStore(group: MPMediaGrouping) -> ItemDataStore? {
+        switch group {
+        case .album:
+            return AlbamDataStore()
+        case .artist:
+            return ArtistDataStore()
+        default:
+            return nil
+        }
     }
 }

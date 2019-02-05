@@ -9,21 +9,26 @@
 import UIKit
 import MediaPlayer
 
-class ArtistListViewController: UIViewController,PresenterOutput {
-    func finishedFetchQuery(query: MPMediaQuery) {
-        
+class ArtistListViewController: UIViewController, PresenterOutput {
+    func finishedFetchQuery(query: MPMediaQuery?) {
+        guard let collections: [MPMediaItemCollection] = query?.collections else {
+            return
+        }
+        DebugUtil.log(collections.map {$0.representativeItem?.artist})
+        DebugUtil.log(collections.map {$0.representativeItem?.albumTitle})
     }
     
     
-    let presenter = Presenter(useCase: MediaItemUseCase(repository: ArtistRepository.shared))
+    let fetcher = MediaQueryFetcher()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter.output = self
+        self.fetcher.output = self
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.presenter.startFetch()
+        self.fetcher.output = self
+        self.fetcher.fetch(with: "Tu", fetchGroup: .album)
     }
     
 

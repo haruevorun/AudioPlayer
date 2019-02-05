@@ -15,9 +15,14 @@ class MediaItemUseCase: UseCaseProtocol {
     init(repository: ItemRepository) {
         self.repository = repository
     }
-    func fetch(complition: @escaping ((MPMediaQuery) -> Void)) {
+    func fetch(complition: @escaping ((MPMediaQuery?) -> Void)) {
         self.repository.fetch { (query) in
             //ここで別モデルに変換するhttp://hachinobu.hateblo.jp/entry/2016/10/13/222316
+            complition(query)
+        }
+    }
+    func serch(keyword: String, complition: @escaping ((MPMediaQuery?) -> Void)) {
+        self.repository.fetch(keyword: keyword) { (query) in
             complition(query)
         }
     }

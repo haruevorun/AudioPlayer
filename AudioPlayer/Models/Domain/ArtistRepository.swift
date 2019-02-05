@@ -9,10 +9,20 @@
 import Foundation
 import MediaPlayer
 class ArtistRepository: ItemRepository {
+    let dataStore: ItemDataStore?
+    
     static let shared: ItemRepository = ArtistRepository()
-    func fetch(complition: @escaping (MPMediaQuery) -> Void) {
+    init() {
+        self.dataStore = ItemDataStoreFactory.createLibraryDataStore(group: .artist)
+    }
+    
+    func fetch(complition: @escaping (MPMediaQuery?) -> Void) {
         let dataStore = ArtistDataStore()
         complition(dataStore.fetchAllItem())
+    }
+    func fetch(keyword: String, complition: @escaping (MPMediaQuery?) -> Void) {
+        let dataStore = ArtistDataStore()
+        complition(dataStore.searchItem(keyword: keyword))
     }
 }
 

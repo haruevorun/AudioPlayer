@@ -9,7 +9,7 @@
 import Foundation
 import MediaPlayer
 
-class QueueItemModel {
+class BaseItemModelItemModel {
     var persistentID: MPMediaEntityPersistentID
     var title: String?
     var artist: String?

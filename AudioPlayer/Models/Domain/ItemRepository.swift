@@ -9,5 +9,7 @@
 import Foundation
 import MediaPlayer
 protocol ItemRepository: class {
-    func fetch(complition: @escaping (_ query: MPMediaQuery)-> Void)
+    var dataStore: ItemDataStore? { get }
+    func fetch(complition: @escaping (_ query: MPMediaQuery?)-> Void)
+    func fetch(keyword: String,complition: @escaping (_ query: MPMediaQuery?)-> Void)
 }

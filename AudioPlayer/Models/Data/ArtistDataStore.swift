@@ -16,7 +16,7 @@ class ArtistDataStore: ItemDataStore {
     
     func searchItem(keyword: String) -> MPMediaQuery {
         let query = MPMediaQuery.artists()
-        let predicate = MPMediaPropertyPredicate(value: keyword, forProperty: MPMediaItemPropertyArtist)
+        let predicate = MPMediaPropertyPredicate(value: keyword, forProperty: MPMediaItemPropertyArtist, comparisonType: MPMediaPredicateComparison.contains)
         query.addFilterPredicate(predicate)
         return query
     }

@@ -206,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */,
-				7EBACEBF2203D76E00D790AE /* Tools */,
+				7EBACEBF2203D76E00D790AE /* Utilities */,
 				7E970D0321F1D0330007612F /* Models */,
 				7E970D0421F1D0440007612F /* DataSources */,
 				7E970D0521F1D0560007612F /* SectionControllers */,
@@ -346,12 +346,12 @@
 			path = SectionControllers;
 			sourceTree = "<group>";
 		};
-		7EBACEBF2203D76E00D790AE /* Tools */ = {
+		7EBACEBF2203D76E00D790AE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				7EBACEC02203D78C00D790AE /* DebugPrint.swift */,
 			);
-			path = Tools;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		7EBAD78E2205C46400D790AE /* Domain */ = {

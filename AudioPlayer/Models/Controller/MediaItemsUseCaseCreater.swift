@@ -9,7 +9,7 @@
 import Foundation
 import MediaPlayer
 
-class MediaQueryConfigure {
+class MediaItemsUseCaseCreator {
     static func createUseCase(group: MPMediaGrouping) -> UseCaseProtocol? {
         switch group {
         case .album:

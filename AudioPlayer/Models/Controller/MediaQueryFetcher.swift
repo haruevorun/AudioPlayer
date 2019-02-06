@@ -8,12 +8,12 @@
 
 import Foundation
 import MediaPlayer
-protocol PresenterOutput: class {
+protocol MediaItemsFetchResult: class {
     func finishedFetchQuery(query: MPMediaQuery?)
 }
 
 class MediaQueryFetcher {
-    weak var output: PresenterOutput?
+    weak var output: MediaItemsFetchResult?
     private var useCase: MediaItemsUseCaseProtocol?
     func fetch(fetchGroup: MPMediaGrouping, isAppleMusic: Bool) {
         self.fetch(with: nil, fetchGroup: fetchGroup, isAppleMusic: isAppleMusic)

@@ -9,7 +9,7 @@
 import UIKit
 import MediaPlayer
 
-class ArtistListViewController: UIViewController, PresenterOutput {
+class ArtistListViewController: UIViewController, MediaItemsFetchResult {
     func finishedFetchQuery(query: MPMediaQuery?) {
         guard let collections: [MPMediaItemCollection] = query?.collections else {
             return

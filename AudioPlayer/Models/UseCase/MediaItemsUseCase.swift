@@ -11,20 +11,18 @@ import MediaPlayer
 
 class MediaItemsUseCase: MediaItemsUseCaseProtocol {
     
-    let repository: MediaItemsRepository
-    init(repository: MediaItemsRepository) {
-        self.repository = repository
+    let repository: MediaItemsRepository?
+    init(group: MPMediaGrouping, isAppleMusic: Bool) {
+        switch isAppleMusic {
+        case true:
+            self.repository = MediaItemsRepositoryCreator.createAppleMusicRepository(group: group)
+        case false:
+            self.repository = MediaItemsRepositoryCreator.create(group: group)
+        }
     }
-    func fetch(complition: @escaping ((MPMediaQuery?) -> Void)) {
-        self.repository.fetch { (query) in
-            //ここで別モデルに変換するhttp://hachinobu.hateblo.jp/entry/2016/10/13/222316
+    func fetch(keyword: String, complition: @escaping ((MPMediaQuery?) -> Void)) {
+        self.repository?.fetch(keyword: keyword) { (query) in
             complition(query)
         }
     }
-    func serch(keyword: String, complition: @escaping ((MPMediaQuery?) -> Void)) {
-        self.repository.fetch(keyword: keyword) { (query) in
-            complition(query)
-        }
-    }
-    
 }

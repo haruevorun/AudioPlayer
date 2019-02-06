@@ -9,15 +9,11 @@
 import Foundation
 import MediaPlayer
 
-class MediaItemRepositoryCreator {
+class MediaItemsRepositoryCreator {
+    static func createAppleMusicRepository(group: MPMediaGrouping) -> MediaItemsRepository? {
+        return nil
+    }
     static func create(group: MPMediaGrouping) -> MediaItemsRepository? {
-        switch group {
-        case .album:
-            return AlbamRepository.shared
-        case .artist:
-            return ArtistRepository.shared
-        default:
-            return nil
-        }
+        return LocalMediaRepository(group: group)
     }
 }

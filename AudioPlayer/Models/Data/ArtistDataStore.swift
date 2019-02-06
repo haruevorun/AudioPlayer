@@ -10,11 +10,8 @@ import Foundation
 import MediaPlayer
 
 class ArtistDataStore: MediaItemsDataStore {
-    func fetchAllItem() -> MPMediaQuery {
-        return MPMediaQuery.artists()
-    }
     
-    func searchItem(keyword: String) -> MPMediaQuery {
+    func fetchItem(keyword: String) -> MPMediaQuery {
         let query = MPMediaQuery.artists()
         let predicate = MPMediaPropertyPredicate(value: keyword, forProperty: MPMediaItemPropertyArtist, comparisonType: MPMediaPredicateComparison.contains)
         query.addFilterPredicate(predicate)

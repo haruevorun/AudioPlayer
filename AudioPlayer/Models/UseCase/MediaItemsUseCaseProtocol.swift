@@ -9,6 +9,5 @@
 import Foundation
 import MediaPlayer
 protocol MediaItemsUseCaseProtocol {
-    func fetch(complition: @escaping (( _ query: MPMediaQuery?)->Void) )
-    func serch(keyword: String,complition: @escaping (( _ query: MPMediaQuery?)->Void))
+    func fetch(keyword: String,complition: @escaping (( _ query: MPMediaQuery?)->Void))
 }

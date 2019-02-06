@@ -15,15 +15,12 @@ protocol PresenterOutput: class {
 class MediaQueryFetcher {
     weak var output: PresenterOutput?
     private var useCase: MediaItemsUseCaseProtocol?
-    func fetch(fechGroup: MPMediaGrouping) {
-        self.useCase = MediaItemsUseCaseCreator.createUseCase(group: fechGroup)
-        self.useCase?.fetch { [weak self] (query) in
-            self?.output?.finishedFetchQuery(query: query)
-        }
+    func fetch(fetchGroup: MPMediaGrouping, isAppleMusic: Bool) {
+        self.fetch(with: nil, fetchGroup: fetchGroup, isAppleMusic: isAppleMusic)
     }
-    func fetch(with keyword: String?, fetchGroup: MPMediaGrouping) {
-        self.useCase = MediaItemsUseCaseCreator.createUseCase(group: fetchGroup)
-        self.useCase?.serch(keyword: keyword ?? "", complition: { [weak self] (query) in
+    func fetch(with keyword: String?, fetchGroup: MPMediaGrouping, isAppleMusic: Bool) {
+        self.useCase = MediaItemsUseCase(group: fetchGroup, isAppleMusic: isAppleMusic)
+        self.useCase?.fetch(keyword: keyword ?? "", complition: { [weak self] (query) in
             self?.output?.finishedFetchQuery(query: query)
         })
     }

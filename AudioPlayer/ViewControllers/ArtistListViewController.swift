@@ -28,7 +28,7 @@ class ArtistListViewController: UIViewController, PresenterOutput {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.fetcher.output = self
-        self.fetcher.fetch(with: "Tu", fetchGroup: .album)
+        self.fetcher.fetch(with: "Tu", fetchGroup: .album, isAppleMusic: false)
     }
     
 

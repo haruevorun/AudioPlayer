@@ -39,7 +39,7 @@ class AudioListDataSource: NSObject, ListAdapterDataSource {
         return nil
     }
     private func fetchItem() {
-        guard let collections = MediaItemCreater.create() else {
+        guard let collections = MediaItemCreator.create() else {
             return
         }
         DispatchQueue.global().async {

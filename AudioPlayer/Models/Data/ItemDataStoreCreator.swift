@@ -9,7 +9,7 @@
 import Foundation
 import MediaPlayer
 
-class ItemDataStoreFactory {
+class ItemDataStoreCreator {
     static func createLibraryDataStore(group: MPMediaGrouping) -> ItemDataStore? {
         switch group {
         case .album:

@@ -51,7 +51,7 @@
 		7EBAD79D2206B8C000D790AE /* ArtistDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD79C2206B8C000D790AE /* ArtistDataStore.swift */; };
 		7EBAD79F2206BCEC00D790AE /* ItemDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD79E2206BCEC00D790AE /* ItemDataStore.swift */; };
 		7EBAD7A12206BE5A00D790AE /* AlbamDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A02206BE5A00D790AE /* AlbamDataStore.swift */; };
-		7EBAD7A32206BF3700D790AE /* ItemDataStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A22206BF3700D790AE /* ItemDataStoreFactory.swift */; };
+		7EBAD7A32206BF3700D790AE /* ItemDataStoreCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A22206BF3700D790AE /* ItemDataStoreCreator.swift */; };
 		7EBAD7A52206C05D00D790AE /* MediaItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A42206C05D00D790AE /* MediaItemRepository.swift */; };
 		7EBAD7A72206C3C900D790AE /* ArtistRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A62206C3C900D790AE /* ArtistRepository.swift */; };
 		7EBAD7A92206CC1700D790AE /* ArtistListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD7A82206CC1700D790AE /* ArtistListViewController.swift */; };
@@ -133,7 +133,7 @@
 		7EBAD79C2206B8C000D790AE /* ArtistDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDataStore.swift; sourceTree = "<group>"; };
 		7EBAD79E2206BCEC00D790AE /* ItemDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataStore.swift; sourceTree = "<group>"; };
 		7EBAD7A02206BE5A00D790AE /* AlbamDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamDataStore.swift; sourceTree = "<group>"; };
-		7EBAD7A22206BF3700D790AE /* ItemDataStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataStoreFactory.swift; sourceTree = "<group>"; };
+		7EBAD7A22206BF3700D790AE /* ItemDataStoreCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataStoreCreator.swift; sourceTree = "<group>"; };
 		7EBAD7A42206C05D00D790AE /* MediaItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemRepository.swift; sourceTree = "<group>"; };
 		7EBAD7A62206C3C900D790AE /* ArtistRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistRepository.swift; sourceTree = "<group>"; };
 		7EBAD7A82206CC1700D790AE /* ArtistListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListViewController.swift; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 				7EBAD79E2206BCEC00D790AE /* ItemDataStore.swift */,
 				7EBAD79C2206B8C000D790AE /* ArtistDataStore.swift */,
 				7EBAD7A02206BE5A00D790AE /* AlbamDataStore.swift */,
-				7EBAD7A22206BF3700D790AE /* ItemDataStoreFactory.swift */,
+				7EBAD7A22206BF3700D790AE /* ItemDataStoreCreator.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -654,7 +654,7 @@
 				7E3FE74021F1749700DCE676 /* MediaItemCreater.swift in Sources */,
 				7E63ED2921FF11B200B4FF83 /* AudioQueueSectionHeader.swift in Sources */,
 				7E63ED2F21FFE16D00B4FF83 /* AlbamListCell.swift in Sources */,
-				7EBAD7A32206BF3700D790AE /* ItemDataStoreFactory.swift in Sources */,
+				7EBAD7A32206BF3700D790AE /* ItemDataStoreCreator.swift in Sources */,
 				7E63ED2B21FFDF9600B4FF83 /* AlbamListDataSource.swift in Sources */,
 				7E63ED44220174AD00B4FF83 /* ShuffleMPMediaItemCollection.swift in Sources */,
 				7E4E207022098E2300C00CAE /* MediaItemsUseCaseCreater.swift in Sources */,

@@ -9,14 +9,14 @@
 import Foundation
 import MediaPlayer
 
-class AlbamRepository: MediaItemRepository {
+class AlbamRepository: MediaItemsRepository {
     
-    static let shared: MediaItemRepository = AlbamRepository()
+    static let shared: MediaItemsRepository = AlbamRepository()
     
-    let dataStore: ItemDataStore?
+    let dataStore: MediaItemsDataStore?
     
     init (){
-        self.dataStore = ItemDataStoreFactory.createLibraryDataStore(group: .album)
+        self.dataStore = MediaItemsDataStoreCreator.createLibraryDataStore(group: .album)
     }
     
     func fetch(complition: @escaping (MPMediaQuery?) -> Void) {

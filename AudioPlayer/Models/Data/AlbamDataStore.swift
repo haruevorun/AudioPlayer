@@ -9,7 +9,7 @@
 import Foundation
 import MediaPlayer
 
-class AlbamDataStore: ItemDataStore {
+class AlbamDataStore: MediaItemsDataStore {
     func fetchAllItem() -> MPMediaQuery {
         return MPMediaQuery.albums()
     }

@@ -10,7 +10,7 @@ import Foundation
 import MediaPlayer
 
 class MediaItemRepositoryCreator {
-    static func create(group: MPMediaGrouping) -> MediaItemRepository? {
+    static func create(group: MPMediaGrouping) -> MediaItemsRepository? {
         switch group {
         case .album:
             return AlbamRepository.shared

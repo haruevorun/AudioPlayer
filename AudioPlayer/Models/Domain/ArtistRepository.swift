@@ -8,12 +8,12 @@
 
 import Foundation
 import MediaPlayer
-class ArtistRepository: MediaItemRepository {
-    let dataStore: ItemDataStore?
+class ArtistRepository: MediaItemsRepository {
+    let dataStore: MediaItemsDataStore?
     
-    static let shared: MediaItemRepository = ArtistRepository()
+    static let shared: MediaItemsRepository = ArtistRepository()
     init() {
-        self.dataStore = ItemDataStoreFactory.createLibraryDataStore(group: .artist)
+        self.dataStore = MediaItemsDataStoreCreator.createLibraryDataStore(group: .artist)
     }
     
     func fetch(complition: @escaping (MPMediaQuery?) -> Void) {

@@ -9,8 +9,8 @@
 import Foundation
 import MediaPlayer
 
-class ItemDataStoreCreator {
-    static func createLibraryDataStore(group: MPMediaGrouping) -> ItemDataStore? {
+class MediaItemsDataStoreCreator {
+    static func createLibraryDataStore(group: MPMediaGrouping) -> MediaItemsDataStore? {
         switch group {
         case .album:
             return AlbamDataStore()

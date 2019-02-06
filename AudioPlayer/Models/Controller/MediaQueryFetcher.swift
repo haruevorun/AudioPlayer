@@ -14,7 +14,7 @@ protocol PresenterOutput: class {
 
 class MediaQueryFetcher {
     weak var output: PresenterOutput?
-    private var useCase: UseCaseProtocol?
+    private var useCase: MediaItemsUseCaseProtocol?
     func fetch(fechGroup: MPMediaGrouping) {
         self.useCase = MediaItemsUseCaseCreator.createUseCase(group: fechGroup)
         self.useCase?.fetch { [weak self] (query) in

@@ -10,10 +10,10 @@ import Foundation
 import MediaPlayer
 
 class MediaItemsUseCaseCreator {
-    static func createUseCase(group: MPMediaGrouping) -> UseCaseProtocol? {
+    static func createUseCase(group: MPMediaGrouping) -> MediaItemsUseCaseProtocol? {
         guard MediaItemRepositoryCreator.create(group: group) != nil else {
             return nil
         }
-        return MediaItemUseCase(repository: MediaItemRepositoryCreator.create(group: group)!)
+        return MediaItemsUseCase(repository: MediaItemRepositoryCreator.create(group: group)!)
     }
 }

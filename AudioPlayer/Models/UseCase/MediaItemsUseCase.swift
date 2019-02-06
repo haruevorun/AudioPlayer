@@ -9,7 +9,7 @@
 import Foundation
 import MediaPlayer
 
-class MediaItemUseCase: UseCaseProtocol {
+class MediaItemsUseCase: MediaItemsUseCaseProtocol {
     
     let repository: MediaItemRepository
     init(repository: MediaItemRepository) {

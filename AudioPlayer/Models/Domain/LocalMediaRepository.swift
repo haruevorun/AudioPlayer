@@ -15,8 +15,8 @@ class LocalMediaRepository: MediaItemsRepository {
         self.dataStore = MediaItemsDataStoreCreator.createLibraryDataStore(group: group)
     }
     
-    func fetch(keyword: String, complition: @escaping (MPMediaQuery?) -> Void) {
-        complition(dataStore?.fetchItem(keyword: keyword))
+    func fetch(keyword: String, completion: @escaping (MPMediaQuery?) -> Void) {
+        completion(dataStore?.fetchItem(keyword: keyword))
     }
 }
 

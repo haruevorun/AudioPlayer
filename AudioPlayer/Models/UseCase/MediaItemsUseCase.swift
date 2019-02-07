@@ -20,9 +20,9 @@ class MediaItemsUseCase: MediaItemsUseCaseProtocol {
             self.repository = MediaItemsRepositoryCreator.create(group: group)
         }
     }
-    func fetch(keyword: String, complition: @escaping ((MPMediaQuery?) -> Void)) {
+    func fetch(keyword: String, completion: @escaping ((MPMediaQuery?) -> Void)) {
         self.repository?.fetch(keyword: keyword) { (query) in
-            complition(query)
+            completion(query)
         }
     }
 }

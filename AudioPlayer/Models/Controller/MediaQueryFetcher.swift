@@ -20,7 +20,7 @@ class MediaQueryFetcher {
     }
     func fetch(with keyword: String?, fetchGroup: MPMediaGrouping, isAppleMusic: Bool) {
         self.useCase = MediaItemsUseCase(group: fetchGroup, isAppleMusic: isAppleMusic)
-        self.useCase?.fetch(keyword: keyword ?? "", complition: { [weak self] (query) in
+        self.useCase?.fetch(keyword: keyword ?? "", completion: { [weak self] (query) in
             self?.output?.finishedFetchQuery(query: query)
         })
     }

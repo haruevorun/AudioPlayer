@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="1880.8" y="29.23538230884558"/>
         </scene>
-        <!--Music Player-->
+        <!--Music Play View Controller-->
         <scene sceneID="jXP-Gm-jeg">
             <objects>
-                <viewController storyboardIdentifier="MusicPlayer" id="fix-Iw-ooc" customClass="MusicPlayer" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MusicPlayer" id="fix-Iw-ooc" customClass="MusicPlayViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ho7-4N-V6I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -42,7 +42,7 @@ class AudioListViewController: UIViewController {
     }
     func presentAudioView(item: MPMediaItem) {
         
-        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MusicPlayer") as? MusicPlayer else {
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MusicPlayer") as? MusicPlayViewController else {
             return
         }
         self.navigationController?.show(viewController, sender: nil)

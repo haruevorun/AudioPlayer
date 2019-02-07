@@ -25,6 +25,7 @@ class MusicPlayViewController: UIViewController {
     
     deinit {
         DebugUtil.log("MusicPlayer is deinit")
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidLoad() {
@@ -33,6 +34,7 @@ class MusicPlayViewController: UIViewController {
         self.tableView.register(UINib(nibName: "AudioArtworkCell", bundle: nil), forCellReuseIdentifier: "ArtworkCell")
         self.tableView.register(UINib(nibName: "AudioQueueCell", bundle: nil), forCellReuseIdentifier: "QueueCell")
         self.tableView.register(UINib(nibName: "AudioQueueSectionHeader", bundle: nil), forCellReuseIdentifier: "QueueHeader")
+        NotificationCenter.default.addObserver(self, selector: #selector(enterForeground), name: NSNotification.Name.NSExtensionHostWillEnterForeground, object: nil)
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
@@ -41,6 +43,9 @@ class MusicPlayViewController: UIViewController {
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+    }
+    @objc private func enterForeground() {
+        self.tableView.reloadData()
     }
 }
 extension MusicPlayViewController: UITableViewDelegate {

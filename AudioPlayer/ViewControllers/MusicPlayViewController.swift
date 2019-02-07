@@ -44,7 +44,7 @@ class MusicPlayViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
-    @objc private func enterForground() {
+    @objc private func enterForeground() {
         self.tableView.reloadData()
     }
 }

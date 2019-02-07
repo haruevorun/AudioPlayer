@@ -15,47 +15,16 @@ class MusicPlayer: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var timer: Timer = Timer()
-    let player: MPMusicPlayerApplicationController = MPMusicPlayerApplicationController.applicationQueuePlayer
-    private var keyObservers: [NSKeyValueObservation] = []
     
     let artworkCellIndexPath: IndexPath = IndexPath(item: 0, section: 0)
     let controllerCellIndexPath: IndexPath = IndexPath(item: 1, section: 0)
     let artworkCellHeight: CGFloat = 500
     let controllerCellHeight: CGFloat = 250
-    private var collection: MPMediaItemCollection?
     
-    private var queue: [MPMediaItem] = [] {
-        didSet {
-            self.tableView?.reloadData()
-        }
-    }
-    private var count: Int = 10
-    private var isShuffle: Bool = false {
-        didSet {
-            DebugUtil.log(isShuffle)
-        }
-    }
-    
-    private var canSkipToPrevious: Bool {
-        guard self.player.nowPlayingItem != nil else {
-            return false
-        }
-        return self.player.currentPlaybackTime <= 2.0 && self.player.indexOfNowPlayingItem > 0
-    }
+    private let mediaPlayerOutPut: MediaPlayerOutputQueueProtocol = AudioPlayer.shared
     
     deinit {
-        NotificationCenter.default.removeObserver(self)
-        DebugUtil.log("player deinit")
-        self.player.endGeneratingPlaybackNotifications()
-    }
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.setObserver()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.setObserver()
+        DebugUtil.log("MusicPlayer is deinit")
     }
     
     override func viewDidLoad() {
@@ -69,36 +38,9 @@ class MusicPlayer: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateSeekBar(timer:)), userInfo: nil, repeats: true)
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        timer.invalidate()
-    }
-    
-    private func setObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(changePlayItem), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(changePlaybackState), name: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil)
-        self.player.beginGeneratingPlaybackNotifications()
-    }
-    @objc private func changePlaybackState() {
-        switch self.player.playbackState {
-        case .playing:
-            updatePlaybackIcon(isPlay: true)
-        case .paused:
-            updatePlaybackIcon(isPlay: false)
-        default:
-            return
-        }
-    }
-    @objc private func changePlayItem() {
-        guard let artwork = artworkView(), let controller = controlView(), let playItem = self.player.nowPlayingItem else {
-            return
-        }
-        self.tableView.selectRow(at: IndexPath(item: self.player.indexOfNowPlayingItem, section: 1), animated: true, scrollPosition: .none)
-        controller.updateMaxSeekValue(value: Float(playItem.playbackDuration))
-        let image = playItem.artwork?.image(at: MPMediaItem.albamJacketSize)
-        artwork.setupItem(playItem.title, playItem.artist, image)
     }
 }
 extension MusicPlayer: UITableViewDelegate {
@@ -111,13 +53,7 @@ extension MusicPlayer: UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard self.player.nowPlayingItem != self.queue[indexPath.item] else {
-            return
-        }
-        self.player.pause()
-        self.player.currentPlaybackTime = 0
-        self.player.nowPlayingItem = queue[indexPath.item]
-        self.player.play()
+        
     }
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         switch indexPath.section {
@@ -134,31 +70,8 @@ extension MusicPlayer: UITableViewDelegate {
         return proposedDestinationIndexPath
     }
 }
+
 extension MusicPlayer: UITableViewDataSource {
-    
-    func setup(collection: MPMediaItemCollection, isShuffle: Bool) {
-        self.collection = collection
-        guard isShuffle else {
-            self.isShuffle = false
-            self.setQueue(collection: collection)
-            return
-        }
-        self.shuffle(collection: collection)
-    }
-    
-    private func shuffle(collection: MPMediaItemCollection) {
-        self.isShuffle = true
-        setQueue(collection: MPMediaItemCollection.shuffle(items: collection.items))
-    }
-    
-    private func setQueue(collection: MPMediaItemCollection) {
-        self.queue = collection.items
-        self.player.stop()
-        self.player.setQueue(with: collection)
-        self.player.prepareToPlay()
-        self.player.shuffleMode = .off
-        self.player.nowPlayingItem = self.queue[0]
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -168,7 +81,8 @@ extension MusicPlayer: UITableViewDataSource {
         case 0:
             return 2
         default:
-            return queue.count
+            return self.mediaPlayerOutPut.queueCount
+            //return queue.count
         }
     }
     
@@ -180,9 +94,9 @@ extension MusicPlayer: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "QueueCell", for: indexPath) as? AudioQueueCell else {
                 fatalError()
             }
-            cell.title = queue[indexPath.item].title
-            cell.artworkImage = queue[indexPath.item].artwork?.image(at: MPMediaItem.albamJacketThumbnailSize)
-            cell.artist = queue[indexPath.item].artist
+            cell.title = self.mediaPlayerOutPut.queue[indexPath.item].title
+            cell.artworkImage = self.mediaPlayerOutPut.queue[indexPath.item].artwork?.image(at: MPMediaItem.albamJacketThumbnailSize)
+            cell.artist = self.mediaPlayerOutPut.queue[indexPath.item].artist
             return cell
         }
     }
@@ -192,16 +106,11 @@ extension MusicPlayer: UITableViewDataSource {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: "ArtworkCell", for: artworkCellIndexPath) as? AudioArtworkCell else {
                 fatalError()
             }
-            let item = self.player.nowPlayingItem
-            cell.setupItem(item?.title, item?.artist, item?.artwork?.image(at: MPMediaItem.albamJacketSize))
             return cell
         case 1:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: "ControllCell", for: controllerCellIndexPath) as? AudioControllerCell else {
                 fatalError()
             }
-            let item = self.player.nowPlayingItem?.playbackDuration
-            cell.updateMaxSeekValue(value: Float(item!))
-            cell.delegate = self
             return cell
         default:
             fatalError()
@@ -235,62 +144,5 @@ extension MusicPlayer: UITableViewDataSource {
         default:
             return tableView.dequeueReusableHeaderFooterView(withIdentifier: "QueueHeader")
         }
-    }
-    private func controlView() -> AudioControllerCell? {
-        guard let cell = tableView?.cellForRow(at: self.controllerCellIndexPath) as? AudioControllerCell else {
-            return nil
-        }
-        return cell
-    }
-    private func artworkView() -> AudioArtworkCell? {
-        guard let cell = tableView?.cellForRow(at: self.artworkCellIndexPath) as? AudioArtworkCell else {
-            return nil
-        }
-        return cell
-    }
-    
-    @objc func updateSeekBar(timer: Timer) {
-        if let controlView = controlView() {
-            controlView.currentPlayBackValue = Float(self.player.currentPlaybackTime)
-        }
-    }
-    func updatePlaybackIcon(isPlay: Bool) {
-        if let controlView = controlView() {
-            controlView.isPlay = isPlay
-        }
-    }
-}
-extension MusicPlayer: AudioControlProtocol {
-    
-    func playback(isPlay: Bool) {
-        if isPlay {
-            player.pause()
-        } else {
-            player.play()
-        }
-    }
-    
-    func skip() {
-        player.skipToNextItem()
-    }
-    
-    func backToBeginning() {
-        guard canSkipToPrevious else {
-            player.skipToBeginning()
-            return
-        }
-        player.skipToPreviousItem()
-    }
-    
-    func seek(value: Float) {
-        self.player.currentPlaybackTime = TimeInterval(value)
-    }
-    func shuffle() {
-        self.player.stop()
-        guard isShuffle else {
-            setup(collection: self.collection!, isShuffle: true)
-            return
-        }
-        setup(collection: self.collection!, isShuffle: false)
     }
 }

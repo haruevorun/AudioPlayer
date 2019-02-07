@@ -10,102 +10,125 @@ import Foundation
 import UIKit
 import MediaPlayer
 
-class AudioPlayer {
+protocol MediaPlayerInputQueueProtocol {
+    func setQueue(query: MPMediaQuery,firstPlayIndex: Int?, isPlay: Bool)
+}
+protocol MediaPlayerOutputQueueProtocol {
+    var queue: [MPMediaItem] { get }
+    var queueCount: Int { get }
+    var currentQueue: MPMediaItem? { get }
+}
+protocol MediaPlayerProtocol {
+    var isPlay: Bool { get }
+    var currentTime: TimeInterval { get }
+    var maximumMediaItemDuration: TimeInterval { get }
+    func play()
+    func pause()
+    func skipToNext()
+    func skipToPrevious()
+    func skipToItem(index: Int, isPlay: Bool)
+    func seek(time: TimeInterval)
+}
+protocol MediaPlayerArtworkProtocol {
+    var image: UIImage? { get }
+    var title: String { get }
+    var artist: String { get }
+}
+
+class AudioPlayer: MediaPlayerProtocol, MediaPlayerArtworkProtocol, MediaPlayerInputQueueProtocol , MediaPlayerOutputQueueProtocol {
+    
+    private(set) static var shared = AudioPlayer()
+    
+    var isPlay: Bool {
+        return (self.player.playbackState == .playing)
+    }
+    
+    var queue: [MPMediaItem] {
+        return self.currentQuery?.items ?? []
+    }
+    
+    var queueCount: Int {
+        return self.currentQuery?.items?.count ?? 0
+    }
+    
+    var currentQueue: MPMediaItem? {
+        return self.player.nowPlayingItem
+    }
+    
+    var currentTime: TimeInterval {
+        return self.player.currentPlaybackTime
+    }
+    var maximumMediaItemDuration: TimeInterval {
+        return self.player.nowPlayingItem?.playbackDuration ?? 0
+    }
+    
+    var image: UIImage? {
+        return self.player.nowPlayingItem?.artwork?.image(at: MPMediaItem.albamJacketSize)
+    }
+    
+    var title: String {
+        return self.player.nowPlayingItem?.title ?? ""
+    }
+    
+    var artist: String {
+        return self.player.nowPlayingItem?.artist ?? ""
+    }
+    
+    
+    private var currentQuery: MPMediaQuery? {
+        didSet {
+            if currentQuery != nil {
+                self.player.setQueue(with: self.currentQuery!)
+            }
+        }
+    }
+    
     private var player: MPMusicPlayerApplicationController
-    private(set) var queue: [MPMediaItem]
-    private var nowPlayindex: Int?
-    private let collection: MPMediaItemCollection
-    private var isSetQueue: Bool {
-        return self.player.nowPlayingItem != nil && self.player.currentPlaybackTime != 0
-    }
-    var currentPlaybackTime: TimeInterval {
-        return player.currentPlaybackTime
-    }
-    var nextIndex: Int {
-        guard let nowPlayIndex = self.nowPlayindex else {
-            return 0
-        }
-        if nowPlayIndex + 1 >= self.queue.count {
-            return 0
-        }
-        return nowPlayIndex + 1
-    }
-    var previousIndex: Int {
-        guard let nowPlayIndex = self.nowPlayindex else {
-            return 0
-        }
-        if nowPlayIndex - 1 < 0 {
-            return self.queue.count - 1
-        }
-        return nowPlayIndex  - 1
-    }
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-        self.player.endGeneratingPlaybackNotifications()
-    }
-    init(queue: MPMediaItemCollection) {
+    
+    init() {
         self.player = MPMusicPlayerApplicationController.applicationQueuePlayer
-        self.player.shuffleMode = .off
-        self.player.repeatMode = .default
-        self.collection = queue
-        self.queue = queue.items
-        self.nowPlayindex = nil
-        NotificationCenter.default.addObserver(self, selector: #selector(changedItem), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: self.player)
-        self.player.beginGeneratingPlaybackNotifications()
-        self.skipToNext()
     }
+    
     func play() {
-        if !self.player.isPreparedToPlay {
+        DispatchQueue.main.async {
             self.player.prepareToPlay()
+            self.player.play()
         }
-        self.player.play()
     }
+    
     func pause() {
         self.player.pause()
     }
-    func stop() {
-        self.player.stop()
-    }
-    func skipToNext() {
+    
+    func skipToItem(index: Int, isPlay: Bool) {
+        self.player.pause()
+        self.player.nowPlayingItem = self.currentQuery?.items?[index]
         self.player.currentPlaybackTime = 0
-        self.setItem(queueIndex: nextIndex)
-    }
-    func skipToPrevious() {
-        self.player.currentPlaybackTime = 0
-        self.setItem(queueIndex: previousIndex)
-    }
-    func seek(interval: TimeInterval) {
-        self.player.currentPlaybackTime = interval
-    }
-    ///moveした後はqueueが移動するのでviewで再リロードする必要あり
-    func moveQueue(fromIndex: Int, toIndex:Int) {
-        if self.nowPlayindex == fromIndex {
-            self.nowPlayindex = toIndex
+        if isPlay {
+            self.player.play()
         }
-        let target = queue[fromIndex]
-        queue.remove(at: fromIndex)
-        queue.insert(target, at: toIndex)
-        self.player.prepareToPlay()
-    }
-    private func shouldNextItem() {
-        self.skipToNext()
-        self.play()
-    }
-    private func setItem(queueIndex: Int) {
-        self.player.setQueue(with: MPMediaItemCollection(items: [queue[queueIndex]]))
-        self.nowPlayindex = queueIndex
-        self.player.prepareToPlay()
-    }
-    @objc private func stopped() {
-        self.skipToNext()
-        self.play()
     }
     
-    @objc private func changedItem() {
-        guard self.player.nowPlayingItem == nil else {
-            return
+    func skipToNext() {
+        self.player.skipToNextItem()
+    }
+    
+    func skipToPrevious() {
+        self.player.skipToPreviousItem()
+    }
+    
+    func seek(time: TimeInterval) {
+        self.player.currentPlaybackTime = time
+    }
+    func setQueue(query: MPMediaQuery, firstPlayIndex index: Int?, isPlay: Bool) {
+        self.player.stop()
+        self.player.currentPlaybackTime = 0
+        self.currentQuery = query
+        if let index = index {
+            self.player.nowPlayingItem = self.currentQuery?.items?[index]
         }
-        self.skipToNext()
-        self.play()
+        if isPlay {
+            self.play()
+        }
     }
 }

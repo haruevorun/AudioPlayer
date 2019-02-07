@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class AudioArtworkCell: UITableViewCell {
 
@@ -14,6 +15,8 @@ class AudioArtworkCell: UITableViewCell {
     @IBOutlet private weak var artworkView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var artistLabel: UILabel!
+    
+    private var artwork: MediaPlayerArtworkProtocol = AudioPlayer.shared
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,12 +28,15 @@ class AudioArtworkCell: UITableViewCell {
         self.artworkShadowView.layer.shadowOffset = CGSize(width: 4, height: 4)
         self.artworkShadowView.layer.shadowRadius = 4
         self.artworkShadowView.layer.shadowOpacity = 0.5
+        self.updateArtwork()
+        MPMusicPlayerApplicationController.applicationQueuePlayer.beginGeneratingPlaybackNotifications()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateArtwork), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
+        MPMusicPlayerApplicationController.applicationQueuePlayer.endGeneratingPlaybackNotifications()
         // Initialization code
     }
-    
-    func setupItem(_ title: String?, _ artist: String?,_ artworkImage: UIImage?) {
-        self.titleLabel.text = title
-        self.artistLabel.text = artist
-        self.artworkView.image = artworkImage
+    @objc private func updateArtwork() {
+        self.artworkView.image = artwork.image
+        self.titleLabel.text = artwork.title
+        self.artistLabel.text = artwork.artist
     }
 }

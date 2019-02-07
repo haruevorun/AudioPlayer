@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MediaPlayer
 
 class AlbamListViewController: UIViewController {
     
@@ -37,10 +38,11 @@ extension AlbamListViewController: UITableViewDelegate {
         return 150
     }
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        guard let player = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MusicPlayer") as? MusicPlayer else {
+        guard let player = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MusicPlayer") as? MusicPlayViewController else {
             fatalError()
         }
-        player.setup(collection: self.datasource.requestItem(index: indexPath.item)!, isShuffle: true)
+        let queueController: MediaPlayerInputQueueProtocol = AudioPlayer.shared
+        queueController.setQueue(query: MPMediaQuery.songs(), firstPlayIndex: 1, isPlay: true)
         self.navigationController?.show(player, sender: nil)
     }
 }

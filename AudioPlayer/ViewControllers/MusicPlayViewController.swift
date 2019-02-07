@@ -34,7 +34,7 @@ class MusicPlayViewController: UIViewController {
         self.tableView.register(UINib(nibName: "AudioArtworkCell", bundle: nil), forCellReuseIdentifier: "ArtworkCell")
         self.tableView.register(UINib(nibName: "AudioQueueCell", bundle: nil), forCellReuseIdentifier: "QueueCell")
         self.tableView.register(UINib(nibName: "AudioQueueSectionHeader", bundle: nil), forCellReuseIdentifier: "QueueHeader")
-        NotificationCenter.default.addObserver(self, selector: #selector(enterForground), name: NSNotification.Name.NSExtensionHostWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(enterForeground), name: NSNotification.Name.NSExtensionHostWillEnterForeground, object: nil)
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }

@@ -1,5 +1,5 @@
 //
-//  MediaItemCreater.swift
+//  MediaItemCreator.swift
 //  AudioPlayer
 //
 //  Created by haruta yamada on 2019/01/18.
@@ -9,7 +9,7 @@
 import Foundation
 import MediaPlayer
 
-class MediaItemCreater {
+class MediaItemCreator {
     static func create() -> [MPMediaItemCollection]? {
         return MPMediaQuery.songs().collections
     }

@@ -19,13 +19,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sr7-Bl-GNZ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_min" translatesAutoresizingMaskIntoConstraints="NO" id="sr7-Bl-GNZ">
                         <rect key="frame" x="16" y="3" width="57" height="57.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="sr7-Bl-GNZ" secondAttribute="height" multiplier="1:1" id="q34-t4-tqX"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewd-Df-Yll">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewd-Df-Yll">
                         <rect key="frame" x="83" y="5" width="227" height="26.5"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="aFT-tc-gab"/>
@@ -34,7 +34,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJm-RG-ZZm">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJm-RG-ZZm">
                         <rect key="frame" x="83" y="41.5" width="227" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="eud-uJ-S3o"/>
@@ -66,4 +66,7 @@
             <point key="canvasLocation" x="137.59999999999999" y="124.13793103448276"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Icon_min" width="1022.1599731445312" height="998.15997314453125"/>
+    </resources>
 </document>

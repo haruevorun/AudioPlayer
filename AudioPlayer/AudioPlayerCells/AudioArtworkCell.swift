@@ -35,7 +35,7 @@ class AudioArtworkCell: UITableViewCell {
         // Initialization code
     }
     @objc private func updateArtwork() {
-        self.artworkView.image = artwork.image
+        self.artworkView.image = artwork.image ?? UIImage(named: "Icon_min")
         self.titleLabel.text = artwork.title
         self.artistLabel.text = artwork.artist
     }

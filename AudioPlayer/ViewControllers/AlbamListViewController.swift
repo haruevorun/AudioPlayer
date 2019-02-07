@@ -38,11 +38,11 @@ extension AlbamListViewController: UITableViewDelegate {
         return 150
     }
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        guard let player = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MusicPlayer") as? MusicPlayViewController else {
-            fatalError()
+        let albamDetailView = AlbamDetailListViewController()
+        guard let title = datasource.requestItem(index: indexPath.item)?.representativeItem?.albumTitle else {
+            return
         }
-        let queueController: MediaPlayerInputQueueProtocol = AudioPlayer.shared
-        queueController.setQueue(query: MPMediaQuery.songs(), firstPlayIndex: 1, isPlay: true)
-        self.navigationController?.show(player, sender: nil)
+        albamDetailView.albamTitle = title
+        self.navigationController?.show(albamDetailView, sender: nil)
     }
 }

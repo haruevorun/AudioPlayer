@@ -29,6 +29,12 @@
 		7E2F9B59220BDC5A00F1BB6C /* app_Icon20.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B58220BDC5A00F1BB6C /* app_Icon20.png */; };
 		7E2F9B5B220BDCC300F1BB6C /* app_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B5A220BDCC300F1BB6C /* app_Icon.png */; };
 		7E2F9B5D220BDCDE00F1BB6C /* Icon_min.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B5C220BDCDE00F1BB6C /* Icon_min.png */; };
+		7E2F9B68220BEEC500F1BB6C /* BaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B67220BEEC500F1BB6C /* BaseListViewController.swift */; };
+		7E2F9B6A220BF22500F1BB6C /* AlbamDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B69220BF22500F1BB6C /* AlbamDetailListViewController.swift */; };
+		7E2F9B6F220BF2B400F1BB6C /* AlbamDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B6D220BF2B400F1BB6C /* AlbamDetailTableViewCell.swift */; };
+		7E2F9B70220BF2B400F1BB6C /* AlbamDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B6E220BF2B400F1BB6C /* AlbamDetailTableViewCell.xib */; };
+		7E2F9B73220BFC1400F1BB6C /* AlbamPlayListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B71220BFC1400F1BB6C /* AlbamPlayListTableViewCell.swift */; };
+		7E2F9B74220BFC1400F1BB6C /* AlbamPlayListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B72220BFC1400F1BB6C /* AlbamPlayListTableViewCell.xib */; };
 		7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */; };
 		7E3BEBFE21F0B92B005F9529 /* AudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */; };
 		7E3BEC0121F0B92B005F9529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFF21F0B92B005F9529 /* Main.storyboard */; };
@@ -125,6 +131,12 @@
 		7E2F9B58220BDC5A00F1BB6C /* app_Icon20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_Icon20.png; sourceTree = "<group>"; };
 		7E2F9B5A220BDCC300F1BB6C /* app_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_Icon.png; sourceTree = "<group>"; };
 		7E2F9B5C220BDCDE00F1BB6C /* Icon_min.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_min.png; sourceTree = "<group>"; };
+		7E2F9B67220BEEC500F1BB6C /* BaseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListViewController.swift; sourceTree = "<group>"; };
+		7E2F9B69220BF22500F1BB6C /* AlbamDetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamDetailListViewController.swift; sourceTree = "<group>"; };
+		7E2F9B6D220BF2B400F1BB6C /* AlbamDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamDetailTableViewCell.swift; sourceTree = "<group>"; };
+		7E2F9B6E220BF2B400F1BB6C /* AlbamDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbamDetailTableViewCell.xib; sourceTree = "<group>"; };
+		7E2F9B71220BFC1400F1BB6C /* AlbamPlayListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamPlayListTableViewCell.swift; sourceTree = "<group>"; };
+		7E2F9B72220BFC1400F1BB6C /* AlbamPlayListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbamPlayListTableViewCell.xib; sourceTree = "<group>"; };
 		7E3BEBF821F0B92B005F9529 /* AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +260,42 @@
 			path = "ios-icons ";
 			sourceTree = "<group>";
 		};
+		7E2F9B63220BEE6800F1BB6C /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		7E2F9B66220BEEAA00F1BB6C /* SelectMusic */ = {
+			isa = PBXGroup;
+			children = (
+				7E2F9B67220BEEC500F1BB6C /* BaseListViewController.swift */,
+				7E2F9B6B220BF26E00F1BB6C /* Albam */,
+			);
+			path = SelectMusic;
+			sourceTree = "<group>";
+		};
+		7E2F9B6B220BF26E00F1BB6C /* Albam */ = {
+			isa = PBXGroup;
+			children = (
+				7E2F9B6C220BF27F00F1BB6C /* Cells */,
+				7E2F9B69220BF22500F1BB6C /* AlbamDetailListViewController.swift */,
+			);
+			path = Albam;
+			sourceTree = "<group>";
+		};
+		7E2F9B6C220BF27F00F1BB6C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7E2F9B6D220BF2B400F1BB6C /* AlbamDetailTableViewCell.swift */,
+				7E2F9B6E220BF2B400F1BB6C /* AlbamDetailTableViewCell.xib */,
+				7E2F9B71220BFC1400F1BB6C /* AlbamPlayListTableViewCell.swift */,
+				7E2F9B72220BFC1400F1BB6C /* AlbamPlayListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		7E3BEBEF21F0B92A005F9529 = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +330,7 @@
 				7E970CF721F1CE880007612F /* AudioPlayerCells */,
 				7E970CF621F1A80B0007612F /* AudioListCollectionViewCell */,
 				7E3BEBFF21F0B92B005F9529 /* Main.storyboard */,
+				7E2F9B63220BEE6800F1BB6C /* StoryBoard */,
 				7E3BEC0521F0B930005F9529 /* Assets.xcassets */,
 				7E3BEC0721F0B930005F9529 /* LaunchScreen.storyboard */,
 				7E3BEC0A21F0B930005F9529 /* Info.plist */,
@@ -376,6 +425,7 @@
 		7E970D0221F1D0190007612F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7E2F9B66220BEEAA00F1BB6C /* SelectMusic */,
 				7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */,
 				7E63ED1B21FED91A00B4FF83 /* MusicPlayViewController.swift */,
 				7E63ED3121FFE1ED00B4FF83 /* AlbamListViewController.swift */,
@@ -603,6 +653,7 @@
 				7E2F9B59220BDC5A00F1BB6C /* app_Icon20.png in Resources */,
 				7E2F9B54220BDA6F00F1BB6C /* Icon-Small-40.png in Resources */,
 				7E3FE74421F17BB500DCE676 /* AudioListCollectionViewCell.xib in Resources */,
+				7E2F9B70220BF2B400F1BB6C /* AlbamDetailTableViewCell.xib in Resources */,
 				7E970CFB21F1CF0A0007612F /* AudioArtworkCell.xib in Resources */,
 				7E2F9B52220BDA6F00F1BB6C /* Icon-Small@3x.png in Resources */,
 				7E2F9B4C220BDA6F00F1BB6C /* Icon-Small-50@2x.png in Resources */,
@@ -610,6 +661,7 @@
 				7E63ED1721FEC9CC00B4FF83 /* skip_next_icon.pdf in Resources */,
 				7E3BEC0621F0B930005F9529 /* Assets.xcassets in Resources */,
 				7E3BEC0121F0B92B005F9529 /* Main.storyboard in Resources */,
+				7E2F9B74220BFC1400F1BB6C /* AlbamPlayListTableViewCell.xib in Resources */,
 				7E63ED2721FF0F2C00B4FF83 /* AudioQueueSectionHeader.xib in Resources */,
 				7E63ED3021FFE16D00B4FF83 /* AlbamListCell.xib in Resources */,
 				7E63ED1A21FEC9CC00B4FF83 /* pause_icon.pdf in Resources */,
@@ -723,11 +775,13 @@
 				7E970CFA21F1CF0A0007612F /* AudioArtworkCell.swift in Sources */,
 				7E3BEBFE21F0B92B005F9529 /* AudioListViewController.swift in Sources */,
 				7EBAD7A12206BE5A00D790AE /* AlbamDataStore.swift in Sources */,
+				7E2F9B73220BFC1400F1BB6C /* AlbamPlayListTableViewCell.swift in Sources */,
 				7E3FE73A21F16F3300DCE676 /* AudioListSectionController.swift in Sources */,
 				7E3FE73621F16B8D00DCE676 /* AudioListDataSource.swift in Sources */,
 				7EBAD7A52206C05D00D790AE /* MediaItemsRepository.swift in Sources */,
 				7E63ED1F21FEE35000B4FF83 /* AudioQueueCell.swift in Sources */,
 				7EBAD7952205CF4000D790AE /* MediaItemsUseCase.swift in Sources */,
+				7E2F9B68220BEEC500F1BB6C /* BaseListViewController.swift in Sources */,
 				7E3FE74321F17BB500DCE676 /* AudioListCollectionViewCell.swift in Sources */,
 				7EBAD79A2206B7A200D790AE /* BaseItemModel.swift in Sources */,
 				7E970CFE21F1CF310007612F /* AudioControllerCell.swift in Sources */,
@@ -744,7 +798,9 @@
 				7E63ED2921FF11B200B4FF83 /* AudioQueueSectionHeader.swift in Sources */,
 				7E63ED2F21FFE16D00B4FF83 /* AlbamListCell.swift in Sources */,
 				7EBAD7A32206BF3700D790AE /* MediaItemsDataStoreCreator.swift in Sources */,
+				7E2F9B6F220BF2B400F1BB6C /* AlbamDetailTableViewCell.swift in Sources */,
 				7E63ED2B21FFDF9600B4FF83 /* AlbamListDataSource.swift in Sources */,
+				7E2F9B6A220BF22500F1BB6C /* AlbamDetailListViewController.swift in Sources */,
 				7E63ED44220174AD00B4FF83 /* ShuffleMPMediaItemCollection.swift in Sources */,
 				7EBAD79D2206B8C000D790AE /* ArtistDataStore.swift in Sources */,
 				7E63ED1C21FED91A00B4FF83 /* MusicPlayViewController.swift in Sources */,

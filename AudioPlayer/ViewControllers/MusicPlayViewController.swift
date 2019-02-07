@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MediaPlayer
 
-class MusicPlayer: UIViewController {
+class MusicPlayViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -43,7 +43,7 @@ class MusicPlayer: UIViewController {
         super.viewDidDisappear(animated)
     }
 }
-extension MusicPlayer: UITableViewDelegate {
+extension MusicPlayViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         switch indexPath.section {
         case 0:
@@ -71,7 +71,7 @@ extension MusicPlayer: UITableViewDelegate {
     }
 }
 
-extension MusicPlayer: UITableViewDataSource {
+extension MusicPlayViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2

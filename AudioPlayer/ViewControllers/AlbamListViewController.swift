@@ -38,7 +38,7 @@ extension AlbamListViewController: UITableViewDelegate {
         return 150
     }
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        guard let player = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MusicPlayer") as? MusicPlayer else {
+        guard let player = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MusicPlayer") as? MusicPlayViewController else {
             fatalError()
         }
         let queueController: MediaPlayerInputQueueProtocol = AudioPlayer.shared

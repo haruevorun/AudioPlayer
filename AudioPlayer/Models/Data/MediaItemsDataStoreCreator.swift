@@ -16,6 +16,10 @@ class MediaItemsDataStoreCreator {
             return AlbamDataStore()
         case .artist:
             return ArtistDataStore()
+        case .genre:
+            return GenreDataStore()
+        case .playlist:
+            return PlayListDataStore()
         default:
             return nil
         }

@@ -54,7 +54,7 @@ extension AlbamDetailListViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "List", for: indexPath) as? AlbamPlayListTableViewCell else {
                 fatalError()
             }
-            cell.updateCell(index: indexPath.item, title: self.query?.items?[indexPath.item].title ?? "")
+            cell.updateCell(index: indexPath.item, title: self.query?.items?[indexPath.item].title ?? "", duration: self.query?.items?[indexPath.item].playbackDuration)
             return cell
         }
     }

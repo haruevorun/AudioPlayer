@@ -12,6 +12,7 @@ class AlbamPlayListTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var numberLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,8 +22,20 @@ class AlbamPlayListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func updateCell(index: Int, title: String) {
+    func updateCell(index: Int, title: String, duration: TimeInterval?) {
         self.numberLabel.text = String(index)
         self.titleLabel.text = title
+        guard let duration = duration else {
+            return
+        }
+        let time = Float(duration)
+        self.durationLabel.text = timeToString(time: time)
+    }
+    private func timeToString(time: Float) -> String {
+        let second: Int
+        let minute: Int
+        second = Int(time) % 60
+        minute = Int(time) / 60
+        return "\(minute):\(NSString(format: "%02d", second))"
     }
 }

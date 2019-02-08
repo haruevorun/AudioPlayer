@@ -11,7 +11,7 @@ import MediaPlayer
 
 class BaseListViewController: UIViewController {
     
-    private let backGroundView: UIView = {
+    private let backgroundView: UIView = {
         let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = UIColor.white
         return view
@@ -29,12 +29,11 @@ class BaseListViewController: UIViewController {
     private(set) var queueController: MediaPlayerInputQueueProtocol = AudioPlayer.shared
     
     private(set) lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: self.view.frame, style: UITableView.Style.plain)
-        return tableView
+        return UITableView(frame: self.view.frame, style: UITableView.Style.plain)
     }()
     override func loadView() {
         super.loadView()
-        self.view = backGroundView
+        self.view = backgroundView
     }
     
     override func viewDidLoad() {

@@ -21,6 +21,11 @@ class AlbamListViewController: UIViewController {
         self.albamTable.register(UINib(nibName: "AlbamListCell", bundle: nil), forCellReuseIdentifier: "AlbamCell")
         self.albamTable.dataSource = self.datasource
         self.albamTable.delegate = self
+        self.albamTable.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 60, right: 0)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

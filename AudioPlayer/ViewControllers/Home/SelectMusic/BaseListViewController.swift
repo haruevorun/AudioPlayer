@@ -11,6 +11,8 @@ import MediaPlayer
 
 class BaseListViewController: UIViewController {
     
+    let miniControllerHeight: CGFloat = 60
+    
     private let backgroundView: UIView = {
         let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = UIColor.white
@@ -29,7 +31,9 @@ class BaseListViewController: UIViewController {
     private(set) var queueController: MediaPlayerInputQueueProtocol = AudioPlayer.shared
     
     private(set) lazy var tableView: UITableView = {
-        return UITableView(frame: self.view.frame, style: UITableView.Style.plain)
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
     }()
     override func loadView() {
         super.loadView()
@@ -40,8 +44,12 @@ class BaseListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.addSubview(tableView)
+        self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 60, right: 0)
     }
-
 }
 extension BaseListViewController: MediaItemsFetchResult {
     func finishedFetchQuery(query: MPMediaQuery?) {

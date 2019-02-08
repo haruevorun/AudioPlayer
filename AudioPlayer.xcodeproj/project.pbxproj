@@ -35,6 +35,8 @@
 		7E2F9B70220BF2B400F1BB6C /* AlbamDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B6E220BF2B400F1BB6C /* AlbamDetailTableViewCell.xib */; };
 		7E2F9B73220BFC1400F1BB6C /* AlbamPlayListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B71220BFC1400F1BB6C /* AlbamPlayListTableViewCell.swift */; };
 		7E2F9B74220BFC1400F1BB6C /* AlbamPlayListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B72220BFC1400F1BB6C /* AlbamPlayListTableViewCell.xib */; };
+		7E2F9B5F220BE5D200F1BB6C /* GenreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B5E220BE5D200F1BB6C /* GenreDataStore.swift */; };
+		7E2F9B62220BE6E700F1BB6C /* PlayListDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B61220BE6E600F1BB6C /* PlayListDataStore.swift */; };
 		7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */; };
 		7E3BEBFE21F0B92B005F9529 /* AudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */; };
 		7E3BEC0121F0B92B005F9529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFF21F0B92B005F9529 /* Main.storyboard */; };
@@ -137,6 +139,8 @@
 		7E2F9B6E220BF2B400F1BB6C /* AlbamDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbamDetailTableViewCell.xib; sourceTree = "<group>"; };
 		7E2F9B71220BFC1400F1BB6C /* AlbamPlayListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamPlayListTableViewCell.swift; sourceTree = "<group>"; };
 		7E2F9B72220BFC1400F1BB6C /* AlbamPlayListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbamPlayListTableViewCell.xib; sourceTree = "<group>"; };
+		7E2F9B5E220BE5D200F1BB6C /* GenreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDataStore.swift; sourceTree = "<group>"; };
+		7E2F9B61220BE6E600F1BB6C /* PlayListDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListDataStore.swift; sourceTree = "<group>"; };
 		7E3BEBF821F0B92B005F9529 /* AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListViewController.swift; sourceTree = "<group>"; };
@@ -506,6 +510,8 @@
 			isa = PBXGroup;
 			children = (
 				7EBAD79E2206BCEC00D790AE /* MediaItemsDataStore.swift */,
+				7E2F9B5E220BE5D200F1BB6C /* GenreDataStore.swift */,
+				7E2F9B61220BE6E600F1BB6C /* PlayListDataStore.swift */,
 				7EBAD79C2206B8C000D790AE /* ArtistDataStore.swift */,
 				7EBAD7A02206BE5A00D790AE /* AlbamDataStore.swift */,
 				7EBAD7A22206BF3700D790AE /* MediaItemsDataStoreCreator.swift */,
@@ -779,6 +785,7 @@
 				7E3FE73A21F16F3300DCE676 /* AudioListSectionController.swift in Sources */,
 				7E3FE73621F16B8D00DCE676 /* AudioListDataSource.swift in Sources */,
 				7EBAD7A52206C05D00D790AE /* MediaItemsRepository.swift in Sources */,
+				7E2F9B5F220BE5D200F1BB6C /* GenreDataStore.swift in Sources */,
 				7E63ED1F21FEE35000B4FF83 /* AudioQueueCell.swift in Sources */,
 				7EBAD7952205CF4000D790AE /* MediaItemsUseCase.swift in Sources */,
 				7E2F9B68220BEEC500F1BB6C /* BaseListViewController.swift in Sources */,
@@ -792,6 +799,7 @@
 				7EBAD7A92206CC1700D790AE /* ArtistListViewController.swift in Sources */,
 				7EBAD7972205CF6D00D790AE /* MediaItemsUseCaseProtocol.swift in Sources */,
 				7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */,
+				7E2F9B62220BE6E700F1BB6C /* PlayListDataStore.swift in Sources */,
 				7E4E2075220ABC5A00C00CAE /* MediaItemRepositoryCreator.swift in Sources */,
 				7E3FE74021F1749700DCE676 /* MediaItemCreator.swift in Sources */,
 				7EBAD78B2204A5FE00D790AE /* AudioPlayer.swift in Sources */,

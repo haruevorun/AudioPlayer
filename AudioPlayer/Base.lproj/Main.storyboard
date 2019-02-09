@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yzS-a1-p0n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nl2-54-aOw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -239,16 +239,16 @@
             </objects>
             <point key="canvasLocation" x="127.2" y="22.938530734632685"/>
         </scene>
-        <!--Albam List View Controller-->
+        <!--Albam-->
         <scene sceneID="y44-Cu-6Xl">
             <objects>
-                <viewController storyboardIdentifier="AlbamList" id="ScR-v6-hAk" customClass="AlbamListViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Albam" title="Albam" id="ScR-v6-hAk" customClass="AlbamListViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UOg-Ce-Tc3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CgA-Ki-eMI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -270,24 +270,6 @@
             </objects>
             <point key="canvasLocation" x="104.8" y="839.73013493253382"/>
         </scene>
-        <!--Audio Play List Navigation View Controller-->
-        <scene sceneID="c1h-De-I4v">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yzS-a1-p0n" customClass="AudioPlayListNavigationViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lyg-c1-YOm">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ScR-v6-hAk" kind="relationship" relationship="rootViewController" id="4RV-us-MO4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3mq-LW-hTE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-834.39999999999998" y="839.73013493253382"/>
-        </scene>
         <!--Artist List View Controller-->
         <scene sceneID="0lh-KN-XGD">
             <objects>
@@ -302,6 +284,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNW-cs-AFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-834" y="1534"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="6XF-bu-k5s">
+            <objects>
+                <viewController id="rlZ-Nc-tqR" customClass="HomeViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HjZ-gj-YF6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Aeo-FK-UZ0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rkX-rY-hYi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Su-3j-f0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="2237.6311844077964"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="16V-D3-g4N">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pgx-vg-JfT" customClass="AudioPlayListNavigationViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="k8h-6B-7EB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JwN-cB-Bzb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rlZ-Nc-tqR" kind="relationship" relationship="rootViewController" id="2st-GI-GOC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LnL-Wm-Hui" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96.799999999999997" y="2237.6311844077964"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mB2-UR-aCb">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="nl2-54-aOw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PBI-rH-2KS">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="pgx-vg-JfT" kind="relationship" relationship="viewControllers" id="a4J-oj-5Wr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyM-PV-Hfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-842.39999999999998" y="2237.6311844077964"/>
         </scene>
     </scenes>
 </document>

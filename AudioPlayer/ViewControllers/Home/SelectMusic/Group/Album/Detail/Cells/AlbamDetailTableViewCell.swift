@@ -9,7 +9,7 @@
 import UIKit
 import MediaPlayer
 
-class AlbamDetailTableViewCell: UITableViewCell {
+class AlbumDetailTableViewCell: UITableViewCell {
     @IBOutlet private weak var shadowView: UIView!
     @IBOutlet private weak var artworkImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!

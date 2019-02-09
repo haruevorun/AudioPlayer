@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class HomeViewController: BaseListViewController {
-    var collection: [String] = ["Albams","Artist","PlayList","Genre"]
+    var collection: [String] = ["Albums","Artist","PlayList","Genre"]
     let cellHeight: CGFloat = 50
     let headerHeight: CGFloat = 70
     override func viewDidLoad() {
@@ -33,8 +33,7 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.item {
         case 0:
-            let albamview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Albam")
-            self.navigationController?.show(albamview, sender: nil)
+            self.navigationController?.show(AlbumListViewController(), sender: nil)
         default:
             return
         }

@@ -32,7 +32,7 @@ class ArtistPlayListTableViewCell: UITableViewCell {
         self.artworkImageView.image = collection?.representativeItem?.artwork?.image(at: MPMediaItem.albamJacketThumbnailSize) ?? UIImage(named: "app_Icon")
         self.albamTitleLabel.text = collection?.representativeItem?.albumTitle
         self.composerLabel.text = collection?.representativeItem?.artist
-        self.dateLabel.text = dateConvert(date: collection?.representativeItem?.releaseDate)
+        self.dateLabel.text = Calendar.dateConvert(date: collection?.representativeItem?.releaseDate)
         self.rateLabel.text = rate(count: collection?.representativeItem?.rating ?? 0)
     }
     private func rate(count: Int) -> String {
@@ -51,13 +51,4 @@ class ArtistPlayListTableViewCell: UITableViewCell {
             return "Rate: ☆ ☆ ☆ ☆ ☆"
         }
     }
-    private func dateConvert(date: Date?) -> String? {
-        guard let date = date else {
-            return nil
-        }
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy", options: 0, locale: Locale.current)
-        return formatter.string(from: date)
-    }
-    
 }

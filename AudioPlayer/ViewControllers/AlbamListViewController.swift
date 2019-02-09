@@ -38,11 +38,18 @@ extension AlbamListViewController: UITableViewDelegate {
         return 150
     }
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        /*
         let albamDetailView = AlbamDetailListViewController()
         guard let title = datasource.requestItem(index: indexPath.item)?.representativeItem?.albumTitle else {
             return
         }
         albamDetailView.albamTitle = title
-        self.navigationController?.show(albamDetailView, sender: nil)
+        self.navigationController?.show(albamDetailView, sender: nil)*/
+        let artistDetailView = AritistDetailListViewController()
+        guard let artist =  datasource.requestItem(index: indexPath.item)?.representativeItem?.albumArtist else {
+            return
+        }
+        artistDetailView.artistName = artist
+        self.navigationController?.show(artistDetailView, sender: nil)
     }
 }

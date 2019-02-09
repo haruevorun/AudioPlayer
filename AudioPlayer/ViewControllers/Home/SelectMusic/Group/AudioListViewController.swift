@@ -5,7 +5,7 @@
 //  Created by haruta yamada on 2019/01/17.
 //  Copyright © 2019 teranyan. All rights reserved.
 //
-
+/*
 import UIKit
 import IGListKit
 import MediaPlayer
@@ -66,3 +66,4 @@ extension AudioListViewController: AudioListDataSourceDelegate {
         self.adapter.performUpdates(animated: true, completion: nil)
     }
 }
+*/

@@ -47,11 +47,11 @@ extension AritistDetailListViewController: UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        let albamDetailView = AlbamDetailListViewController()
+        let albamDetailView = AlbumDetailListViewController()
         guard let title = query?.collections?[indexPath.item].representativeItem?.albumTitle else {
             return
         }
-        albamDetailView.albamTitle = title
+        albamDetailView.albumTitle = title
         self.navigationController?.show(albamDetailView, sender: nil)
     }
 }

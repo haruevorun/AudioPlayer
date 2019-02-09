@@ -8,27 +8,30 @@
 
 import UIKit
 
-class AlbamDetailListViewController: BaseListViewController {
+class AlbumDetailListViewController: BaseListViewController {
 
-    private let albamViewHeight: CGFloat = 150
+    private let albumViewHeight: CGFloat = 150
     private let listViewHeight: CGFloat = 50
     
-    var albamTitle: String? = nil
+    var albumTitle: String? = nil
     
+    deinit {
+        DebugUtil.log("AlbumDetailList is deinit")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UINib(nibName: "AlbamDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "Albam")
-        self.tableView.register(UINib(nibName: "AlbamPlayListTableViewCell", bundle: nil), forCellReuseIdentifier: "List")
+        self.tableView.register(UINib(nibName: "AlbumDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "Albam")
+        self.tableView.register(UINib(nibName: "AlbumPlayListTableViewCell", bundle: nil), forCellReuseIdentifier: "List")
         self.tableView.dataSource = self
         self.tableView.delegate = self
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.fetcher.fetch(with: self.albamTitle, fetchGroup: .album, isAppleMusic: false)
+        self.fetcher.fetch(with: self.albumTitle, fetchGroup: .album, isAppleMusic: false)
     }
 }
-extension AlbamDetailListViewController: UITableViewDataSource {
+extension AlbumDetailListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -44,14 +47,14 @@ extension AlbamDetailListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "Albam", for: indexPath) as? AlbamDetailTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "Albam", for: indexPath) as? AlbumDetailTableViewCell else {
                 fatalError()
             }
             let item = self.query?.collections?[0].representativeItem
             cell.updateView(item: item)
             return cell
         default:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "List", for: indexPath) as? AlbamPlayListTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "List", for: indexPath) as? AlbumPlayListTableViewCell else {
                 fatalError()
             }
             cell.updateCell(index: indexPath.item, title: self.query?.items?[indexPath.item].title ?? "", duration: self.query?.items?[indexPath.item].playbackDuration)
@@ -59,7 +62,7 @@ extension AlbamDetailListViewController: UITableViewDataSource {
         }
     }
 }
-extension AlbamDetailListViewController: UITableViewDelegate {
+extension AlbumDetailListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         switch indexPath.section {
         case 0:
@@ -71,7 +74,7 @@ extension AlbamDetailListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return self.albamViewHeight
+            return self.albumViewHeight
         default:
             return self.listViewHeight
         }

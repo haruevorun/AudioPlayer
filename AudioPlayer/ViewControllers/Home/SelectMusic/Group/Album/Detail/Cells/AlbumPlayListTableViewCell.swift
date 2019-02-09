@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlbamPlayListTableViewCell: UITableViewCell {
+class AlbumPlayListTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var numberLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -29,13 +29,6 @@ class AlbamPlayListTableViewCell: UITableViewCell {
             return
         }
         let time = Float(duration)
-        self.durationLabel.text = timeToString(time: time)
-    }
-    private func timeToString(time: Float) -> String {
-        let second: Int
-        let minute: Int
-        second = Int(time) % 60
-        minute = Int(time) / 60
-        return "\(minute):\(NSString(format: "%02d", second))"
+        self.durationLabel.text = Calendar.timeToString(time: time)
     }
 }

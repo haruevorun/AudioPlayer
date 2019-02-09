@@ -29,14 +29,19 @@
 		7E2F9B59220BDC5A00F1BB6C /* app_Icon20.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B58220BDC5A00F1BB6C /* app_Icon20.png */; };
 		7E2F9B5B220BDCC300F1BB6C /* app_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B5A220BDCC300F1BB6C /* app_Icon.png */; };
 		7E2F9B5D220BDCDE00F1BB6C /* Icon_min.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B5C220BDCDE00F1BB6C /* Icon_min.png */; };
+		7E2F9B5F220BE5D200F1BB6C /* GenreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B5E220BE5D200F1BB6C /* GenreDataStore.swift */; };
+		7E2F9B62220BE6E700F1BB6C /* PlayListDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B61220BE6E600F1BB6C /* PlayListDataStore.swift */; };
 		7E2F9B68220BEEC500F1BB6C /* BaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B67220BEEC500F1BB6C /* BaseListViewController.swift */; };
 		7E2F9B6A220BF22500F1BB6C /* AlbamDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B69220BF22500F1BB6C /* AlbamDetailListViewController.swift */; };
 		7E2F9B6F220BF2B400F1BB6C /* AlbamDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B6D220BF2B400F1BB6C /* AlbamDetailTableViewCell.swift */; };
 		7E2F9B70220BF2B400F1BB6C /* AlbamDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B6E220BF2B400F1BB6C /* AlbamDetailTableViewCell.xib */; };
 		7E2F9B73220BFC1400F1BB6C /* AlbamPlayListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B71220BFC1400F1BB6C /* AlbamPlayListTableViewCell.swift */; };
 		7E2F9B74220BFC1400F1BB6C /* AlbamPlayListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B72220BFC1400F1BB6C /* AlbamPlayListTableViewCell.xib */; };
-		7E2F9B5F220BE5D200F1BB6C /* GenreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B5E220BE5D200F1BB6C /* GenreDataStore.swift */; };
-		7E2F9B62220BE6E700F1BB6C /* PlayListDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B61220BE6E600F1BB6C /* PlayListDataStore.swift */; };
+		7E2F9B7E220D1F9900F1BB6C /* MiniAudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B7D220D1F9900F1BB6C /* MiniAudioController.swift */; };
+		7E2F9B80220D1FAA00F1BB6C /* MiniAudioController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F9B7F220D1FAA00F1BB6C /* MiniAudioController.xib */; };
+		7E2F9B82220D20AD00F1BB6C /* CustomMiniAudioPlayerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F9B81220D20AD00F1BB6C /* CustomMiniAudioPlayerSlider.swift */; };
+		7E34AA69220D5C0B00DC5134 /* AudioPlayListNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E34AA67220D5C0B00DC5134 /* AudioPlayListNavigationViewController.swift */; };
+		7E34AA6C220D5EB200DC5134 /* AudioPlayListTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E34AA6B220D5EB200DC5134 /* AudioPlayListTabbarController.swift */; };
 		7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */; };
 		7E3BEBFE21F0B92B005F9529 /* AudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */; };
 		7E3BEC0121F0B92B005F9529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFF21F0B92B005F9529 /* Main.storyboard */; };
@@ -133,14 +138,19 @@
 		7E2F9B58220BDC5A00F1BB6C /* app_Icon20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_Icon20.png; sourceTree = "<group>"; };
 		7E2F9B5A220BDCC300F1BB6C /* app_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_Icon.png; sourceTree = "<group>"; };
 		7E2F9B5C220BDCDE00F1BB6C /* Icon_min.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_min.png; sourceTree = "<group>"; };
+		7E2F9B5E220BE5D200F1BB6C /* GenreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDataStore.swift; sourceTree = "<group>"; };
+		7E2F9B61220BE6E600F1BB6C /* PlayListDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListDataStore.swift; sourceTree = "<group>"; };
 		7E2F9B67220BEEC500F1BB6C /* BaseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListViewController.swift; sourceTree = "<group>"; };
 		7E2F9B69220BF22500F1BB6C /* AlbamDetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamDetailListViewController.swift; sourceTree = "<group>"; };
 		7E2F9B6D220BF2B400F1BB6C /* AlbamDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamDetailTableViewCell.swift; sourceTree = "<group>"; };
 		7E2F9B6E220BF2B400F1BB6C /* AlbamDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbamDetailTableViewCell.xib; sourceTree = "<group>"; };
 		7E2F9B71220BFC1400F1BB6C /* AlbamPlayListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbamPlayListTableViewCell.swift; sourceTree = "<group>"; };
 		7E2F9B72220BFC1400F1BB6C /* AlbamPlayListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbamPlayListTableViewCell.xib; sourceTree = "<group>"; };
-		7E2F9B5E220BE5D200F1BB6C /* GenreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDataStore.swift; sourceTree = "<group>"; };
-		7E2F9B61220BE6E600F1BB6C /* PlayListDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListDataStore.swift; sourceTree = "<group>"; };
+		7E2F9B7D220D1F9900F1BB6C /* MiniAudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniAudioController.swift; sourceTree = "<group>"; };
+		7E2F9B7F220D1FAA00F1BB6C /* MiniAudioController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiniAudioController.xib; sourceTree = "<group>"; };
+		7E2F9B81220D20AD00F1BB6C /* CustomMiniAudioPlayerSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMiniAudioPlayerSlider.swift; sourceTree = "<group>"; };
+		7E34AA67220D5C0B00DC5134 /* AudioPlayListNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayListNavigationViewController.swift; sourceTree = "<group>"; };
+		7E34AA6B220D5EB200DC5134 /* AudioPlayListTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayListTabbarController.swift; sourceTree = "<group>"; };
 		7E3BEBF821F0B92B005F9529 /* AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListViewController.swift; sourceTree = "<group>"; };
@@ -274,8 +284,10 @@
 		7E2F9B66220BEEAA00F1BB6C /* SelectMusic */ = {
 			isa = PBXGroup;
 			children = (
+				7E34AA6E220D61AB00DC5134 /* Group */,
 				7E2F9B67220BEEC500F1BB6C /* BaseListViewController.swift */,
-				7E2F9B6B220BF26E00F1BB6C /* Albam */,
+				7E34AA6B220D5EB200DC5134 /* AudioPlayListTabbarController.swift */,
+				7E34AA67220D5C0B00DC5134 /* AudioPlayListNavigationViewController.swift */,
 			);
 			path = SelectMusic;
 			sourceTree = "<group>";
@@ -283,8 +295,10 @@
 		7E2F9B6B220BF26E00F1BB6C /* Albam */ = {
 			isa = PBXGroup;
 			children = (
+				7E63ED3121FFE1ED00B4FF83 /* AlbamListViewController.swift */,
 				7E2F9B6C220BF27F00F1BB6C /* Cells */,
 				7E2F9B69220BF22500F1BB6C /* AlbamDetailListViewController.swift */,
+				7E970CF621F1A80B0007612F /* AudioListCollectionViewCell */,
 			);
 			path = Albam;
 			sourceTree = "<group>";
@@ -298,6 +312,34 @@
 				7E2F9B72220BFC1400F1BB6C /* AlbamPlayListTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		7E2F9B7C220D1F7900F1BB6C /* miniController */ = {
+			isa = PBXGroup;
+			children = (
+				7E2F9B7D220D1F9900F1BB6C /* MiniAudioController.swift */,
+				7E2F9B7F220D1FAA00F1BB6C /* MiniAudioController.xib */,
+				7E2F9B81220D20AD00F1BB6C /* CustomMiniAudioPlayerSlider.swift */,
+			);
+			path = miniController;
+			sourceTree = "<group>";
+		};
+		7E34AA6D220D614100DC5134 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7E2F9B66220BEEAA00F1BB6C /* SelectMusic */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7E34AA6E220D61AB00DC5134 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				7E2F9B6B220BF26E00F1BB6C /* Albam */,
+				7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */,
+				7EBAD7A82206CC1700D790AE /* ArtistListViewController.swift */,
+			);
+			path = Group;
 			sourceTree = "<group>";
 		};
 		7E3BEBEF21F0B92A005F9529 = {
@@ -331,8 +373,7 @@
 				7E970D0421F1D0440007612F /* DataSources */,
 				7E970D0521F1D0560007612F /* SectionControllers */,
 				7E970D0221F1D0190007612F /* ViewControllers */,
-				7E970CF721F1CE880007612F /* AudioPlayerCells */,
-				7E970CF621F1A80B0007612F /* AudioListCollectionViewCell */,
+				7E970CF721F1CE880007612F /* AudioPlayer */,
 				7E3BEBFF21F0B92B005F9529 /* Main.storyboard */,
 				7E2F9B63220BEE6800F1BB6C /* StoryBoard */,
 				7E3BEC0521F0B930005F9529 /* Assets.xcassets */,
@@ -414,26 +455,24 @@
 			path = AudioListCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		7E970CF721F1CE880007612F /* AudioPlayerCells */ = {
+		7E970CF721F1CE880007612F /* AudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				7E63ED1B21FED91A00B4FF83 /* MusicPlayViewController.swift */,
 				7E970CF821F1CF0A0007612F /* AudioArtworkCell.swift */,
 				7E970CF921F1CF0A0007612F /* AudioArtworkCell.xib */,
 				7E970CFC21F1CF310007612F /* AudioControllerCell.swift */,
 				7E970CFD21F1CF310007612F /* AudioControllerCell.xib */,
 				7E63ED2121FF0A7200B4FF83 /* AudioQueue */,
 			);
-			path = AudioPlayerCells;
+			path = AudioPlayer;
 			sourceTree = "<group>";
 		};
 		7E970D0221F1D0190007612F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7E2F9B66220BEEAA00F1BB6C /* SelectMusic */,
-				7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */,
-				7E63ED1B21FED91A00B4FF83 /* MusicPlayViewController.swift */,
-				7E63ED3121FFE1ED00B4FF83 /* AlbamListViewController.swift */,
-				7EBAD7A82206CC1700D790AE /* ArtistListViewController.swift */,
+				7E34AA6D220D614100DC5134 /* Home */,
+				7E2F9B7C220D1F7900F1BB6C /* miniController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -654,6 +693,7 @@
 				7E63ED1921FEC9CC00B4FF83 /* play_icon.pdf in Resources */,
 				7E63ED1821FEC9CC00B4FF83 /* skip_previous_icon.pdf in Resources */,
 				7E63ED2021FEE35000B4FF83 /* AudioQueueCell.xib in Resources */,
+				7E2F9B80220D1FAA00F1BB6C /* MiniAudioController.xib in Resources */,
 				7E2F9B5B220BDCC300F1BB6C /* app_Icon.png in Resources */,
 				7E2F9B4E220BDA6F00F1BB6C /* Icon-72@2x.png in Resources */,
 				7E2F9B59220BDC5A00F1BB6C /* app_Icon20.png in Resources */,
@@ -779,6 +819,8 @@
 			files = (
 				7E63ED3221FFE1ED00B4FF83 /* AlbamListViewController.swift in Sources */,
 				7E970CFA21F1CF0A0007612F /* AudioArtworkCell.swift in Sources */,
+				7E2F9B82220D20AD00F1BB6C /* CustomMiniAudioPlayerSlider.swift in Sources */,
+				7E34AA69220D5C0B00DC5134 /* AudioPlayListNavigationViewController.swift in Sources */,
 				7E3BEBFE21F0B92B005F9529 /* AudioListViewController.swift in Sources */,
 				7EBAD7A12206BE5A00D790AE /* AlbamDataStore.swift in Sources */,
 				7E2F9B73220BFC1400F1BB6C /* AlbamPlayListTableViewCell.swift in Sources */,
@@ -800,11 +842,13 @@
 				7EBAD7972205CF6D00D790AE /* MediaItemsUseCaseProtocol.swift in Sources */,
 				7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */,
 				7E2F9B62220BE6E700F1BB6C /* PlayListDataStore.swift in Sources */,
+				7E2F9B7E220D1F9900F1BB6C /* MiniAudioController.swift in Sources */,
 				7E4E2075220ABC5A00C00CAE /* MediaItemRepositoryCreator.swift in Sources */,
 				7E3FE74021F1749700DCE676 /* MediaItemCreator.swift in Sources */,
 				7EBAD78B2204A5FE00D790AE /* AudioPlayer.swift in Sources */,
 				7E63ED2921FF11B200B4FF83 /* AudioQueueSectionHeader.swift in Sources */,
 				7E63ED2F21FFE16D00B4FF83 /* AlbamListCell.swift in Sources */,
+				7E34AA6C220D5EB200DC5134 /* AudioPlayListTabbarController.swift in Sources */,
 				7EBAD7A32206BF3700D790AE /* MediaItemsDataStoreCreator.swift in Sources */,
 				7E2F9B6F220BF2B400F1BB6C /* AlbamDetailTableViewCell.swift in Sources */,
 				7E63ED2B21FFDF9600B4FF83 /* AlbamListDataSource.swift in Sources */,

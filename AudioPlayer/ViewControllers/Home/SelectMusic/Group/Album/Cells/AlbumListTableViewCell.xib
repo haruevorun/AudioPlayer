@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="96.5" height="96.5"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QZ8-Gr-pnp" firstAttribute="leading" secondItem="tuk-V6-2KN" secondAttribute="leading" id="5Qg-z4-8iB"/>
                             <constraint firstItem="QZ8-Gr-pnp" firstAttribute="top" secondItem="tuk-V6-2KN" secondAttribute="top" id="GRi-M3-oK8"/>

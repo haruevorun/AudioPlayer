@@ -19,8 +19,6 @@ class HomeViewController: BaseListViewController {
         self.tableView.register(UINib(nibName: "HomeHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-        self.tableView.backgroundColor = UIColor.white
     }
 }
 extension HomeViewController: UITableViewDelegate {
@@ -34,6 +32,8 @@ extension HomeViewController: UITableViewDelegate {
         switch indexPath.item {
         case 0:
             self.navigationController?.show(AlbumListViewController(), sender: nil)
+        case 1:
+            self.navigationController?.show(ArtistListViewController(), sender: nil)
         default:
             return
         }
@@ -58,6 +58,7 @@ extension HomeViewController: UITableViewDataSource {
         guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? HomeHeaderView else {
             fatalError()
         }
+        view.updateView(text: "Library")
         return view
     }
 }

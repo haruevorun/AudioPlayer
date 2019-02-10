@@ -80,7 +80,11 @@ extension AlbumDetailListViewController: UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         guard let query = query else {
+            return
+        }
+        guard queue.currentQueue?.persistentID != query.items?[indexPath.item].persistentID else {
             return
         }
         self.queueController.setQueue(query: query, firstPlayIndex: indexPath.item, isPlay: true)

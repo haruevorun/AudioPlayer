@@ -15,6 +15,9 @@ class AritistDetailListViewController: BaseListViewController {
     
     private var artistHeight: CGFloat = 70
     private var albamHeight: CGFloat = 100
+    deinit {
+        DebugUtil.log("ArtistDetailList is deinit")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +25,6 @@ class AritistDetailListViewController: BaseListViewController {
         self.tableView.register(UINib(nibName: "ArtistDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "Detail")
         self.tableView.dataSource = self
         self.tableView.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         self.fetcher.fetch(with: artistName, fetchGroup: .artist, isAppleMusic: false)
     }
 }
@@ -46,7 +45,7 @@ extension AritistDetailListViewController: UITableViewDelegate {
             return true
         }
     }
-    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let albamDetailView = AlbumDetailListViewController()
         guard let title = query?.collections?[indexPath.item].representativeItem?.albumTitle else {
             return

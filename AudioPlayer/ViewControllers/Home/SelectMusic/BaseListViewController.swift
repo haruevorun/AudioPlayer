@@ -15,7 +15,6 @@ class BaseListViewController: UIViewController {
     
     private let backgroundView: UIView = {
         let view = UIView(frame: UIScreen.main.bounds)
-        view.backgroundColor = UIColor.white
         return view
     }()
     private(set) var query: MPMediaQuery? {
@@ -28,7 +27,8 @@ class BaseListViewController: UIViewController {
         fetcher.output = self
         return fetcher
     }()
-    private(set) var queueController: MediaPlayerInputQueueProtocol = AudioPlayer.shared
+    let queueController: MediaPlayerInputQueueProtocol = AudioPlayer.shared
+    let queue: MediaPlayerOutputQueueProtocol = AudioPlayer.shared
     
     private(set) lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -49,6 +49,13 @@ class BaseListViewController: UIViewController {
         self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         self.tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 60, right: 0)
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let selectIndex = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: selectIndex, animated: true)
+        }
     }
 }
 extension BaseListViewController: MediaItemsFetchResult {

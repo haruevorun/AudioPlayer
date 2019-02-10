@@ -26,6 +26,7 @@ class AlbumPlayListTableViewCell: UITableViewCell {
         self.numberLabel.text = String(index)
         self.titleLabel.text = title
         guard let duration = duration else {
+            self.durationLabel.text = nil
             return
         }
         let time = Float(duration)

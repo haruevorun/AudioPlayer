@@ -17,6 +17,7 @@ protocol MediaPlayerOutputQueueProtocol {
     var queue: [MPMediaItem] { get }
     var queueCount: Int { get }
     var currentQueue: MPMediaItem? { get }
+    var indexOfCurrentQueue: Int { get }
 }
 protocol MediaPlayerProtocol {
     var isPlay: Bool { get }
@@ -53,6 +54,9 @@ class AudioPlayer: MediaPlayerProtocol, MediaPlayerArtworkProtocol, MediaPlayerI
     
     var currentQueue: MPMediaItem? {
         return self.player.nowPlayingItem
+    }
+    var indexOfCurrentQueue: Int {
+        return self.player.indexOfNowPlayingItem
     }
     
     var currentTime: TimeInterval {

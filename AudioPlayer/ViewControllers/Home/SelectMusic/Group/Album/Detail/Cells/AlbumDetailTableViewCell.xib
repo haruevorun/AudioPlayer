@@ -39,7 +39,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsA-6C-ThY">
-                        <rect key="frame" x="165" y="18" width="297" height="26.5"/>
+                        <rect key="frame" x="165" y="18" width="287" height="26.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                         <state key="normal" image="round-list"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yt-1c-fJ8">
-                        <rect key="frame" x="165" y="44.5" width="297" height="33"/>
+                        <rect key="frame" x="165" y="44.5" width="287" height="33"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <state key="normal" title="Button">
                             <color key="titleColor" red="0.91620738049076023" green="0.10370802879333496" blue="1" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
@@ -78,10 +78,10 @@
                 <constraints>
                     <constraint firstItem="sk0-oK-x8X" firstAttribute="bottom" secondItem="Zvb-fL-2NJ" secondAttribute="bottom" id="1Fz-69-Qdd"/>
                     <constraint firstItem="cBF-hA-Ynt" firstAttribute="leading" secondItem="Zvb-fL-2NJ" secondAttribute="trailing" constant="10" id="97Z-pD-i3f"/>
-                    <constraint firstAttribute="trailing" secondItem="6yt-1c-fJ8" secondAttribute="trailing" constant="10" id="9YA-7V-rHl"/>
+                    <constraint firstAttribute="trailing" secondItem="6yt-1c-fJ8" secondAttribute="trailing" constant="20" id="9YA-7V-rHl"/>
                     <constraint firstItem="p4e-Jn-lht" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="8:10" id="NUA-oh-PAO"/>
                     <constraint firstItem="6yt-1c-fJ8" firstAttribute="top" secondItem="dsA-6C-ThY" secondAttribute="bottom" id="PXU-VI-tui"/>
-                    <constraint firstAttribute="trailing" secondItem="dsA-6C-ThY" secondAttribute="trailing" constant="10" id="Swb-Yy-Wt0"/>
+                    <constraint firstAttribute="trailing" secondItem="dsA-6C-ThY" secondAttribute="trailing" constant="20" id="Swb-Yy-Wt0"/>
                     <constraint firstItem="p4e-Jn-lht" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XT4-un-sdl"/>
                     <constraint firstItem="p4e-Jn-lht" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Y8B-Ta-hBp"/>
                     <constraint firstItem="dsA-6C-ThY" firstAttribute="leading" secondItem="Zvb-fL-2NJ" secondAttribute="trailing" constant="10" id="Z2j-TH-VMk"/>

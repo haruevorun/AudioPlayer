@@ -14,4 +14,7 @@ class HomeHeaderView: UITableViewHeaderFooterView {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    func updateView(text: String) {
+        self.label.text = text
+    }
 }

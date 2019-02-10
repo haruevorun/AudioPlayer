@@ -12,20 +12,26 @@ import MediaPlayer
 
 class AlbumListViewController: BaseListViewController {
     let cellHeight: CGFloat = 120
+    let headerHeight: CGFloat = 70
     deinit {
         DebugUtil.log("AlbumList is deinit")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "AlbumListTableViewCell", bundle: nil), forCellReuseIdentifier: "List")
+        self.tableView.register(UINib(nibName: "HomeHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.tableFooterView = UIView()
         self.fetcher.fetch(fetchGroup: .album, isAppleMusic: false)
     }
 }
 extension AlbumListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.cellHeight
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.headerHeight
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let albamDetailView = AlbumDetailListViewController()
@@ -44,5 +50,12 @@ extension AlbumListViewController: UITableViewDataSource {
         }
         cell.updateView(item: query?.collections?.filter {$0.representativeItem?.albumTitle != ""}[indexPath.item].representativeItem)
         return cell
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? HomeHeaderView else {
+            fatalError()
+        }
+        view.updateView(text: "Albums")
+        return view
     }
 }

@@ -12,6 +12,7 @@ import MediaPlayer
 class MiniAudioController: UIView {
 
     @IBOutlet weak var contentView: UIVisualEffectView!
+    @IBOutlet weak var artworkImageShadowView: UIView!
     @IBOutlet weak var artworkImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var playbackButton: UIButton!
@@ -24,7 +25,11 @@ class MiniAudioController: UIView {
         super.init(frame: frame)
         self.comminInit()
         self.artworkImageView.layer.cornerRadius = 10
+        self.artworkImageShadowView.layer.cornerRadius = 10
         self.artworkImageView.layer.masksToBounds = true
+        self.artworkImageShadowView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.artworkImageShadowView.layer.shadowRadius = 4
+        self.artworkImageShadowView.layer.shadowOpacity = 0.4
     }
     
     required init?(coder aDecoder: NSCoder) {

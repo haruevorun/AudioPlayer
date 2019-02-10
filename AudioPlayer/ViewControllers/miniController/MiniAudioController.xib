@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MiniAudioController" customModule="AudioPlayer" customModuleProvider="target">
             <connections>
+                <outlet property="artworkImageShadowView" destination="ZB7-HB-GtO" id="0Zs-7a-B4r"/>
                 <outlet property="artworkImageView" destination="aG6-Xw-1pl" id="95N-fk-z6s"/>
                 <outlet property="contentView" destination="Dit-Ju-dMn" id="NbV-3Z-wzV"/>
                 <outlet property="playbackButton" destination="X9K-iC-xsP" id="V08-PY-mi8"/>

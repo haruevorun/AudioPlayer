@@ -12,6 +12,7 @@ import MediaPlayer
 class MiniAudioController: UIView {
 
     @IBOutlet weak var contentView: UIVisualEffectView!
+    @IBOutlet weak var artworkImageShadowView: UIView!
     @IBOutlet weak var artworkImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var playbackButton: UIButton!
@@ -24,7 +25,11 @@ class MiniAudioController: UIView {
         super.init(frame: frame)
         self.comminInit()
         self.artworkImageView.layer.cornerRadius = 10
+        self.artworkImageShadowView.layer.cornerRadius = 10
         self.artworkImageView.layer.masksToBounds = true
+        self.artworkImageShadowView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.artworkImageShadowView.layer.shadowRadius = 4
+        self.artworkImageShadowView.layer.shadowOpacity = 0.4
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,12 +41,14 @@ class MiniAudioController: UIView {
         contentView.frame = self.bounds
         self.addSubview(contentView)
         MPMusicPlayerApplicationController.applicationQueuePlayer.beginGeneratingPlaybackNotifications()
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangeItem), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangePlayback), name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didChangeItem), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didChangePlayback), name: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil)
         MPMusicPlayerApplicationController.applicationQueuePlayer.endGeneratingPlaybackNotifications()
     }
     @objc private func didChangeItem() {
-        self.artworkImageView.image = artwork.image ?? UIImage(named: "Icon_min")
+        self.artworkImageView.image = artwork.image ?? UIImage(named: "app_Icon")
         self.titleLabel.text = artwork.title
     }
     @objc private func didChangePlayback() {

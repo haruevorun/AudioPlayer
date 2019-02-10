@@ -32,7 +32,7 @@ class AlbumDetailTableViewCell: UITableViewCell {
         self.titleLabel.text = item?.albumTitle
         self.artistLabel.setTitle(item?.albumArtist, for: .normal)
         self.descriptionLabel.text = item?.genre
-        self.artworkImageView.image = item?.artwork?.image(at: MPMediaItem.albamJacketThumbnailSize)
+        self.artworkImageView.image = item?.artwork?.image(at: MPMediaItem.albamJacketThumbnailSize) ?? UIImage(named: "app_Icon")
     }
     @IBAction func artist(_ sender: Any) {
         

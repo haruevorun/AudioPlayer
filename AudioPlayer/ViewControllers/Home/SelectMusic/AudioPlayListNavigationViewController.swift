@@ -10,10 +10,6 @@ import UIKit
 
 class AudioPlayListNavigationViewController: UINavigationController {
 
-    lazy var miniController: MiniAudioController = {
-        let view = MiniAudioController(frame: CGRect(x: 0, y: self.view.frame.origin.y + self.view.frame.height - miniControllerHeight - self.view.safeAreaInsets.bottom, width: self.view.frame.width, height: miniControllerHeight))
-        return view
-    }()
     let miniControllerHeight: CGFloat = 60
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +18,6 @@ class AudioPlayListNavigationViewController: UINavigationController {
         self.navigationBar.shadowImage = UIImage()
         // Do any additional setup after loading the view.
     }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        /*
-        for subview in self.view.subviews {
-            if subview.isKind(of: NSClassFromString("UINavigationTransitionView")!) {
-                subview.frame.size.height = UIScreen.main.bounds.height - miniControllerHeight - self.view.safeAreaInsets.bottom
-            }
-        }*/
-        self.view.addSubview(miniController)
-    }
-
 
     /*
     // MARK: - Navigation

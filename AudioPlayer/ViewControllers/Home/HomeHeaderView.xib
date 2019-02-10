@@ -16,6 +16,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eez-kr-8mk">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Library" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBh-tN-ygK">
                     <rect key="frame" x="30" y="14" width="335" height="48"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
@@ -25,9 +29,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Eez-kr-8mk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9Kq-3N-FK5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Eez-kr-8mk" secondAttribute="trailing" id="BVA-d9-GaH"/>
+                <constraint firstItem="Eez-kr-8mk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QzK-a4-cp5"/>
                 <constraint firstItem="VBh-tN-ygK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="TrG-MZ-Kwn"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VBh-tN-ygK" secondAttribute="trailing" constant="10" id="ZVl-C2-MPT"/>
                 <constraint firstItem="VBh-tN-ygK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="hSx-NU-yTa"/>
+                <constraint firstItem="Eez-kr-8mk" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="res-ND-5VH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

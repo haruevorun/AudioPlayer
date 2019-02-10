@@ -15,7 +15,6 @@ class ArtistDataStore: MediaItemsDataStore {
         let query = MPMediaQuery.albums()
         let predicate = MPMediaPropertyPredicate(value: keyword, forProperty: MPMediaItemPropertyAlbumArtist, comparisonType: MPMediaPredicateComparison.contains)
         query.addFilterPredicate(predicate)
-        DebugUtil.log(query.collections?.count)
         return query
     }
 }

@@ -20,12 +20,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmL-kr-1DR">
-                        <rect key="frame" x="10" y="18.5" width="30" height="13.5"/>
+                        <rect key="frame" x="5" y="18.5" width="40" height="13.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="qEV-Op-zB2"/>
+                            <constraint firstAttribute="width" constant="40" id="qEV-Op-zB2"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hte-PW-bIO">
@@ -73,12 +73,12 @@
                     <constraint firstItem="yga-u6-Yv6" firstAttribute="leading" secondItem="hte-PW-bIO" secondAttribute="trailing" constant="10" id="9Nj-VA-AhV"/>
                     <constraint firstItem="yga-u6-Yv6" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="1:2" id="Ha8-ie-rOB"/>
                     <constraint firstItem="ndH-5e-Skn" firstAttribute="leading" secondItem="hte-PW-bIO" secondAttribute="trailing" constant="10" id="OFq-xK-4Zt"/>
-                    <constraint firstItem="DmL-kr-1DR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="W5t-vU-8Ru"/>
+                    <constraint firstItem="DmL-kr-1DR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="W5t-vU-8Ru"/>
                     <constraint firstItem="DmL-kr-1DR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Wf3-eo-tpG"/>
                     <constraint firstItem="hte-PW-bIO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bXY-yG-7Hx"/>
                     <constraint firstItem="ndH-5e-Skn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="foe-pD-0r6"/>
                     <constraint firstItem="ndH-5e-Skn" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="1:2" id="gqQ-Pc-06C"/>
-                    <constraint firstItem="hte-PW-bIO" firstAttribute="leading" secondItem="DmL-kr-1DR" secondAttribute="trailing" constant="10" id="iol-1R-nOA"/>
+                    <constraint firstItem="hte-PW-bIO" firstAttribute="leading" secondItem="DmL-kr-1DR" secondAttribute="trailing" constant="5" id="iol-1R-nOA"/>
                     <constraint firstItem="gNP-0t-8jv" firstAttribute="leading" secondItem="ndH-5e-Skn" secondAttribute="trailing" constant="30" id="rHt-Yk-Olf"/>
                     <constraint firstItem="yga-u6-Yv6" firstAttribute="top" secondItem="ndH-5e-Skn" secondAttribute="bottom" id="vPX-X0-V9I"/>
                     <constraint firstAttribute="bottom" secondItem="yga-u6-Yv6" secondAttribute="bottom" id="wcs-cw-ezk"/>

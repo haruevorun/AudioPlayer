@@ -13,12 +13,20 @@ class HomeViewController: BaseListViewController {
     var collection: [String] = ["Albums","Artist","Songs","PlayList","Genre"]
     let cellHeight: CGFloat = 50
     let headerHeight: CGFloat = 70
+    lazy var miniController: MiniAudioController = {
+        let view = MiniAudioController(frame: CGRect(x: 0, y: self.view.frame.origin.y + self.view.frame.height - miniControllerHeight - self.view.safeAreaInsets.bottom, width: self.view.frame.width, height: miniControllerHeight))
+        return view
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "HomeListTableViewCell", bundle: nil), forCellReuseIdentifier: "List")
         self.tableView.register(UINib(nibName: "HomeHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
         self.tableView.dataSource = self
         self.tableView.delegate = self
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.navigationController?.view.addSubview(miniController)
     }
 }
 extension HomeViewController: UITableViewDelegate {

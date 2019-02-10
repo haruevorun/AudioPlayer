@@ -36,6 +36,8 @@ class MiniAudioController: UIView {
         contentView.frame = self.bounds
         self.addSubview(contentView)
         MPMusicPlayerApplicationController.applicationQueuePlayer.beginGeneratingPlaybackNotifications()
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangeItem), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangePlayback), name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didChangeItem), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didChangePlayback), name: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil)
         MPMusicPlayerApplicationController.applicationQueuePlayer.endGeneratingPlaybackNotifications()

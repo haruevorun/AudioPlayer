@@ -58,7 +58,6 @@
 		7E34AA69220D5C0B00DC5134 /* AudioPlayListNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E34AA67220D5C0B00DC5134 /* AudioPlayListNavigationViewController.swift */; };
 		7E34AA6C220D5EB200DC5134 /* AudioPlayListTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E34AA6B220D5EB200DC5134 /* AudioPlayListTabbarController.swift */; };
 		7E3BEBFC21F0B92B005F9529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */; };
-		7E3BEBFE21F0B92B005F9529 /* AudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */; };
 		7E3BEC0121F0B92B005F9529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BEBFF21F0B92B005F9529 /* Main.storyboard */; };
 		7E3BEC0421F0B92B005F9529 /* AudioPlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BEC0221F0B92B005F9529 /* AudioPlayer.xcdatamodeld */; };
 		7E3BEC0621F0B930005F9529 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BEC0521F0B930005F9529 /* Assets.xcassets */; };
@@ -184,7 +183,6 @@
 		7E34AA6B220D5EB200DC5134 /* AudioPlayListTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayListTabbarController.swift; sourceTree = "<group>"; };
 		7E3BEBF821F0B92B005F9529 /* AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3BEBFB21F0B92B005F9529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListViewController.swift; sourceTree = "<group>"; };
 		7E3BEC0021F0B92B005F9529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E3BEC0321F0B92B005F9529 /* AudioPlayer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AudioPlayer.xcdatamodel; sourceTree = "<group>"; };
 		7E3BEC0521F0B930005F9529 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -414,7 +412,6 @@
 				7EB1A3B5220FFA7500ADC452 /* Songs */,
 				7E27FBF2220EA6BC0064BFC7 /* Artist */,
 				7E2F9B6B220BF26E00F1BB6C /* Album */,
-				7E3BEBFD21F0B92B005F9529 /* AudioListViewController.swift */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -915,7 +912,6 @@
 				7E970CFA21F1CF0A0007612F /* AudioArtworkCell.swift in Sources */,
 				7E2F9B82220D20AD00F1BB6C /* CustomMiniAudioPlayerSlider.swift in Sources */,
 				7E34AA69220D5C0B00DC5134 /* AudioPlayListNavigationViewController.swift in Sources */,
-				7E3BEBFE21F0B92B005F9529 /* AudioListViewController.swift in Sources */,
 				7E27FC2B220EB6F20064BFC7 /* HomeViewController.swift in Sources */,
 				7EBAD7A12206BE5A00D790AE /* AlbamDataStore.swift in Sources */,
 				7E27FBFD220EA6BC0064BFC7 /* AritistDetailListViewController.swift in Sources */,

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class HomeViewController: BaseListViewController {
-    var collection: [String] = ["Albums","Artist","PlayList","Genre"]
+    var collection: [String] = ["Albums","Artist","Songs","PlayList","Genre"]
     let cellHeight: CGFloat = 50
     let headerHeight: CGFloat = 70
     override func viewDidLoad() {
@@ -34,6 +34,8 @@ extension HomeViewController: UITableViewDelegate {
             self.navigationController?.show(AlbumListViewController(), sender: nil)
         case 1:
             self.navigationController?.show(ArtistListViewController(), sender: nil)
+        case 2:
+            self.navigationController?.show(SongsListViewController(), sender: nil)
         default:
             return
         }

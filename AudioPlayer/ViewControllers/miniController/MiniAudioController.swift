@@ -41,7 +41,7 @@ class MiniAudioController: UIView {
         MPMusicPlayerApplicationController.applicationQueuePlayer.endGeneratingPlaybackNotifications()
     }
     @objc private func didChangeItem() {
-        self.artworkImageView.image = artwork.image ?? UIImage(named: "Icon_min")
+        self.artworkImageView.image = artwork.image ?? UIImage(named: "app_Icon")
         self.titleLabel.text = artwork.title
     }
     @objc private func didChangePlayback() {

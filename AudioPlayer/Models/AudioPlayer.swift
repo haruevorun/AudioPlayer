@@ -12,6 +12,7 @@ import MediaPlayer
 
 protocol MediaPlayerInputQueueProtocol {
     func setQueue(query: MPMediaQuery,firstPlayIndex: Int?, isPlay: Bool)
+    func updateQueue(index: Int, isPlay: Bool)
 }
 protocol MediaPlayerOutputQueueProtocol {
     var queue: [MPMediaItem] { get }
@@ -95,7 +96,9 @@ class AudioPlayer: MediaPlayerProtocol, MediaPlayerArtworkProtocol, MediaPlayerI
     
     func play() {
         DispatchQueue.main.async {
-            self.player.prepareToPlay()
+            if !self.player.isPreparedToPlay {
+                self.player.prepareToPlay()
+            }
             self.player.play()
         }
     }
@@ -127,10 +130,19 @@ class AudioPlayer: MediaPlayerProtocol, MediaPlayerArtworkProtocol, MediaPlayerI
     func setQueue(query: MPMediaQuery, firstPlayIndex index: Int?, isPlay: Bool) {
         self.player.stop()
         self.player.currentPlaybackTime = 0
-        self.currentQuery = query
+        if self.currentQuery != query {
+            self.currentQuery = query
+        }
         if let index = index {
             self.player.nowPlayingItem = self.currentQuery?.items?[index]
         }
+        if isPlay {
+            self.play()
+        }
+    }
+    func updateQueue(index: Int, isPlay: Bool) {
+        self.player.stop()
+        self.player.nowPlayingItem = self.currentQuery?.items?[index]
         if isPlay {
             self.play()
         }

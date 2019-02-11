@@ -44,6 +44,10 @@ extension HomeViewController: UITableViewDelegate {
             self.navigationController?.show(ArtistListViewController(), sender: nil)
         case 2:
             self.navigationController?.show(SongsListViewController(), sender: nil)
+        case 3:
+            self.navigationController?.show(PlaylistViewCotroller(), sender: nil)
+        case 4:
+            self.navigationController?.show(GenreListViewController(), sender: nil)
         default:
             return
         }

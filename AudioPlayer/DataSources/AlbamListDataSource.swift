@@ -5,7 +5,7 @@
 //  Created by haruta yamada on 2019/01/29.
 //  Copyright © 2019 teranyan. All rights reserved.
 //
-
+/*
 import Foundation
 import UIKit
 import MediaPlayer
@@ -42,3 +42,4 @@ class AlbamListDataSource: NSObject, UITableViewDataSource {
         return self.albams[index]
     }
 }
+*/

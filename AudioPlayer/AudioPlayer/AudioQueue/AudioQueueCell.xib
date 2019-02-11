@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="64" id="KGk-i7-Jjw" customClass="AudioQueueCell" customModule="AudioPlayer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_min" translatesAutoresizingMaskIntoConstraints="NO" id="sr7-Bl-GNZ">
+                        <rect key="frame" x="16" y="3" width="57" height="57.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="sr7-Bl-GNZ" secondAttribute="height" multiplier="1:1" id="q34-t4-tqX"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewd-Df-Yll">
+                        <rect key="frame" x="83" y="5" width="227" height="26.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="aFT-tc-gab"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJm-RG-ZZm">
+                        <rect key="frame" x="83" y="41.5" width="227" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="eud-uJ-S3o"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sr7-Bl-GNZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2Tz-wI-uzg"/>
+                    <constraint firstItem="ewd-Df-Yll" firstAttribute="leading" secondItem="sr7-Bl-GNZ" secondAttribute="trailing" constant="10" id="FX6-0y-8yO"/>
+                    <constraint firstAttribute="bottom" secondItem="aJm-RG-ZZm" secondAttribute="bottom" constant="5" id="LHQ-UN-d2l"/>
+                    <constraint firstItem="aJm-RG-ZZm" firstAttribute="top" secondItem="ewd-Df-Yll" secondAttribute="bottom" constant="10" id="PiL-vQ-id1"/>
+                    <constraint firstItem="ewd-Df-Yll" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="dBA-9A-T0S"/>
+                    <constraint firstItem="sr7-Bl-GNZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ivJ-k1-Lj0"/>
+                    <constraint firstItem="sr7-Bl-GNZ" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.9" id="jSo-XS-NcR"/>
+                    <constraint firstItem="aJm-RG-ZZm" firstAttribute="leading" secondItem="sr7-Bl-GNZ" secondAttribute="trailing" constant="10" id="ljn-bc-sx3"/>
+                    <constraint firstAttribute="trailing" secondItem="ewd-Df-Yll" secondAttribute="trailing" constant="10" id="wdG-TL-Jnw"/>
+                    <constraint firstAttribute="trailing" secondItem="aJm-RG-ZZm" secondAttribute="trailing" constant="10" id="xaZ-4u-Tdv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="artistView" destination="aJm-RG-ZZm" id="eJ0-fh-GLO"/>
+                <outlet property="artworkView" destination="sr7-Bl-GNZ" id="Iti-TO-IIY"/>
+                <outlet property="titleView" destination="ewd-Df-Yll" id="K5C-Zc-h6a"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="124.13793103448276"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Icon_min" width="1022.1599731445312" height="998.15997314453125"/>
+    </resources>
+</document>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeHeaderView" customModule="AudioPlayer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eez-kr-8mk">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Library" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBh-tN-ygK">
+                    <rect key="frame" x="30" y="14" width="335" height="48"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Eez-kr-8mk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9Kq-3N-FK5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Eez-kr-8mk" secondAttribute="trailing" id="BVA-d9-GaH"/>
+                <constraint firstItem="Eez-kr-8mk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QzK-a4-cp5"/>
+                <constraint firstItem="VBh-tN-ygK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="TrG-MZ-Kwn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VBh-tN-ygK" secondAttribute="trailing" constant="10" id="ZVl-C2-MPT"/>
+                <constraint firstItem="VBh-tN-ygK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="hSx-NU-yTa"/>
+                <constraint firstItem="Eez-kr-8mk" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="res-ND-5VH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="label" destination="VBh-tN-ygK" id="PIh-vB-Ieg"/>
+            </connections>
+            <point key="canvasLocation" x="261.60000000000002" y="347.22638680659674"/>
+        </view>
+    </objects>
+</document>

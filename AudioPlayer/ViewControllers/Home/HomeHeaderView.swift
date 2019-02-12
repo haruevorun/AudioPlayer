@@ -14,6 +14,9 @@ class HomeHeaderView: UITableViewHeaderFooterView {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    func setupFont(style: UIFont.TextStyle) {
+        self.label.font = UIFont.preferredFont(forTextStyle: style)
+    }
     func updateView(text: String) {
         self.label.text = text
     }

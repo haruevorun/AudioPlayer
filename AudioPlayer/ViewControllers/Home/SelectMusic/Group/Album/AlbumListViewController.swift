@@ -23,7 +23,7 @@ class AlbumListViewController: BaseListViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView()
-        self.fetcher.fetch(fetchGroup: .album, isAppleMusic: false)
+        self.queryFetch(case: .album)
     }
 }
 extension AlbumListViewController: UITableViewDelegate {

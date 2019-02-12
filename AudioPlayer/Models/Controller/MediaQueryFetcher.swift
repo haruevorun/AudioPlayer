@@ -15,13 +15,10 @@ protocol MediaItemsFetchResult: class {
 class MediaQueryFetcher {
     weak var output: MediaItemsFetchResult?
     private var useCase: MediaItemsUseCaseProtocol?
-    func fetch(fetchGroup: MPMediaGrouping, isAppleMusic: Bool) {
-        self.fetch(with: nil, fetchGroup: fetchGroup, isAppleMusic: isAppleMusic)
-    }
-    func fetch(with keyword: String?, fetchGroup: MPMediaGrouping, isAppleMusic: Bool) {
-        self.useCase = MediaItemsUseCase(group: fetchGroup, isAppleMusic: isAppleMusic)
-        self.useCase?.fetch(keyword: keyword ?? "", completion: { [weak self] (query) in
-            self?.output?.finishedFetchQuery(query: query)
+    func fetch(cases: MediaItemsUseCase.QueryCase,with filter:Set<MPMediaPropertyPredicate>, isAppleMusic: Bool) {
+        self.useCase = MediaItemsUseCase(with: cases, isAppleMusic)
+        self.useCase?.fetch(filter: filter, completion: { (query) in
+            self.output?.finishedFetchQuery(query: query)
         })
     }
     // TODO: AppleMusicのオンラインアイテム用のフェッチメソッド

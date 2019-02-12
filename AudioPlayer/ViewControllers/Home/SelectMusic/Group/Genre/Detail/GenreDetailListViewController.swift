@@ -20,7 +20,12 @@ class GenreDetailListViewController: BaseListViewController {
         self.tableView.register(UINib(nibName: "GenreDetailListTableViewCell", bundle: nil), forCellReuseIdentifier: "List")
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.fetcher.fetch(with: genre, fetchGroup: .genre, isAppleMusic: false)
+        self.queryFilter = [MPMediaPropertyPredicate(value: genre, forProperty: MPMediaItemPropertyGenre, comparisonType: .equalTo)]
+        self.queryFetch(case: .album)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DebugUtil.log(self.query?.collections?.map {$0.representativeItem?.albumTitle})
     }
 }
 extension GenreDetailListViewController: UITableViewDelegate {

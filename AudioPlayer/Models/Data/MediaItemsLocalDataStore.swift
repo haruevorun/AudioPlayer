@@ -8,6 +8,6 @@
 
 import Foundation
 import MediaPlayer
-protocol MediaItemsDataStore: class {
-    func fetchItem(keyword: String) -> MPMediaQuery
+protocol MediaItemsLocalDataStore: class {
+    func fetchItem(queryCase: MediaItemsUseCase.QueryCase, filter: Set<MPMediaPropertyPredicate>) -> MPMediaQuery
 }

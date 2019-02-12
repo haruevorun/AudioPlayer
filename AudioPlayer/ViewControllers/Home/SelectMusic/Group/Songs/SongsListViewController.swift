@@ -12,14 +12,15 @@ import MediaPlayer
 
 class SongsListViewController: BaseListViewController {
     let cellHeight: CGFloat = 60
-    let headerHeight: CGFloat = 70
+    let headerHeight: CGFloat = 20
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "SongsListTableViewCell", bundle: nil), forCellReuseIdentifier: "List")
-        self.tableView.register(UINib(nibName: "HomeHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
+        self.tableView.register(UINib(nibName: "ItemSectionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.fetcher.fetch(fetchGroup: .title, isAppleMusic: false)
+        self.queryFetch(case: .songs)
+        //self.fetcher.fetch(fetchGroup: .title, isAppleMusic: false)
     }
 }
 extension SongsListViewController: UITableViewDelegate {
@@ -41,21 +42,28 @@ extension SongsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return headerHeight
     }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.query?.itemSections?.count ?? 0
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.query?.items?.count ?? 0
+        return self.query?.itemSections?[section].range.length ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "List", for: indexPath) as? SongsListTableViewCell else {
             fatalError()
         }
-        cell.updateView(item: self.query?.items?[indexPath.item], index: indexPath.item)
+        guard let location = self.query?.itemSections?[indexPath.section].range.location else {
+            return cell
+        }
+        let index = location + indexPath.item
+        cell.updateView(item: self.query?.items?[index], index: index)
         return cell
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? HomeHeaderView else {
+        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? ItemSectionHeader else {
             fatalError()
         }
-        view.updateView(text: "Songs")
+        view.updateTitle(text: self.query?.itemSections?[section].title ?? "")
         return view
     }
 }

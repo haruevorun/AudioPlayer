@@ -20,7 +20,8 @@ class PlaylistDetailViewController: BaseListViewController {
         self.tableView.register(UINib(nibName: "PlaylistDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "List")
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        fetcher.fetch(with: playlist, fetchGroup: .playlist, isAppleMusic: false)
+        self.queryFilter = [MPMediaPropertyPredicate(value: playlist, forProperty: MPMediaPlaylistPropertyName, comparisonType: .equalTo)]
+        self.queryFetch(case: .playlists)
     }
 }
 extension PlaylistDetailViewController: UITableViewDelegate {

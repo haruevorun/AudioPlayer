@@ -23,7 +23,7 @@ class ArtistListViewController: BaseListViewController {
         self.tableView.register(UINib(nibName: "HomeHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.fetcher.fetch(fetchGroup: .artist, isAppleMusic: false)
+        self.queryFetch(case: .artist)
     }
     private func uniqueCollection(collection: [MPMediaItemCollection]) -> [String] {
         let orderSet: NSOrderedSet = NSOrderedSet(array: collection.compactMap {$0.representativeItem?.albumArtist})

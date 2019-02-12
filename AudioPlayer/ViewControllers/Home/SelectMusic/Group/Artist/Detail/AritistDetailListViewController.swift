@@ -25,7 +25,8 @@ class AritistDetailListViewController: BaseListViewController {
         self.tableView.register(UINib(nibName: "ArtistDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "Detail")
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.fetcher.fetch(with: artistName, fetchGroup: .artist, isAppleMusic: false)
+        self.queryFilter = [MPMediaPropertyPredicate(value: artistName, forProperty: MPMediaItemPropertyAlbumArtist, comparisonType: .equalTo)]
+        self.queryFetch(case: .album)
     }
 }
 extension AritistDetailListViewController: UITableViewDelegate {

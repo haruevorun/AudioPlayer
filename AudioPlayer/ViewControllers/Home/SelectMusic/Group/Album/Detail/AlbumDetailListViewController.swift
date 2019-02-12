@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class AlbumDetailListViewController: BaseListViewController {
 
@@ -24,11 +25,11 @@ class AlbumDetailListViewController: BaseListViewController {
         self.tableView.register(UINib(nibName: "AlbumPlayListTableViewCell", bundle: nil), forCellReuseIdentifier: "List")
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        // Do any additional setup after loading the view.
+        self.queryFilter = [MPMediaPropertyPredicate(value: albumTitle, forProperty: MPMediaItemPropertyAlbumTitle, comparisonType: .equalTo)]
+        self.queryFetch(case: .album)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.fetcher.fetch(with: self.albumTitle, fetchGroup: .album, isAppleMusic: false)
     }
 }
 extension AlbumDetailListViewController: UITableViewDataSource {

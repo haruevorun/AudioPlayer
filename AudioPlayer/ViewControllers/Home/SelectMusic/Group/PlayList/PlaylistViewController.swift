@@ -19,7 +19,7 @@ class PlaylistViewCotroller: BaseListViewController {
         self.tableView.register(UINib(nibName: "HomeHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.fetcher.fetch(fetchGroup: .playlist, isAppleMusic: false)
+        self.queryFetch(case: .playlists)
     }
 }
 extension PlaylistViewCotroller: UITableViewDelegate {

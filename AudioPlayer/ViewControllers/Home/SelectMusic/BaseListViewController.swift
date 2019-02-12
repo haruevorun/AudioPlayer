@@ -12,6 +12,7 @@ import MediaPlayer
 class BaseListViewController: UIViewController {
     
     let miniControllerHeight: CGFloat = 60
+    var queryFilter: Set<MPMediaPropertyPredicate> = []
     
     private let backgroundView: UIView = {
         let view = UIView(frame: UIScreen.main.bounds)
@@ -22,7 +23,7 @@ class BaseListViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
-    private(set) lazy var fetcher: MediaQueryFetcher = {
+    private lazy var fetcher: MediaQueryFetcher = {
         let fetcher = MediaQueryFetcher()
         fetcher.output = self
         return fetcher
@@ -56,6 +57,10 @@ class BaseListViewController: UIViewController {
         if let selectIndex = self.tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: selectIndex, animated: true)
         }
+    }
+    func queryFetch(case queryCase: MediaItemsUseCase.QueryCase ) {
+        //デフォでアップルミュージックの接続を制限
+        self.fetcher.fetch(cases: queryCase, with: self.queryFilter, isAppleMusic: false)
     }
 }
 extension BaseListViewController: MediaItemsFetchResult {

@@ -20,10 +20,12 @@ protocol MediaPlayerOutputQueueProtocol {
     var currentQueue: MPMediaItem? { get }
     var indexOfCurrentQueue: Int { get }
 }
-protocol MediaPlayerProtocol {
+protocol MediaPlayerStateProtocol {
     var isPlay: Bool { get }
     var currentTime: TimeInterval { get }
     var maximumMediaItemDuration: TimeInterval { get }
+}
+protocol MediaPlayerControlProtocol {
     func play()
     func pause()
     func skipToNext()
@@ -37,7 +39,7 @@ protocol MediaPlayerArtworkProtocol {
     var artist: String { get }
 }
 
-class AudioPlayer: MediaPlayerProtocol, MediaPlayerArtworkProtocol, MediaPlayerInputQueueProtocol , MediaPlayerOutputQueueProtocol {
+class AudioPlayer: MediaPlayerControlProtocol, MediaPlayerArtworkProtocol, MediaPlayerInputQueueProtocol , MediaPlayerOutputQueueProtocol, MediaPlayerStateProtocol {
     
     private(set) static var shared = AudioPlayer()
     
@@ -130,12 +132,8 @@ class AudioPlayer: MediaPlayerProtocol, MediaPlayerArtworkProtocol, MediaPlayerI
     func setQueue(query: MPMediaQuery, firstPlayIndex index: Int?, isPlay: Bool) {
         self.player.stop()
         self.player.currentPlaybackTime = 0
-        if self.currentQuery != query {
-            self.currentQuery = query
-        }
-        if let index = index {
-            self.player.nowPlayingItem = self.currentQuery?.items?[index]
-        }
+        self.setQuery(query: query)
+        self.setPlayingItem(index: index)
         if isPlay {
             self.play()
         }
@@ -146,5 +144,18 @@ class AudioPlayer: MediaPlayerProtocol, MediaPlayerArtworkProtocol, MediaPlayerI
         if isPlay {
             self.play()
         }
+    }
+    private func setQuery(query: MPMediaQuery) {
+        guard self.currentQuery != query else {
+            return
+        }
+        self.currentQuery = query
+    }
+    private func setPlayingItem(index: Int?) {
+        guard let index = index, 0 ..< (self.currentQuery?.items?.count ?? 0) ~= index else {
+            self.player.nowPlayingItem = self.currentQuery?.items?[0]
+            return
+        }
+        self.player.nowPlayingItem = self.currentQuery?.items?[index]
     }
 }

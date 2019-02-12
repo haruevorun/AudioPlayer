@@ -16,7 +16,7 @@ class GenreDetailListViewController: BaseListViewController {
     var genre: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UINib(nibName: "HomeHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
+        self.tableView.register(UINib(nibName: "AlbumSectionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
         self.tableView.register(UINib(nibName: "GenreDetailListTableViewCell", bundle: nil), forCellReuseIdentifier: "List")
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -36,10 +36,11 @@ extension GenreDetailListViewController: UITableViewDelegate {
         return headerHeight
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? HomeHeaderView else {
+        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? AlbumSectionHeader else {
             fatalError()
         }
-        view.updateView(text: genre ?? "")
+        view.updateView(item: self.query?.collections?[section].representativeItem)
+        //view.updateView(text: genre ?? "")
         return view
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -54,15 +55,18 @@ extension GenreDetailListViewController: UITableViewDelegate {
     }
 }
 extension GenreDetailListViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return query?.collections?.count ?? 0
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return query?.items?.count ?? 0
+        return self.query?.collections?[section].items.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "List", for: indexPath) as? GenreDetailListTableViewCell else {
             fatalError()
         }
-        cell.updateView(item: self.query?.items?[indexPath.item])
+        cell.updateView(item: self.query?.collections?[indexPath.section].items[indexPath.item], index: indexPath.item + 1)
         return cell
     }
 }

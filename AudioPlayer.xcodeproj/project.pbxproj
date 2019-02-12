@@ -100,6 +100,8 @@
 		7EB1A3E2221073A200ADC452 /* PlaylistDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EB1A3E0221073A200ADC452 /* PlaylistDetailTableViewCell.xib */; };
 		7EB1A3E722127D4C00ADC452 /* ItemSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1A3E622127D4C00ADC452 /* ItemSectionHeader.swift */; };
 		7EB1A3EB221283D800ADC452 /* ItemSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EB1A3EA221283D800ADC452 /* ItemSectionHeader.xib */; };
+		7EB1A3F322128E6000ADC452 /* AlbumSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1A3F222128E6000ADC452 /* AlbumSectionHeader.swift */; };
+		7EB1A3F522128E8D00ADC452 /* AlbumSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EB1A3F422128E8D00ADC452 /* AlbumSectionHeader.xib */; };
 		7EBACEC12203D78C00D790AE /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBACEC02203D78C00D790AE /* DebugPrint.swift */; };
 		7EBAD78B2204A5FE00D790AE /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD78A2204A5FE00D790AE /* AudioPlayer.swift */; };
 		7EBAD7902205C49900D790AE /* MediaQueryFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBAD78F2205C49900D790AE /* MediaQueryFetcher.swift */; };
@@ -238,6 +240,8 @@
 		7EB1A3E0221073A200ADC452 /* PlaylistDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistDetailTableViewCell.xib; sourceTree = "<group>"; };
 		7EB1A3E622127D4C00ADC452 /* ItemSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSectionHeader.swift; sourceTree = "<group>"; };
 		7EB1A3EA221283D800ADC452 /* ItemSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemSectionHeader.xib; sourceTree = "<group>"; };
+		7EB1A3F222128E6000ADC452 /* AlbumSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSectionHeader.swift; sourceTree = "<group>"; };
+		7EB1A3F422128E8D00ADC452 /* AlbumSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumSectionHeader.xib; sourceTree = "<group>"; };
 		7EBACEC02203D78C00D790AE /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
 		7EBAD78A2204A5FE00D790AE /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		7EBAD78F2205C49900D790AE /* MediaQueryFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaQueryFetcher.swift; sourceTree = "<group>"; };
@@ -691,6 +695,8 @@
 			children = (
 				7EB1A3E622127D4C00ADC452 /* ItemSectionHeader.swift */,
 				7EB1A3EA221283D800ADC452 /* ItemSectionHeader.xib */,
+				7EB1A3F222128E6000ADC452 /* AlbumSectionHeader.swift */,
+				7EB1A3F422128E8D00ADC452 /* AlbumSectionHeader.xib */,
 			);
 			path = headers;
 			sourceTree = "<group>";
@@ -905,6 +911,7 @@
 				7E2F9B45220BDA6F00F1BB6C /* Icon.png in Resources */,
 				7E2F9B50220BDA6F00F1BB6C /* Icon@2x.png in Resources */,
 				7E2F9B46220BDA6F00F1BB6C /* Icon-76@2x.png in Resources */,
+				7EB1A3F522128E8D00ADC452 /* AlbumSectionHeader.xib in Resources */,
 				7E2F9B48220BDA6F00F1BB6C /* Icon-60@3x.png in Resources */,
 				7E970CFF21F1CF310007612F /* AudioControllerCell.xib in Resources */,
 				7E2F9B49220BDA6F00F1BB6C /* Icon-76.png in Resources */,
@@ -1013,6 +1020,7 @@
 				7E27FC41220EED950064BFC7 /* ExtensionCalendar.swift in Sources */,
 				7E970CFA21F1CF0A0007612F /* AudioArtworkCell.swift in Sources */,
 				7E2F9B82220D20AD00F1BB6C /* CustomMiniAudioPlayerSlider.swift in Sources */,
+				7EB1A3F322128E6000ADC452 /* AlbumSectionHeader.swift in Sources */,
 				7E34AA69220D5C0B00DC5134 /* AudioPlayListNavigationViewController.swift in Sources */,
 				7E27FC2B220EB6F20064BFC7 /* HomeViewController.swift in Sources */,
 				7E27FBFD220EA6BC0064BFC7 /* AritistDetailListViewController.swift in Sources */,

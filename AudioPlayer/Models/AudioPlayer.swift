@@ -11,7 +11,7 @@ import UIKit
 import MediaPlayer
 
 protocol MediaPlayerInputQueueProtocol {
-    func setQueue(query: MPMediaQuery,firstPlayIndex: Int?, isPlay: Bool)
+    func setQueue(query: MPMediaQuery, playingItem: MPMediaItem?, isPlay: Bool)
     func updateQueue(index: Int, isPlay: Bool)
 }
 protocol MediaPlayerOutputQueueProtocol {
@@ -129,11 +129,10 @@ class AudioPlayer: MediaPlayerControlProtocol, MediaPlayerArtworkProtocol, Media
     func seek(time: TimeInterval) {
         self.player.currentPlaybackTime = time
     }
-    func setQueue(query: MPMediaQuery, firstPlayIndex index: Int?, isPlay: Bool) {
+    func setQueue(query: MPMediaQuery, playingItem: MPMediaItem?, isPlay: Bool) {
         self.player.stop()
-        self.player.currentPlaybackTime = 0
         self.setQuery(query: query)
-        self.setPlayingItem(index: index)
+        self.setPlayingItem(item: playingItem)
         if isPlay {
             self.play()
         }
@@ -151,11 +150,11 @@ class AudioPlayer: MediaPlayerControlProtocol, MediaPlayerArtworkProtocol, Media
         }
         self.currentQuery = query
     }
-    private func setPlayingItem(index: Int?) {
-        guard let index = index, 0 ..< (self.currentQuery?.items?.count ?? 0) ~= index else {
-            self.player.nowPlayingItem = self.currentQuery?.items?[0]
+    private func setPlayingItem(item: MPMediaItem?) {
+        guard self.player.nowPlayingItem != item else {
             return
         }
-        self.player.nowPlayingItem = self.currentQuery?.items?[index]
+        self.player.currentPlaybackTime = 0
+        self.player.nowPlayingItem = item
     }
 }

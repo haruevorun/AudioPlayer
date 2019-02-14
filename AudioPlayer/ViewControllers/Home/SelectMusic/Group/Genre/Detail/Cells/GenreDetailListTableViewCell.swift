@@ -16,7 +16,7 @@ class GenreDetailListTableViewCell: UITableViewCell {
     @IBOutlet private weak var durationLabel: UILabel!
     
     func updateView(item: MPMediaItem?, index: Int) {
-        self.indexLabel.text = String(index)
+        self.indexLabel.text = nil
         self.titleLabel.text = item?.title
         self.durationLabel.text = Calendar.timeToString(time: Float(item?.playbackDuration ?? 0))
     }

@@ -22,6 +22,12 @@ class SongsListViewController: BaseListViewController {
         self.queryFetch(case: .songs)
         //self.fetcher.fetch(fetchGroup: .title, isAppleMusic: false)
     }
+    private func itemIndex(path: IndexPath) -> Int? {
+        guard let location = self.query?.itemSections?[path.section].range.location else {
+            return nil
+        }
+        return location + path.item
+    }
 }
 extension SongsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -29,10 +35,11 @@ extension SongsListViewController: UITableViewDelegate {
         guard let query = query else {
             return
         }
-        guard queue.currentQueue?.persistentID != query.items?[indexPath.item].persistentID else {
+        guard queue.currentQueue?.persistentID != query.items?[itemIndex(path: indexPath) ?? 0].persistentID else {
             return
         }
-        self.queueController.setQueue(query: query, firstPlayIndex: indexPath.item, isPlay: true)
+        
+        self.queueController.setQueue(query: query, playingItem: query.items?[itemIndex(path: indexPath) ?? 0], isPlay: true)
     }
 }
 extension SongsListViewController: UITableViewDataSource {
@@ -52,11 +59,8 @@ extension SongsListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "List", for: indexPath) as? SongsListTableViewCell else {
             fatalError()
         }
-        guard let location = self.query?.itemSections?[indexPath.section].range.location else {
-            return cell
-        }
-        let index = location + indexPath.item
-        cell.updateView(item: self.query?.items?[index], index: index)
+        
+        cell.updateView(item: self.query?.items?[itemIndex(path: indexPath) ?? 0], index: itemIndex(path: indexPath) ?? 0)
         return cell
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

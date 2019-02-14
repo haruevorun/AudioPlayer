@@ -23,9 +23,13 @@ class GenreDetailListViewController: BaseListViewController {
         self.queryFilter = [MPMediaPropertyPredicate(value: genre, forProperty: MPMediaItemPropertyGenre, comparisonType: .equalTo)]
         self.queryFetch(case: .album)
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        DebugUtil.log(self.query?.collections?.map {$0.representativeItem?.albumTitle})
+    private func itemIndex(path: IndexPath) -> Int? {
+        DebugUtil.log(path.section)
+        DebugUtil.log(path.item)
+        guard let location = self.query?.collectionSections?[path.section].range.location else {
+            return nil
+        }
+        return location + path.item
     }
 }
 extension GenreDetailListViewController: UITableViewDelegate {
@@ -48,10 +52,10 @@ extension GenreDetailListViewController: UITableViewDelegate {
         guard let query = query else {
             return
         }
-        guard queue.currentQueue?.persistentID != query.items?[indexPath.item].persistentID else {
+        guard queue.currentQueue?.persistentID != query.collections?[indexPath.section].items[indexPath.item].persistentID else {
             return
         }
-        self.queueController.setQueue(query: query, firstPlayIndex: indexPath.item, isPlay: true)
+        self.queueController.setQueue(query: query, playingItem: query.collections?[indexPath.section].items[indexPath.item], isPlay: true)
     }
 }
 extension GenreDetailListViewController: UITableViewDataSource {

@@ -34,7 +34,7 @@ extension ArtistListViewController: UITableViewDelegate {
         return self.headerHeight
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailView = AritistDetailListViewController()
+        let detailView = ArtistDetailListViewController()
         guard let collection = self.query?.collections else {
             return
         }

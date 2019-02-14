@@ -12,7 +12,7 @@
 		7E27FBFA220EA6BC0064BFC7 /* ArtistDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E27FBF5220EA6BC0064BFC7 /* ArtistDetailTableViewCell.xib */; };
 		7E27FBFB220EA6BC0064BFC7 /* ArtistPlayListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E27FBF6220EA6BC0064BFC7 /* ArtistPlayListTableViewCell.swift */; };
 		7E27FBFC220EA6BC0064BFC7 /* ArtistPlayListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E27FBF7220EA6BC0064BFC7 /* ArtistPlayListTableViewCell.xib */; };
-		7E27FBFD220EA6BC0064BFC7 /* AritistDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E27FBF8220EA6BC0064BFC7 /* AritistDetailListViewController.swift */; };
+		7E27FBFD220EA6BC0064BFC7 /* ArtistDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E27FBF8220EA6BC0064BFC7 /* ArtistDetailListViewController.swift */; };
 		7E27FC2B220EB6F20064BFC7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E27FC2A220EB6F20064BFC7 /* HomeViewController.swift */; };
 		7E27FC2E220EBC490064BFC7 /* HomeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E27FC2C220EBC490064BFC7 /* HomeListTableViewCell.swift */; };
 		7E27FC2F220EBC490064BFC7 /* HomeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E27FC2D220EBC490064BFC7 /* HomeListTableViewCell.xib */; };
@@ -149,7 +149,7 @@
 		7E27FBF5220EA6BC0064BFC7 /* ArtistDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtistDetailTableViewCell.xib; sourceTree = "<group>"; };
 		7E27FBF6220EA6BC0064BFC7 /* ArtistPlayListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistPlayListTableViewCell.swift; sourceTree = "<group>"; };
 		7E27FBF7220EA6BC0064BFC7 /* ArtistPlayListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtistPlayListTableViewCell.xib; sourceTree = "<group>"; };
-		7E27FBF8220EA6BC0064BFC7 /* AritistDetailListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AritistDetailListViewController.swift; sourceTree = "<group>"; };
+		7E27FBF8220EA6BC0064BFC7 /* ArtistDetailListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailListViewController.swift; sourceTree = "<group>"; };
 		7E27FC2A220EB6F20064BFC7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7E27FC2C220EBC490064BFC7 /* HomeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListTableViewCell.swift; sourceTree = "<group>"; };
 		7E27FC2D220EBC490064BFC7 /* HomeListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeListTableViewCell.xib; sourceTree = "<group>"; };
@@ -317,7 +317,7 @@
 		7E27FBF3220EA6BC0064BFC7 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				7E27FBF8220EA6BC0064BFC7 /* AritistDetailListViewController.swift */,
+				7E27FBF8220EA6BC0064BFC7 /* ArtistDetailListViewController.swift */,
 				7E27FBF4220EA6BC0064BFC7 /* ArtistDetailTableViewCell.swift */,
 				7E27FBF5220EA6BC0064BFC7 /* ArtistDetailTableViewCell.xib */,
 				7E27FBF6220EA6BC0064BFC7 /* ArtistPlayListTableViewCell.swift */,
@@ -1041,7 +1041,7 @@
 				7EB1A3F322128E6000ADC452 /* AlbumSectionHeader.swift in Sources */,
 				7E34AA69220D5C0B00DC5134 /* AudioPlayListNavigationViewController.swift in Sources */,
 				7E27FC2B220EB6F20064BFC7 /* HomeViewController.swift in Sources */,
-				7E27FBFD220EA6BC0064BFC7 /* AritistDetailListViewController.swift in Sources */,
+				7E27FBFD220EA6BC0064BFC7 /* ArtistDetailListViewController.swift in Sources */,
 				7EB1A3C922105ECB00ADC452 /* GenreDetailListViewController.swift in Sources */,
 				7EB1A43E22151C8A00ADC452 /* TransitionDelegate.swift in Sources */,
 				7E2F9B73220BFC1400F1BB6C /* AlbumPlayListTableViewCell.swift in Sources */,

@@ -24,5 +24,4 @@ class ArtistListTableViewCell: UITableViewCell {
     func updateView(artist: String?) {
         artistLabel.text = artist
     }
-    
 }

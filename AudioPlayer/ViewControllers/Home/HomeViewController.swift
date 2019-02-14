@@ -28,6 +28,8 @@ class HomeViewController: BaseListViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.navigationController?.view.addSubview(miniController)
+        let gesture = UITapGestureRecognizer(target: self.navigationController, action: #selector(AudioPlayListNavigationViewController.openPlayer))
+        self.miniController.contentView.addGestureRecognizer(gesture)
     }
 }
 extension HomeViewController: UITableViewDelegate {

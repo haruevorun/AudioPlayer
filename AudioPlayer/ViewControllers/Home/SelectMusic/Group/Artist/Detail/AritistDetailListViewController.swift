@@ -25,7 +25,7 @@ class AritistDetailListViewController: BaseListViewController {
         self.tableView.register(UINib(nibName: "ArtistDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "Detail")
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.queryFilter = [MPMediaPropertyPredicate(value: artistName, forProperty: MPMediaItemPropertyAlbumArtist, comparisonType: .equalTo)]
+        self.queryFilter = [MPMediaPropertyPredicate(value: artistName, forProperty: MPMediaItemPropertyArtist, comparisonType: .equalTo)]
         self.queryFetch(case: .album)
     }
 }
@@ -53,6 +53,9 @@ extension AritistDetailListViewController: UITableViewDelegate {
         }
         albamDetailView.albumTitle = title
         self.navigationController?.show(albamDetailView, sender: nil)
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        <#code#>
     }
 }
 extension AritistDetailListViewController: UITableViewDataSource {

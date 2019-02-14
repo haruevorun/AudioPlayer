@@ -30,7 +30,7 @@ class MusicPlayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UINib(nibName: "AudioControllerCell", bundle: nil), forCellReuseIdentifier: "ControllCell")
+        self.tableView.register(UINib(nibName: "AudioControllerCell", bundle: nil), forCellReuseIdentifier: "ControlCell")
         self.tableView.register(UINib(nibName: "AudioArtworkCell", bundle: nil), forCellReuseIdentifier: "ArtworkCell")
         self.tableView.register(UINib(nibName: "AudioQueueCell", bundle: nil), forCellReuseIdentifier: "QueueCell")
         self.tableView.register(UINib(nibName: "AudioQueueSectionHeader", bundle: nil), forCellReuseIdentifier: "QueueHeader")
@@ -74,6 +74,14 @@ extension MusicPlayViewController: UITableViewDelegate {
         }
         return proposedDestinationIndexPath
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y
+        updateViewPosition(contentoffsetY: y)
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let y = scrollView.contentOffset.y
+        checkDismissingCondition(withScrollOffset: y)
+    }
 }
 
 extension MusicPlayViewController: UITableViewDataSource {
@@ -94,7 +102,7 @@ extension MusicPlayViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            return createControllÇell(tableview: tableView, item: indexPath.item)
+            return createControlCell(tableview: tableView, item: indexPath.item)
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "QueueCell", for: indexPath) as? AudioQueueCell else {
                 fatalError()
@@ -105,7 +113,7 @@ extension MusicPlayViewController: UITableViewDataSource {
             return cell
         }
     }
-    private func createControllÇell(tableview: UITableView, item: Int) -> UITableViewCell {
+    private func createControlCell(tableview: UITableView, item: Int) -> UITableViewCell {
         switch item {
         case 0:
             guard let cell = tableview.dequeueReusableCell(withIdentifier: "ArtworkCell", for: artworkCellIndexPath) as? AudioArtworkCell else {
@@ -113,7 +121,7 @@ extension MusicPlayViewController: UITableViewDataSource {
             }
             return cell
         case 1:
-            guard let cell = tableview.dequeueReusableCell(withIdentifier: "ControllCell", for: controllerCellIndexPath) as? AudioControllerCell else {
+            guard let cell = tableview.dequeueReusableCell(withIdentifier: "ControlCell", for: controllerCellIndexPath) as? AudioControllerCell else {
                 fatalError()
             }
             return cell
@@ -148,6 +156,24 @@ extension MusicPlayViewController: UITableViewDataSource {
             return nil
         default:
             return tableView.dequeueReusableHeaderFooterView(withIdentifier: "QueueHeader")
+        }
+    }
+}
+extension MusicPlayViewController {
+    func updateViewPosition(contentoffsetY y: CGFloat ) {
+        let move = min(y, 0)
+        self.view.frame.origin.y = -move
+        self.tableView.subviews.map { $0.transform = CGAffineTransform(translationX: 0, y: move)}
+    }
+    private func checkDismissingCondition(withScrollOffset y: CGFloat) {
+        // 移動量が一定値を超えたらモーダルビューを閉じる（全体の1/6くらい）
+        if y < -self.view.frame.height / 6 {
+            // モーダルビューを閉じた後に一瞬スクロールビューの中身がバウンスで戻る映像が見えてしまう対策
+            self.tableView.isScrollEnabled = false
+            self.tableView.setContentOffset(self.tableView.contentOffset, animated: false) // 慣性スクロールを強制停止
+            self.tableView.contentOffset = CGPoint(x: 0, y: y)
+            self.tableView.setContentOffset(CGPoint(x: 0, y: self.view.frame.height), animated: true)
+            self.dismiss(animated: false, completion: nil)
         }
     }
 }

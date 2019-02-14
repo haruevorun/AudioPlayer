@@ -25,13 +25,6 @@ class ArtistListViewController: BaseListViewController {
         self.tableView.dataSource = self
         self.queryFetch(case: .artist)
     }
-    private func uniqueCollection(collection: [MPMediaItemCollection]) -> [String] {
-        let orderSet: NSOrderedSet = NSOrderedSet(array: collection.compactMap {$0.representativeItem?.albumArtist})
-        guard let array = orderSet.array as? [String] else {
-            fatalError()
-        }
-        return array
-    }
 }
 extension ArtistListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -45,7 +38,7 @@ extension ArtistListViewController: UITableViewDelegate {
         guard let collection = self.query?.collections else {
             return
         }
-        detailView.artistName = self.uniqueCollection(collection: collection)[indexPath.item]
+        detailView.artistName = collection[indexPath.item].representativeItem?.artist
         self.navigationController?.show(detailView, sender: nil)
     }
 }
@@ -54,7 +47,7 @@ extension ArtistListViewController: UITableViewDataSource {
         guard let collection = self.query?.collections else {
             return 0
         }
-        return uniqueCollection(collection: collection).count
+        return collection.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,7 +57,7 @@ extension ArtistListViewController: UITableViewDataSource {
         guard let collection = self.query?.collections else {
             return cell
         }
-        cell.updateView(artist: self.uniqueCollection(collection: collection)[indexPath.item])
+        cell.updateView(artist: collection[indexPath.item].representativeItem?.artist)
         return cell
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

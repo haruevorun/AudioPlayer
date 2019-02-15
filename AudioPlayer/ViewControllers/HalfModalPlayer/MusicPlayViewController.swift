@@ -33,8 +33,7 @@ class MusicPlayViewController: UIViewController {
         self.tableView.register(UINib(nibName: "AudioControllerCell", bundle: nil), forCellReuseIdentifier: "ControlCell")
         self.tableView.register(UINib(nibName: "AudioArtworkCell", bundle: nil), forCellReuseIdentifier: "ArtworkCell")
         self.tableView.register(UINib(nibName: "AudioQueueCell", bundle: nil), forCellReuseIdentifier: "QueueCell")
-        self.tableView.register(UINib(nibName: "AudioQueueSectionHeader", bundle: nil), forCellReuseIdentifier: "QueueHeader")
-        NotificationCenter.default.addObserver(self, selector: #selector(enterForeground), name: NSNotification.Name.NSExtensionHostWillEnterForeground, object: nil)
+        self.tableView.register(UINib(nibName: "AudioQueueSectionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "QueueHeader")
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
@@ -43,9 +42,6 @@ class MusicPlayViewController: UIViewController {
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-    }
-    @objc private func enterForeground() {
-        self.tableView.reloadData()
     }
 }
 extension MusicPlayViewController: UITableViewDelegate {
@@ -135,7 +131,7 @@ extension MusicPlayViewController: UITableViewDataSource {
         case 0:
             return 0
         default:
-            return 50
+            return 70
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -155,7 +151,10 @@ extension MusicPlayViewController: UITableViewDataSource {
         case 0:
             return nil
         default:
-            return tableView.dequeueReusableHeaderFooterView(withIdentifier: "QueueHeader")
+            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "QueueHeader") as? AudioQueueSectionHeader else {
+                return nil
+            }
+            return header
         }
     }
 }

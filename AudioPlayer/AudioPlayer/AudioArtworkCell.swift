@@ -29,13 +29,14 @@ class AudioArtworkCell: UITableViewCell {
         self.artworkShadowView.layer.shadowRadius = 4
         self.artworkShadowView.layer.shadowOpacity = 0.5
         self.updateArtwork()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateArtwork), name: UIApplication.willEnterForegroundNotification, object: nil)
         MPMusicPlayerApplicationController.applicationQueuePlayer.beginGeneratingPlaybackNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(updateArtwork), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
         MPMusicPlayerApplicationController.applicationQueuePlayer.endGeneratingPlaybackNotifications()
         // Initialization code
     }
     @objc private func updateArtwork() {
-        self.artworkView.image = artwork.image ?? UIImage(named: "Icon_min")
+        self.artworkView.image = artwork.image ?? UIImage(named: "app_Icon")
         self.titleLabel.text = artwork.title
         self.artistLabel.text = artwork.artist
     }

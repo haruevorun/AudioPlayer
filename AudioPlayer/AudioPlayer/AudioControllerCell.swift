@@ -29,9 +29,13 @@ class AudioControllerCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        NotificationCenter.default.addObserver(self, selector: #selector(changePlaybackState), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCurrentTime), name: UIApplication.willEnterForegroundNotification, object: nil)
         MPMusicPlayerApplicationController.applicationQueuePlayer.beginGeneratingPlaybackNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(changePlaybackState), name: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil)
         MPMusicPlayerApplicationController.applicationQueuePlayer.endGeneratingPlaybackNotifications()
+        self.changePlaybackState()
+        self.updateCurrentTime()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCurrentTime), userInfo: nil, repeats: true)
         self.seekbar.maximumValue = Float(playerState.maximumMediaItemDuration)
     }

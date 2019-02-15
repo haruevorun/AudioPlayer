@@ -34,7 +34,7 @@ class AudioQueueCell: UITableViewCell {
             return artworkView.image
         }
         set(value) {
-            self.artworkView.image = value ?? UIImage(named: "Icon_min")
+            self.artworkView.image = value ?? UIImage(named: "app_Icon")
         }
     }
     override func awakeFromNib() {

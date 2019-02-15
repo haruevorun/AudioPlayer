@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 class AudioQueueSectionHeader: UITableViewHeaderFooterView {
-    
+    @IBOutlet weak var queueLabel: UILabel!
 }

@@ -21,8 +21,7 @@ class ArtistListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func updateView(artist: String) {
+    func updateView(artist: String?) {
         artistLabel.text = artist
     }
-    
 }

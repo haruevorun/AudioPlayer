@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Queue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INR-vV-OOp">
-                    <rect key="frame" x="10" y="10" width="70.5" height="34"/>
+                    <rect key="frame" x="10" y="10" width="355" height="34"/>
                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -25,6 +25,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="XPA-on-aYg" firstAttribute="trailing" secondItem="INR-vV-OOp" secondAttribute="trailing" constant="10" id="8mM-K9-qHs"/>
                 <constraint firstItem="INR-vV-OOp" firstAttribute="centerY" secondItem="OkU-qu-Iax" secondAttribute="centerY" id="Aha-bD-HOm"/>
                 <constraint firstItem="INR-vV-OOp" firstAttribute="leading" secondItem="XPA-on-aYg" secondAttribute="leading" constant="10" id="BBe-Tq-f8T"/>
                 <constraint firstItem="INR-vV-OOp" firstAttribute="top" secondItem="XPA-on-aYg" secondAttribute="top" constant="10" id="E9T-zS-eI9"/>
@@ -33,6 +34,9 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="XPA-on-aYg"/>
+            <connections>
+                <outlet property="queueLabel" destination="INR-vV-OOp" id="mHo-7J-NUA"/>
+            </connections>
             <point key="canvasLocation" x="209" y="171"/>
         </view>
     </objects>

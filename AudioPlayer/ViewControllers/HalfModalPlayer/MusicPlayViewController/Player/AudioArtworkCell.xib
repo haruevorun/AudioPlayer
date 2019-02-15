@@ -21,11 +21,11 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdE-0C-TqK">
                         <rect key="frame" x="37.5" y="31" width="300" height="300"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_min" translatesAutoresizingMaskIntoConstraints="NO" id="PXQ-ql-byX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="PXQ-ql-byX">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="kdE-0C-TqK" secondAttribute="height" multiplier="1:1" id="5g5-gn-Zr0"/>
                             <constraint firstAttribute="bottom" secondItem="PXQ-ql-byX" secondAttribute="bottom" id="HtA-aK-Sif"/>
@@ -83,6 +83,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Icon_min" width="1022.1599731445312" height="998.15997314453125"/>
+        <image name="app_Icon" width="1024.0799560546875" height="1024.0799560546875"/>
     </resources>
 </document>

@@ -14,14 +14,14 @@ class MusicPlayViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var timer: Timer = Timer()
-    
-    let artworkCellIndexPath: IndexPath = IndexPath(item: 0, section: 0)
-    let controllerCellIndexPath: IndexPath = IndexPath(item: 1, section: 0)
+    let headerHeight: CGFloat = 50
     let artworkCellHeight: CGFloat = 500
     let controllerCellHeight: CGFloat = 250
+    let queueCellHeight: CGFloat = 60
     
     private let mediaPlayerOutPut: MediaPlayerOutputQueueProtocol = AudioPlayer.shared
+    private let queueController: MediaPlayerInputQueueProtocol = AudioPlayer.shared
+    private let dataSource: UITableViewDataSource = MusicPlayViewControllerDataSource()
     
     deinit {
         DebugUtil.log("MusicPlayer is deinit")
@@ -34,17 +34,55 @@ class MusicPlayViewController: UIViewController {
         self.tableView.register(UINib(nibName: "AudioArtworkCell", bundle: nil), forCellReuseIdentifier: "ArtworkCell")
         self.tableView.register(UINib(nibName: "AudioQueueCell", bundle: nil), forCellReuseIdentifier: "QueueCell")
         self.tableView.register(UINib(nibName: "AudioQueueSectionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "QueueHeader")
-        self.tableView.dataSource = self
+        self.tableView.dataSource = dataSource
         self.tableView.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(selectItem), name: UIApplication.willEnterForegroundNotification, object: nil)
+        MPMusicPlayerApplicationController.applicationQueuePlayer.beginGeneratingPlaybackNotifications()
+        NotificationCenter.default.addObserver(self, selector: #selector(selectItem), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
+        MPMusicPlayerApplicationController.applicationQueuePlayer.endGeneratingPlaybackNotifications()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    }
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+        self.selectItem()
     }
 }
 extension MusicPlayViewController: UITableViewDelegate {
+    @objc func selectItem() {
+        let index = self.mediaPlayerOutPut.indexOfCurrentQueue
+        self.tableView.selectRow(at: IndexPath(item: index, section: 1), animated: true, scrollPosition: .none)
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 0
+        default:
+            return self.headerHeight
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            if indexPath.item == 0 {
+                return self.artworkCellHeight
+            } else {
+                return self.controllerCellHeight
+            }
+        default:
+            return self.queueCellHeight
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 0:
+            return nil
+        default:
+            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "QueueHeader") as? AudioQueueSectionHeader else {
+                return nil
+            }
+            return header
+        }
+    }
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         switch indexPath.section {
         case 0:
@@ -54,7 +92,12 @@ extension MusicPlayViewController: UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        switch indexPath.section {
+        case 1:
+            self.queueController.updateQueue(index: indexPath.item, isPlay: true)
+        default:
+            return
+        }
     }
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         switch indexPath.section {
@@ -77,85 +120,6 @@ extension MusicPlayViewController: UITableViewDelegate {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let y = scrollView.contentOffset.y
         checkDismissingCondition(withScrollOffset: y)
-    }
-}
-
-extension MusicPlayViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 2
-        default:
-            return self.mediaPlayerOutPut.queueCount
-            //return queue.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            return createControlCell(tableview: tableView, item: indexPath.item)
-        default:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "QueueCell", for: indexPath) as? AudioQueueCell else {
-                fatalError()
-            }
-            cell.title = self.mediaPlayerOutPut.queue[indexPath.item].title
-            cell.artworkImage = self.mediaPlayerOutPut.queue[indexPath.item].artwork?.image(at: MPMediaItem.albamJacketThumbnailSize)
-            cell.artist = self.mediaPlayerOutPut.queue[indexPath.item].artist
-            return cell
-        }
-    }
-    private func createControlCell(tableview: UITableView, item: Int) -> UITableViewCell {
-        switch item {
-        case 0:
-            guard let cell = tableview.dequeueReusableCell(withIdentifier: "ArtworkCell", for: artworkCellIndexPath) as? AudioArtworkCell else {
-                fatalError()
-            }
-            return cell
-        case 1:
-            guard let cell = tableview.dequeueReusableCell(withIdentifier: "ControlCell", for: controllerCellIndexPath) as? AudioControllerCell else {
-                fatalError()
-            }
-            return cell
-        default:
-            fatalError()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section {
-        case 0:
-            return 0
-        default:
-            return 70
-        }
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-            if indexPath.item == 0 {
-                return self.artworkCellHeight
-            } else {
-                return self.controllerCellHeight
-            }
-        default:
-            return 70
-        }
-    }
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        switch section {
-        case 0:
-            return nil
-        default:
-            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "QueueHeader") as? AudioQueueSectionHeader else {
-                return nil
-            }
-            return header
-        }
     }
 }
 extension MusicPlayViewController {

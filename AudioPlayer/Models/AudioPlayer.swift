@@ -138,6 +138,12 @@ class AudioPlayer: MediaPlayerControlProtocol, MediaPlayerArtworkProtocol, Media
         }
     }
     func updateQueue(index: Int, isPlay: Bool) {
+        guard index != indexOfCurrentQueue else {
+            if self.player.playbackState != MPMusicPlaybackState.playing && isPlay {
+                self.play()
+            }
+            return
+        }
         self.player.stop()
         self.player.nowPlayingItem = self.currentQuery?.items?[index]
         if isPlay {

@@ -1,5 +1,5 @@
 //
-//  AritistDetailListViewController.swift
+//  ArtistDetailListViewController.swift
 //  AudioPlayer
 //
 //  Created by haruta yamada on 2019/02/09.
@@ -9,12 +9,12 @@
 import UIKit
 import MediaPlayer
 
-class AritistDetailListViewController: BaseListViewController {
+class ArtistDetailListViewController: BaseListViewController {
 
     var artistName: String?
     
     private var artistHeight: CGFloat = 70
-    private var albamHeight: CGFloat = 100
+    private var albumHeight: CGFloat = 100
     deinit {
         DebugUtil.log("ArtistDetailList is deinit")
     }
@@ -25,16 +25,17 @@ class AritistDetailListViewController: BaseListViewController {
         self.tableView.register(UINib(nibName: "ArtistDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "Detail")
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.fetcher.fetch(with: artistName, fetchGroup: .artist, isAppleMusic: false)
+        self.queryFilter = [MPMediaPropertyPredicate(value: artistName, forProperty: MPMediaItemPropertyArtist, comparisonType: .equalTo)]
+        self.queryFetch(case: .album)
     }
 }
-extension AritistDetailListViewController: UITableViewDelegate {
+extension ArtistDetailListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
             return artistHeight
         default:
-            return albamHeight
+            return albumHeight
         }
     }
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
@@ -46,15 +47,15 @@ extension AritistDetailListViewController: UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let albamDetailView = AlbumDetailListViewController()
+        let albumDetailView = AlbumDetailListViewController()
         guard let title = query?.collections?[indexPath.item].representativeItem?.albumTitle else {
             return
         }
-        albamDetailView.albumTitle = title
-        self.navigationController?.show(albamDetailView, sender: nil)
+        albumDetailView.albumTitle = title
+        self.navigationController?.show(albumDetailView, sender: nil)
     }
 }
-extension AritistDetailListViewController: UITableViewDataSource {
+extension ArtistDetailListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }

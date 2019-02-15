@@ -18,7 +18,8 @@ class MiniAudioController: UIView {
     @IBOutlet weak var playbackButton: UIButton!
     @IBOutlet weak var skipToNextButton: UIButton!
     
-    let controller: MediaPlayerProtocol = AudioPlayer.shared
+    let controller: MediaPlayerControlProtocol = AudioPlayer.shared
+    let state: MediaPlayerStateProtocol = AudioPlayer.shared
     let artwork: MediaPlayerArtworkProtocol = AudioPlayer.shared
     
     override init(frame: CGRect) {
@@ -52,7 +53,7 @@ class MiniAudioController: UIView {
         self.titleLabel.text = artwork.title
     }
     @objc private func didChangePlayback() {
-        switch self.controller.isPlay {
+        switch self.state.isPlay {
         case true:
             self.playbackButton?.setImage(UIImage(named: "pause_icon"), for: .normal)
         case false:
@@ -60,7 +61,7 @@ class MiniAudioController: UIView {
         }
     }
     @IBAction func playback(_ sender: Any) {
-        switch self.controller.isPlay {
+        switch self.state.isPlay {
         case true:
             self.controller.pause()
         case false:

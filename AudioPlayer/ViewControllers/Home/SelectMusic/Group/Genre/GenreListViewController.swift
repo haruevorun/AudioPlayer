@@ -19,7 +19,7 @@ class GenreListViewController: BaseListViewController {
         self.tableView.register(UINib(nibName: "HomeHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.fetcher.fetch(fetchGroup: .genre, isAppleMusic: false)
+        self.queryFetch(case: .genres)
     }
 }
 extension GenreListViewController: UITableViewDelegate {

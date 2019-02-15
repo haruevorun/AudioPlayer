@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
+import MediaPlayer
 
 class HomeViewController: BaseListViewController {
-    var collection: [String] = ["Albums","Artist","Songs","PlayList","Genre"]
+    var collection: [String] = ["Albums","Artist","Songs","PlayList","Genre","Picker"]
     let cellHeight: CGFloat = 50
     let headerHeight: CGFloat = 70
     lazy var miniController: MiniAudioController = {
@@ -27,6 +28,8 @@ class HomeViewController: BaseListViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.navigationController?.view.addSubview(miniController)
+        let gesture = UITapGestureRecognizer(target: self.navigationController, action: #selector(AudioPlayListNavigationViewController.openPlayer))
+        self.miniController.contentView.addGestureRecognizer(gesture)
     }
 }
 extension HomeViewController: UITableViewDelegate {
@@ -48,6 +51,8 @@ extension HomeViewController: UITableViewDelegate {
             self.navigationController?.show(PlaylistViewCotroller(), sender: nil)
         case 4:
             self.navigationController?.show(GenreListViewController(), sender: nil)
+        case 5:
+            self.navigationController?.show(MPMediaPickerController(), sender: nil)
         default:
             return
         }

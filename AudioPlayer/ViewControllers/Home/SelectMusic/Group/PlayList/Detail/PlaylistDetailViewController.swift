@@ -20,7 +20,8 @@ class PlaylistDetailViewController: BaseListViewController {
         self.tableView.register(UINib(nibName: "PlaylistDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "List")
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        fetcher.fetch(with: playlist, fetchGroup: .playlist, isAppleMusic: false)
+        self.queryFilter = [MPMediaPropertyPredicate(value: playlist, forProperty: MPMediaPlaylistPropertyName, comparisonType: .equalTo)]
+        self.queryFetch(case: .playlists)
     }
 }
 extension PlaylistDetailViewController: UITableViewDelegate {
@@ -45,7 +46,7 @@ extension PlaylistDetailViewController: UITableViewDelegate {
         guard queue.currentQueue?.persistentID != query.items?[indexPath.item].persistentID else {
             return
         }
-        self.queueController.setQueue(query: query, firstPlayIndex: indexPath.item, isPlay: true)
+        self.queueController.setQueue(query: query, playingItem: query.items?[indexPath.item], isPlay: true)
     }
 }
 extension PlaylistDetailViewController: UITableViewDataSource {

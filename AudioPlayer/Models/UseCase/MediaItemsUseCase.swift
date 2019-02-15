@@ -10,18 +10,29 @@ import Foundation
 import MediaPlayer
 
 class MediaItemsUseCase: MediaItemsUseCaseProtocol {
-    
+    enum QueryCase {
+        case album
+        case artist
+        case audiobooks
+        case composers
+        case genres
+        case playlists
+        case podcasts
+        case songs
+    }
+    private var cases: QueryCase
     let repository: MediaItemsRepository?
-    init(group: MPMediaGrouping, isAppleMusic: Bool) {
+    init(with cases: QueryCase,_ isAppleMusic: Bool) {
+        self.cases = cases
         switch isAppleMusic {
         case true:
-            self.repository = MediaItemsRepositoryCreator.createAppleMusicRepository(group: group)
+            self.repository = nil
         case false:
-            self.repository = MediaItemsRepositoryCreator.create(group: group)
+            self.repository = MediaItemsRepositoryImpl()
         }
     }
-    func fetch(keyword: String, completion: @escaping ((MPMediaQuery?) -> Void)) {
-        self.repository?.fetch(keyword: keyword) { (query) in
+    func fetch(filter: Set<MPMediaPropertyPredicate>, completion: @escaping ((MPMediaQuery?) -> Void)) {
+        self.repository?.fetch(queryCase: self.cases, filter: filter) { (query) in
             completion(query)
         }
     }

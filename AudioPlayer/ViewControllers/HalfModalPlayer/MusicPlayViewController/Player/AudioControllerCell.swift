@@ -21,22 +21,27 @@ class AudioControllerCell: UITableViewCell {
     @IBOutlet weak var repeatButton: UIButton!
     
     private var timer: Timer = Timer()
-    private var playerController: MediaPlayerProtocol = AudioPlayer.shared
+    private var playerController: MediaPlayerControlProtocol = AudioPlayer.shared
+    private var playerState: MediaPlayerStateProtocol = AudioPlayer.shared
     deinit {
         NotificationCenter.default.removeObserver(self)
         timer.invalidate()
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        NotificationCenter.default.addObserver(self, selector: #selector(changePlaybackState), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCurrentTime), name: UIApplication.willEnterForegroundNotification, object: nil)
         MPMusicPlayerApplicationController.applicationQueuePlayer.beginGeneratingPlaybackNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(changePlaybackState), name: NSNotification.Name.MPMusicPlayerControllerPlaybackStateDidChange, object: nil)
         MPMusicPlayerApplicationController.applicationQueuePlayer.endGeneratingPlaybackNotifications()
+        self.changePlaybackState()
+        self.updateCurrentTime()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCurrentTime), userInfo: nil, repeats: true)
-        self.seekbar.maximumValue = Float(playerController.maximumMediaItemDuration)
+        self.seekbar.maximumValue = Float(playerState.maximumMediaItemDuration)
     }
     
     @IBAction func playback(_ sender: Any) {
-        if self.playerController.isPlay {
+        if self.playerState.isPlay {
             self.playerController.pause()
         } else {
             self.playerController.play()
@@ -56,13 +61,13 @@ class AudioControllerCell: UITableViewCell {
         
     }
     @objc private func updateCurrentTime() {
-        self.seekbar.maximumValue = Float(self.playerController.maximumMediaItemDuration)
-        self.remainingTimeLabel.text = "-\(timeToString(time: Float(self.playerController.maximumMediaItemDuration - self.playerController.currentTime)))"
-        self.currentTimeLabel.text = timeToString(time: Float(self.playerController.currentTime))
-        self.seekbar.value = Float(self.playerController.currentTime)
+        self.seekbar.maximumValue = Float(self.playerState.maximumMediaItemDuration)
+        self.remainingTimeLabel.text = "-\(timeToString(time: Float(self.playerState.maximumMediaItemDuration - self.playerState.currentTime)))"
+        self.currentTimeLabel.text = timeToString(time: Float(self.playerState.currentTime))
+        self.seekbar.value = Float(self.playerState.currentTime)
     }
     @objc private func changePlaybackState() {
-        switch self.playerController.isPlay {
+        switch self.playerState.isPlay {
         case true:
             self.playbackButton.setImage(UIImage(named: "pause_icon"), for: .normal)
         case false:

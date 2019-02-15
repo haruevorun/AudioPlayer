@@ -11,7 +11,7 @@ import UIKit
 import MediaPlayer
 
 protocol MediaPlayerInputQueueProtocol {
-    func setQueue(query: MPMediaQuery,firstPlayIndex: Int?, isPlay: Bool)
+    func setQueue(query: MPMediaQuery, playingItem: MPMediaItem?, isPlay: Bool)
     func updateQueue(index: Int, isPlay: Bool)
 }
 protocol MediaPlayerOutputQueueProtocol {
@@ -20,10 +20,12 @@ protocol MediaPlayerOutputQueueProtocol {
     var currentQueue: MPMediaItem? { get }
     var indexOfCurrentQueue: Int { get }
 }
-protocol MediaPlayerProtocol {
+protocol MediaPlayerStateProtocol {
     var isPlay: Bool { get }
     var currentTime: TimeInterval { get }
     var maximumMediaItemDuration: TimeInterval { get }
+}
+protocol MediaPlayerControlProtocol {
     func play()
     func pause()
     func skipToNext()
@@ -37,7 +39,7 @@ protocol MediaPlayerArtworkProtocol {
     var artist: String { get }
 }
 
-class AudioPlayer: MediaPlayerProtocol, MediaPlayerArtworkProtocol, MediaPlayerInputQueueProtocol , MediaPlayerOutputQueueProtocol {
+class AudioPlayer: MediaPlayerControlProtocol, MediaPlayerArtworkProtocol, MediaPlayerInputQueueProtocol , MediaPlayerOutputQueueProtocol, MediaPlayerStateProtocol {
     
     private(set) static var shared = AudioPlayer()
     
@@ -127,24 +129,38 @@ class AudioPlayer: MediaPlayerProtocol, MediaPlayerArtworkProtocol, MediaPlayerI
     func seek(time: TimeInterval) {
         self.player.currentPlaybackTime = time
     }
-    func setQueue(query: MPMediaQuery, firstPlayIndex index: Int?, isPlay: Bool) {
+    func setQueue(query: MPMediaQuery, playingItem: MPMediaItem?, isPlay: Bool) {
         self.player.stop()
-        self.player.currentPlaybackTime = 0
-        if self.currentQuery != query {
-            self.currentQuery = query
-        }
-        if let index = index {
-            self.player.nowPlayingItem = self.currentQuery?.items?[index]
-        }
+        self.setQuery(query: query)
+        self.setPlayingItem(item: playingItem)
         if isPlay {
             self.play()
         }
     }
     func updateQueue(index: Int, isPlay: Bool) {
+        guard index != indexOfCurrentQueue else {
+            if self.player.playbackState != MPMusicPlaybackState.playing && isPlay {
+                self.play()
+            }
+            return
+        }
         self.player.stop()
         self.player.nowPlayingItem = self.currentQuery?.items?[index]
         if isPlay {
             self.play()
         }
+    }
+    private func setQuery(query: MPMediaQuery) {
+        guard self.currentQuery != query else {
+            return
+        }
+        self.currentQuery = query
+    }
+    private func setPlayingItem(item: MPMediaItem?) {
+        guard self.player.nowPlayingItem != item else {
+            return
+        }
+        self.player.currentPlaybackTime = 0
+        self.player.nowPlayingItem = item
     }
 }

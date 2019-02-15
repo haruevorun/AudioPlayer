@@ -28,5 +28,9 @@ class AudioPlayListNavigationViewController: UINavigationController {
         // Pass the selected object to the new view controller.
     }
     */
+    @objc func openPlayer() {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Player")
+        self.present(viewController, animated: true, completion: nil)
+    }
 
 }

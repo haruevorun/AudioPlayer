@@ -29,7 +29,7 @@ class ArtistPlayListTableViewCell: UITableViewCell {
     }
     
     func updateView(collection: MPMediaItemCollection?) {
-        self.artworkImageView.image = collection?.representativeItem?.artwork?.image(at: MPMediaItem.albamJacketThumbnailSize) ?? UIImage(named: "app_Icon")
+        self.artworkImageView.image = collection?.representativeItem?.artwork?.image(at: MPMediaItem.albumJacketThumbnailSize) ?? UIImage(named: "app_Icon")
         self.albamTitleLabel.text = collection?.representativeItem?.albumTitle
         self.composerLabel.text = collection?.representativeItem?.artist
         self.dateLabel.text = Calendar.dateConvert(date: collection?.representativeItem?.releaseDate)

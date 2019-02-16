@@ -25,7 +25,7 @@ class AlbumSectionHeader: UITableViewHeaderFooterView {
         self.artworkImageShadowView.layer.shadowOpacity = 0.4
     }
     func updateView(item: MPMediaItem?) {
-        self.artworkImageView.image = item?.artwork?.image(at: MPMediaItem.albamJacketThumbnailSize)
+        self.artworkImageView.image = item?.artwork?.image(at: MPMediaItem.albumJacketThumbnailSize)
         self.albumTitle.text = item?.albumTitle
         self.albumArtist.text = item?.artist
     }

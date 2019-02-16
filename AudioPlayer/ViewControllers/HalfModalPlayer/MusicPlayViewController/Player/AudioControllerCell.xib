@@ -12,73 +12,77 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="236" id="w3J-Yy-qYa" customClass="AudioControllerCell" customModule="AudioPlayer" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="371" height="236"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="212" id="w3J-Yy-qYa" customClass="AudioControllerCell" customModule="AudioPlayer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="363" height="212"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w3J-Yy-qYa" id="iAK-kp-WM9">
-                <rect key="frame" x="0.0" y="0.0" width="371" height="235.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="363" height="211.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWd-yN-CRp">
-                        <rect key="frame" x="0.0" y="0.0" width="371" height="235.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="363" height="211.5"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="25D-nL-i9L">
-                                <rect key="frame" x="6" y="10" width="359" height="52.5"/>
+                                <rect key="frame" x="6" y="10" width="351" height="30"/>
                                 <connections>
                                     <action selector="seek:" destination="w3J-Yy-qYa" eventType="valueChanged" id="HN6-4W-JrJ"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUq-pk-F4P">
-                                <rect key="frame" x="148.5" y="81.5" width="74" height="74"/>
+                                <rect key="frame" x="145" y="59" width="73" height="72.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iUq-pk-F4P" secondAttribute="height" multiplier="1:1" id="Urh-gQ-PfO"/>
                                 </constraints>
-                                <state key="normal" image="play_icon"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="round_play_arrow_black_48pt"/>
                                 <connections>
                                     <action selector="playback:" destination="w3J-Yy-qYa" eventType="touchUpInside" id="ZUb-Aq-jRg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xN-y4-w5B">
-                                <rect key="frame" x="37" y="81.5" width="74.5" height="74"/>
+                                <rect key="frame" x="36.5" y="59" width="72.5" height="72.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2xN-y4-w5B" secondAttribute="height" multiplier="1:1" id="PME-3p-q23"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="skip_previous_icon"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button" image="round_skip_previous_black_48pt"/>
                                 <connections>
                                     <action selector="backToBeginning:" destination="w3J-Yy-qYa" eventType="touchUpInside" id="IHX-Dd-iyk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSx-cv-VbW">
-                                <rect key="frame" x="259.5" y="81.5" width="74.5" height="74"/>
+                                <rect key="frame" x="254" y="59" width="72.5" height="72.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xSx-cv-VbW" secondAttribute="height" multiplier="1:1" id="1pM-pw-UoB"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="skip_next_icon"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button" image="round_skip_next_black_48pt"/>
                                 <connections>
                                     <action selector="skip:" destination="w3J-Yy-qYa" eventType="touchUpInside" id="ZtI-ek-OXO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-tf-piY">
-                                <rect key="frame" x="308" y="61.5" width="58" height="20"/>
+                                <rect key="frame" x="300" y="39" width="58" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6v-X5-EPF">
-                                <rect key="frame" x="8" y="61.5" width="46" height="20"/>
+                                <rect key="frame" x="8" y="39" width="46" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jz-Xz-WvG">
-                                <rect key="frame" x="10" y="175.5" width="165.5" height="50"/>
+                                <rect key="frame" x="10" y="151.5" width="161.5" height="50"/>
                                 <state key="normal" title="Shuffle"/>
                                 <connections>
                                     <action selector="shuffle:" destination="w3J-Yy-qYa" eventType="touchUpInside" id="bs9-mR-sqZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeS-kB-pCe">
-                                <rect key="frame" x="195.5" y="175.5" width="165.5" height="50"/>
+                                <rect key="frame" x="191.5" y="151.5" width="161.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="e0C-46-oqg"/>
                                 </constraints>
@@ -134,12 +138,12 @@
                 <outlet property="skipNextButton" destination="xSx-cv-VbW" id="FKz-tY-KUc"/>
                 <outlet property="skipPreviousButton" destination="2xN-y4-w5B" id="gFg-ND-yUN"/>
             </connections>
-            <point key="canvasLocation" x="-18.399999999999999" y="-81.859070464767626"/>
+            <point key="canvasLocation" x="-24.800000000000001" y="-92.653673163418304"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="play_icon" width="172" height="172"/>
-        <image name="skip_next_icon" width="197" height="197"/>
-        <image name="skip_previous_icon" width="197" height="197"/>
+        <image name="round_play_arrow_black_48pt" width="96" height="96"/>
+        <image name="round_skip_next_black_48pt" width="96" height="96"/>
+        <image name="round_skip_previous_black_48pt" width="96" height="96"/>
     </resources>
 </document>

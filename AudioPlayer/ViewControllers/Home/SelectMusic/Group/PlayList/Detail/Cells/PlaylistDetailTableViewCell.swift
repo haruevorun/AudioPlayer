@@ -33,7 +33,7 @@ class PlaylistDetailTableViewCell: UITableViewCell {
     }
     func updateView(item: MPMediaItem?) {
         self.titleLabel.text = item?.title
-        self.artworkImageView.image = item?.artwork?.image(at: MPMediaItem.albamJacketThumbnailSize) ?? UIImage(named: "app_Icon")
+        self.artworkImageView.image = item?.artwork?.image(at: MPMediaItem.albumJacketThumbnailSize) ?? UIImage(named: "app_Icon")
         self.durationLabel.text = Calendar.timeToString(time: Float(item?.playbackDuration ?? 0))
     }
     

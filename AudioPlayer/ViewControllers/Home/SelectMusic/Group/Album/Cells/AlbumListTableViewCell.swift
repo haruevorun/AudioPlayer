@@ -35,7 +35,7 @@ class AlbumListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func updateView(item: MPMediaItem?) {
-        self.artworkImageView.image = item?.artwork?.image(at: MPMediaItem.albamJacketThumbnailSize) ?? UIImage(named: "app_Icon")
+        self.artworkImageView.image = item?.artwork?.image(at: MPMediaItem.albumJacketThumbnailSize) ?? UIImage(named: "app_Icon")
         if item?.albumTitle != "", item?.albumTitle != nil {
             self.titleLabel.text = item?.albumTitle
         } else if item?.title != "", item?.title != nil {

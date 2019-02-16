@@ -35,7 +35,7 @@ class SongsListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func updateView(item: MPMediaItem?, index: Int) {
-        self.artworkImageView.image = item?.artwork?.image(at: MPMediaItem.albamJacketThumbnailSize) ?? UIImage(named: "app_Icon")
+        self.artworkImageView.image = item?.artwork?.image(at: MPMediaItem.albumJacketThumbnailSize) ?? UIImage(named: "app_Icon")
         self.titleLabel.text = item?.title
         self.artistLabel.text = item?.artist
         self.durationLabel.text = Calendar.timeToString(time: Float(item?.playbackDuration ?? 0))

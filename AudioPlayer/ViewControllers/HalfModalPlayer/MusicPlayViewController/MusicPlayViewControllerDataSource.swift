@@ -40,7 +40,7 @@ class MusicPlayViewControllerDataSource: NSObject, UITableViewDataSource {
                 fatalError()
             }
             cell.title = self.playerOutPut.queue[indexPath.item].title
-            cell.artworkImage = self.playerOutPut.queue[indexPath.item].artwork?.image(at: MPMediaItem.albamJacketThumbnailSize)
+            cell.artworkImage = self.playerOutPut.queue[indexPath.item].artwork?.image(at: MPMediaItem.albumJacketThumbnailSize)
             cell.artist = self.playerOutPut.queue[indexPath.item].artist
             return cell
         }

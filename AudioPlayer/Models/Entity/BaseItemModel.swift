@@ -18,6 +18,6 @@ class BaseItemModelItemModel {
         self.persistentID = item.persistentID
         self.title = item.title
         self.artist = item.artist
-        self.jacketImage = item.artwork?.image(at: MPMediaItem.albamJacketThumbnailSize)
+        self.jacketImage = item.artwork?.image(at: MPMediaItem.albumJacketThumbnailSize)
     }
 }

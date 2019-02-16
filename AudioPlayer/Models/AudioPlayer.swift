@@ -70,7 +70,7 @@ class AudioPlayer: MediaPlayerControlProtocol, MediaPlayerArtworkProtocol, Media
     }
     
     var image: UIImage? {
-        return self.player.nowPlayingItem?.artwork?.image(at: MPMediaItem.albamJacketSize)
+        return self.player.nowPlayingItem?.artwork?.image(at: MPMediaItem.albumJacketSize)
     }
     
     var title: String {

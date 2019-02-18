@@ -28,7 +28,7 @@ protocol MediaPlayerQueueControllerOutputProtocol {
 }
 
 class AudioQueueController: MediaPlayerOutputQueueProtocol {
-    static let shared = AudioQueueController()
+    static let sharedQueueController = AudioQueueController()
     
     private var query: MPMediaQuery? = nil
     private var playingItem: MPMediaItem? = nil

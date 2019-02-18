@@ -16,7 +16,7 @@ import MediaPlayer
 
 protocol MediaPlayerQueueControllerInputProtocol {
     var isShuffled: Bool { get set }
-    func setQueue(query: MPMediaQuery)
+    func queue(query: MPMediaQuery)
     func addFilter(filter: MPMediaPropertyPredicate)
     func removeFilter(filter: MPMediaPropertyPredicate)
 }
@@ -114,7 +114,7 @@ class AudioQueueController: MediaPlayerOutputQueueProtocol {
 }
 extension AudioQueueController: MediaPlayerQueueControllerInputProtocol {
     
-    func setQueue(query: MPMediaQuery) {
+    func queue(query: MPMediaQuery) {
         updateQuery(query: query)
     }
     

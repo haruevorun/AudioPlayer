@@ -17,8 +17,8 @@ protocol MediaPlayerInputQueueProtocol {
 protocol MediaPlayerOutputQueueProtocol {
     var queue: [MPMediaItem] { get }
     var queueCount: Int { get }
-    var currentQueue: MPMediaItem? { get }
-    var indexOfCurrentQueue: Int { get }
+    var nowPlayingItem: MPMediaItem? { get }
+    var indexOfNowPlayingItem: Int? { get }
 }
 protocol MediaPlayerStateProtocol {
     var isPlay: Bool { get }
@@ -55,10 +55,11 @@ class AudioPlayer: MediaPlayerControlProtocol, MediaPlayerArtworkProtocol, Media
         return self.currentQuery?.items?.count ?? 0
     }
     
-    var currentQueue: MPMediaItem? {
+    var nowPlayingItem: MPMediaItem? {
         return self.player.nowPlayingItem
     }
-    var indexOfCurrentQueue: Int {
+    
+    var indexOfNowPlayingItem: Int? {
         return self.player.indexOfNowPlayingItem
     }
     
@@ -138,7 +139,7 @@ class AudioPlayer: MediaPlayerControlProtocol, MediaPlayerArtworkProtocol, Media
         }
     }
     func updateQueue(index: Int, isPlay: Bool) {
-        guard index != indexOfCurrentQueue else {
+        guard index != indexOfNowPlayingItem else {
             if self.player.playbackState != MPMusicPlaybackState.playing && isPlay {
                 self.play()
             }

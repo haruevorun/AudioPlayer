@@ -48,7 +48,7 @@ class MusicPlayViewController: UIViewController {
 }
 extension MusicPlayViewController: UITableViewDelegate {
     @objc func selectItem() {
-        let index = self.mediaPlayerOutPut.indexOfCurrentQueue
+        let index = self.mediaPlayerOutPut.indexOfNowPlayingItem ?? 0
         self.tableView.selectRow(at: IndexPath(item: index, section: 1), animated: true, scrollPosition: .none)
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

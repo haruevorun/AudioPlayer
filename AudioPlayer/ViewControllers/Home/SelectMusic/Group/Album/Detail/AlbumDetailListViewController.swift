@@ -85,7 +85,7 @@ extension AlbumDetailListViewController: UITableViewDelegate {
         guard let query = query else {
             return
         }
-        guard queue.currentQueue?.persistentID != query.items?[indexPath.item].persistentID else {
+        guard queue.nowPlayingItem?.persistentID != query.items?[indexPath.item].persistentID else {
             return
         }
         self.queueController.setQueue(query: query, playingItem: query.items?[indexPath.item], isPlay: true)

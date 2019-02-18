@@ -52,7 +52,7 @@ extension GenreDetailListViewController: UITableViewDelegate {
         guard let query = query else {
             return
         }
-        guard queue.currentQueue?.persistentID != query.collections?[indexPath.section].items[indexPath.item].persistentID else {
+        guard queue.nowPlayingItem?.persistentID != query.collections?[indexPath.section].items[indexPath.item].persistentID else {
             return
         }
         self.queueController.setQueue(query: query, playingItem: query.collections?[indexPath.section].items[indexPath.item], isPlay: true)

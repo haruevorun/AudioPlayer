@@ -35,7 +35,7 @@ extension SongsListViewController: UITableViewDelegate {
         guard let query = query else {
             return
         }
-        guard queue.currentQueue?.persistentID != query.items?[itemIndex(path: indexPath) ?? 0].persistentID else {
+        guard queue.nowPlayingItem?.persistentID != query.items?[itemIndex(path: indexPath) ?? 0].persistentID else {
             return
         }
         

@@ -23,53 +23,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="363" height="211.5"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="25D-nL-i9L">
-                                <rect key="frame" x="6" y="10" width="351" height="30"/>
+                                <rect key="frame" x="6" y="10" width="351" height="44"/>
                                 <connections>
                                     <action selector="seek:" destination="w3J-Yy-qYa" eventType="valueChanged" id="HN6-4W-JrJ"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUq-pk-F4P">
-                                <rect key="frame" x="145" y="59" width="73" height="72.5"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUq-pk-F4P">
+                                <rect key="frame" x="152.5" y="73" width="58" height="64.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="iUq-pk-F4P" secondAttribute="height" multiplier="1:1" id="Urh-gQ-PfO"/>
+                                    <constraint firstAttribute="width" secondItem="iUq-pk-F4P" secondAttribute="height" multiplier="0.9:1" id="Urh-gQ-PfO"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="round_play_arrow_black_48pt"/>
+                                <state key="normal" image="round-play_arrow"/>
                                 <connections>
                                     <action selector="playback:" destination="w3J-Yy-qYa" eventType="touchUpInside" id="ZUb-Aq-jRg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xN-y4-w5B">
-                                <rect key="frame" x="36.5" y="59" width="72.5" height="72.5"/>
+                                <rect key="frame" x="46.5" y="79" width="52" height="52.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2xN-y4-w5B" secondAttribute="height" multiplier="1:1" id="PME-3p-q23"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button" image="round_skip_previous_black_48pt"/>
+                                <state key="normal" title="Button" image="round-skip_previous"/>
                                 <connections>
                                     <action selector="backToBeginning:" destination="w3J-Yy-qYa" eventType="touchUpInside" id="IHX-Dd-iyk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSx-cv-VbW">
-                                <rect key="frame" x="254" y="59" width="72.5" height="72.5"/>
+                                <rect key="frame" x="264.5" y="79" width="52" height="52.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xSx-cv-VbW" secondAttribute="height" multiplier="1:1" id="1pM-pw-UoB"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button" image="round_skip_next_black_48pt"/>
+                                <state key="normal" title="Button" image="round-skip_next"/>
                                 <connections>
                                     <action selector="skip:" destination="w3J-Yy-qYa" eventType="touchUpInside" id="ZtI-ek-OXO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-tf-piY">
-                                <rect key="frame" x="300" y="39" width="58" height="20"/>
+                                <rect key="frame" x="300" y="53" width="58" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6v-X5-EPF">
-                                <rect key="frame" x="8" y="39" width="46" height="20"/>
+                                <rect key="frame" x="8" y="53" width="46" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -92,10 +92,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="25D-nL-i9L" firstAttribute="top" secondItem="yWd-yN-CRp" secondAttribute="top" constant="10" id="1IY-m4-ZSv"/>
-                            <constraint firstItem="iUq-pk-F4P" firstAttribute="width" secondItem="yWd-yN-CRp" secondAttribute="width" multiplier="2:10" id="278-HR-pma"/>
-                            <constraint firstItem="2xN-y4-w5B" firstAttribute="width" secondItem="iUq-pk-F4P" secondAttribute="width" id="813-So-bR5"/>
+                            <constraint firstItem="iUq-pk-F4P" firstAttribute="width" secondItem="yWd-yN-CRp" secondAttribute="width" multiplier="1.6:10" id="278-HR-pma"/>
+                            <constraint firstItem="2xN-y4-w5B" firstAttribute="width" secondItem="iUq-pk-F4P" secondAttribute="width" multiplier="9:10" id="813-So-bR5"/>
                             <constraint firstItem="ogz-vf-1Rp" firstAttribute="bottom" secondItem="6Jz-Xz-WvG" secondAttribute="bottom" constant="10" id="FoC-12-rKf"/>
-                            <constraint firstItem="xSx-cv-VbW" firstAttribute="width" secondItem="iUq-pk-F4P" secondAttribute="width" id="FyU-zU-ilc"/>
+                            <constraint firstItem="xSx-cv-VbW" firstAttribute="width" secondItem="iUq-pk-F4P" secondAttribute="width" multiplier="9:10" id="FyU-zU-ilc"/>
                             <constraint firstItem="ogz-vf-1Rp" firstAttribute="bottom" secondItem="LeS-kB-pCe" secondAttribute="bottom" constant="10" id="KEL-4k-p3G"/>
                             <constraint firstItem="iUq-pk-F4P" firstAttribute="top" secondItem="25D-nL-i9L" secondAttribute="bottom" constant="20" id="PuG-bJ-G9y"/>
                             <constraint firstItem="6Jz-Xz-WvG" firstAttribute="centerX" secondItem="yWd-yN-CRp" secondAttribute="centerX" multiplier="0.5" id="RRO-3k-Dmo"/>
@@ -109,14 +109,14 @@
                             <constraint firstAttribute="trailing" secondItem="TNf-tf-piY" secondAttribute="trailing" constant="5" id="bmY-jp-rtq"/>
                             <constraint firstItem="LeS-kB-pCe" firstAttribute="top" secondItem="xSx-cv-VbW" secondAttribute="bottom" constant="20" id="cHB-9x-mRs"/>
                             <constraint firstItem="ogz-vf-1Rp" firstAttribute="trailing" secondItem="LeS-kB-pCe" secondAttribute="trailing" constant="10" id="cjN-A0-dWh"/>
-                            <constraint firstItem="2xN-y4-w5B" firstAttribute="top" secondItem="25D-nL-i9L" secondAttribute="bottom" constant="20" id="df3-sh-Eyn"/>
+                            <constraint firstItem="2xN-y4-w5B" firstAttribute="centerY" secondItem="iUq-pk-F4P" secondAttribute="centerY" id="elv-2V-Wgw"/>
                             <constraint firstItem="d6v-X5-EPF" firstAttribute="leading" secondItem="yWd-yN-CRp" secondAttribute="leading" constant="8" id="enm-N9-19Q"/>
+                            <constraint firstItem="xSx-cv-VbW" firstAttribute="centerY" secondItem="iUq-pk-F4P" secondAttribute="centerY" id="hjI-oj-Z2U"/>
                             <constraint firstItem="2xN-y4-w5B" firstAttribute="top" secondItem="d6v-X5-EPF" secondAttribute="bottom" id="jZ8-SE-JWi"/>
                             <constraint firstItem="xSx-cv-VbW" firstAttribute="centerX" secondItem="yWd-yN-CRp" secondAttribute="centerX" multiplier="1.6" id="jrU-My-e9z"/>
                             <constraint firstItem="6Jz-Xz-WvG" firstAttribute="leading" secondItem="ogz-vf-1Rp" secondAttribute="leading" constant="10" id="kz2-j6-Ncv"/>
                             <constraint firstItem="LeS-kB-pCe" firstAttribute="centerX" secondItem="yWd-yN-CRp" secondAttribute="centerX" multiplier="1.5" id="mPu-9Y-Bxg"/>
                             <constraint firstItem="d6v-X5-EPF" firstAttribute="top" secondItem="25D-nL-i9L" secondAttribute="bottom" id="t3f-dw-ta8"/>
-                            <constraint firstItem="xSx-cv-VbW" firstAttribute="top" secondItem="25D-nL-i9L" secondAttribute="bottom" constant="20" id="vPF-15-pFl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ogz-vf-1Rp"/>
                     </view>
@@ -142,8 +142,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="round_play_arrow_black_48pt" width="96" height="96"/>
-        <image name="round_skip_next_black_48pt" width="96" height="96"/>
-        <image name="round_skip_previous_black_48pt" width="96" height="96"/>
+        <image name="round-play_arrow" width="83" height="100"/>
+        <image name="round-skip_next" width="100" height="100"/>
+        <image name="round-skip_previous" width="101" height="100"/>
     </resources>
 </document>

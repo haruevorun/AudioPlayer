@@ -55,7 +55,7 @@ class MiniAudioController: UIView {
     @objc private func didChangePlayback() {
         switch self.state.isPlay {
         case true:
-            self.playbackButton?.setImage(UIImage(named: "round_pause_arrow_black_48pt"), for: .normal)
+            self.playbackButton?.setImage(UIImage(named: "round_pause_black_48pt"), for: .normal)
         case false:
             self.playbackButton?.setImage(UIImage(named: "round_play_arrow_black_48pt"), for: .normal)
         }

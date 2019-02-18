@@ -48,7 +48,8 @@
                         <constraints>
                             <constraint firstAttribute="width" secondItem="X9K-iC-xsP" secondAttribute="height" multiplier="1:1" id="Rth-dd-xFx"/>
                         </constraints>
-                        <state key="normal" image="play_icon"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="round_play_arrow_black_48pt"/>
                         <connections>
                             <action selector="playback:" destination="-1" eventType="touchUpInside" id="cXF-2F-7vj"/>
                         </connections>
@@ -58,7 +59,8 @@
                         <constraints>
                             <constraint firstAttribute="width" secondItem="a9c-h1-Jyj" secondAttribute="height" multiplier="1:1" id="hbd-sw-2i8"/>
                         </constraints>
-                        <state key="normal" image="skip_next_icon"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="round_skip_next_black_48pt"/>
                         <connections>
                             <action selector="skipToNext:" destination="-1" eventType="touchUpInside" id="KTL-0p-gFy"/>
                         </connections>
@@ -91,7 +93,7 @@
     </objects>
     <resources>
         <image name="Icon-167.png" width="167" height="167"/>
-        <image name="play_icon" width="172" height="172"/>
-        <image name="skip_next_icon" width="197" height="197"/>
+        <image name="round_play_arrow_black_48pt" width="96" height="96"/>
+        <image name="round_skip_next_black_48pt" width="96" height="96"/>
     </resources>
 </document>

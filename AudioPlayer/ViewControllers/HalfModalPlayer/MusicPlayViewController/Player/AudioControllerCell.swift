@@ -69,9 +69,9 @@ class AudioControllerCell: UITableViewCell {
     @objc private func changePlaybackState() {
         switch self.playerState.isPlay {
         case true:
-            self.playbackButton.setImage(UIImage(named: "pause_icon"), for: .normal)
+            self.playbackButton.setImage(UIImage.pauseIcon(size: .regular), for: .normal)
         case false:
-            self.playbackButton.setImage(UIImage(named: "play_icon"), for: .normal)
+            self.playbackButton.setImage(UIImage.playIcon(size: .regular), for: .normal)
         }
     }
     private func timeToString(time: Float) -> String {

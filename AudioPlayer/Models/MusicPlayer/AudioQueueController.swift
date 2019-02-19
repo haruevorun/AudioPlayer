@@ -19,6 +19,8 @@ protocol MediaPlayerQueueControllerInputProtocol {
     func queue(query: MPMediaQuery)
     func addFilter(filter: MPMediaPropertyPredicate)
     func removeFilter(filter: MPMediaPropertyPredicate)
+    func setQueue(index: Int) -> Bool
+    func setQueue(playingItem: MPMediaItem?) -> Bool
 }
 protocol MediaPlayerQueueControllerOutputProtocol {
     func setPlayItem() -> MPMediaItem?
@@ -125,6 +127,17 @@ extension AudioQueueController: MediaPlayerQueueControllerInputProtocol {
     func removeFilter(filter: MPMediaPropertyPredicate) {
         self.query?.removeFilterPredicate(filter)
         updateQueue()
+    }
+    
+    func setQueue(index: Int) -> Bool {
+        guard setSelectItem(index: index) != nil else {
+            return false
+        }
+        return true
+    }
+    
+    func setQueue(playingItem: MPMediaItem?) -> Bool {
+        <#code#>
     }
 }
 extension AudioQueueController: MediaPlayerQueueControllerOutputProtocol {

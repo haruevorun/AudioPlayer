@@ -11,29 +11,21 @@ import MediaPlayer
 
 class TestQueueViewController: UIViewController {
 
-    let output: MediaPlayerQueueControllerOutputProtocol = AudioQueueController.shared
-    var input: MediaPlayerQueueControllerInputProtocol = AudioQueueController.shared
+    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var playBackButton: UIButton!
+    @IBOutlet weak var skipButton: UIButton!
+    let player: MediaPlayerControlProtocol = AudioPlayerController.sharedPlayerController
+    let input: ProvisionalInputProtocol = AudioPlayerController.sharedPlayerController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.input.setQueue(query: MPMediaQuery.albums())
-        self.input.isShuffled = true
+        self.input.inputQueue(query: MPMediaQuery.albums())
+        
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DebugUtil.log(self.output.setPlayItem()?.title)
-        DebugUtil.log(self.output.setNextItem()?.title)
-        DebugUtil.log(self.output.setNextItem()?.title)
-        DebugUtil.log(self.output.setNextItem()?.title)
-        DebugUtil.log(self.output.setPreviousItem()?.title)
-        DebugUtil.log(self.output.setPreviousItem()?.title)
-        DebugUtil.log(self.output.setPreviousItem()?.title)
-        DebugUtil.log(self.output.setPreviousItem()?.title)
-        DebugUtil.log(self.output.setSelectItem(index: 2)?.title)
-        DebugUtil.log(self.output.setNextItem()?.title)
-        DebugUtil.log(self.output.setPreviousItem()?.title)
-        DebugUtil.log(self.output.setPlayItem()?.title)
+        self.player.play()
     }
     
     
@@ -48,5 +40,13 @@ class TestQueueViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func previous(_ sender: Any) {
+        self.player.skipToPrevious()
+    }
+    @IBAction func playback(_ sender: Any) {
+    }
+    
+    @IBAction func skip(_ sender: Any) {
+        self.player.skipToNext()
+    }
 }

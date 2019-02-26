@@ -29,15 +29,21 @@ class AudioPlayerController: ProvisionalInputProtocol {
         self.player.beginGeneratingPlaybackNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(didChangePlayingItem), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: player)
         self.player.endGeneratingPlaybackNotifications()
-        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) {timer in
-            if self.player.repeatMode == .none && self.player.shuffleMode == .off {
-                DebugUtil.log("set option")
+        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { [weak self] timer in
+            if self?.isSetOptions() {
                 timer.invalidate()
             } else {
-                DebugUtil.log("not set option")
-                self.player.repeatMode = .none
-                self.player.shuffleMode = .off
+                self?.player.repeatMode = .none
+                self?.player.shuffleMode = .off
             }
+        }
+    }
+    
+    private func isSetOptions() -> Bool {
+        if self.player.repeatMode == .none && self.player.shuffleMode == .off {
+            return true
+        } else {
+            return false
         }
     }
     

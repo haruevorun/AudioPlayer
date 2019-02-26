@@ -30,13 +30,13 @@ class AudioPlayerController: ProvisionalInputProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(didChangePlayingItem), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: player)
         self.player.endGeneratingPlaybackNotifications()
         Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) {timer in
-            if self.player.repeatMode != .none || self.player.shuffleMode != .off {
-                DebugUtil.log("not shuffle mode")
+            if self.player.repeatMode == .none && self.player.shuffleMode == .off {
+                DebugUtil.log("set option")
+                timer.invalidate()
+            } else {
+                DebugUtil.log("not set option")
                 self.player.repeatMode = .none
                 self.player.shuffleMode = .off
-            } else {
-                print("set shuffle mode")
-                timer.invalidate()
             }
         }
     }

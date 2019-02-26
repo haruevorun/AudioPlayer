@@ -14,6 +14,7 @@ class TestQueueViewController: UIViewController {
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var playBackButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
+    
     let player: MediaPlayerControlProtocol = AudioPlayerController.sharedPlayerController
     let input: ProvisionalInputProtocol = AudioPlayerController.sharedPlayerController
     
@@ -23,26 +24,16 @@ class TestQueueViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.player.play()
     }
     
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func previous(_ sender: Any) {
         self.player.skipToPrevious()
     }
+    
     @IBAction func playback(_ sender: Any) {
     }
     

@@ -42,7 +42,6 @@ protocol MediaPlayerArtworkProtocol {
 
 class AudioPlayer: MediaPlayerControlProtocol, MediaPlayerArtworkProtocol, MediaPlayerInputQueueProtocol , MediaPlayerOutputQueueProtocol, MediaPlayerStateProtocol {
     
-    
     private(set) static var shared = AudioPlayer()
     
     var isPlay: Bool {

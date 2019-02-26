@@ -54,6 +54,7 @@ class AudioPlayerController: ProvisionalInputProtocol {
         self.input.queue(query: query)
     }
 }
+
 extension AudioPlayerController: MediaPlayerInputQueueProtocol {
     
     func setQueue(query: MPMediaQuery, playingItem: MPMediaItem?, isPlay: Bool) {
@@ -77,6 +78,7 @@ extension AudioPlayerController: MediaPlayerInputQueueProtocol {
         }
     }
 }
+
 extension AudioPlayerController: MediaPlayerControlProtocol {
     
     func play() {
@@ -110,6 +112,7 @@ extension AudioPlayerController: MediaPlayerControlProtocol {
         self.player.currentPlaybackTime = time
     }
 }
+
 extension AudioPlayerController: MediaPlayerStateProtocol {
     
     var isPlay: Bool {
@@ -122,6 +125,7 @@ extension AudioPlayerController: MediaPlayerStateProtocol {
         return self.player.nowPlayingItem?.playbackDuration ?? TimeInterval(0)
     }
 }
+
 extension AudioPlayerController: MediaPlayerArtworkProtocol {
     
     var image: UIImage? {
@@ -134,6 +138,7 @@ extension AudioPlayerController: MediaPlayerArtworkProtocol {
         return self.player.nowPlayingItem?.artist ?? ""
     }
 }
+
 extension AudioPlayerController {
     
     @objc private func didChangePlayingItem() {
@@ -146,6 +151,7 @@ extension AudioPlayerController {
         }
     }
 }
+
 extension NSNotification.Name {
     
     static let AudioPlayerDidChangeItem: NSNotification.Name = NSNotification.Name("MediaPlayerDidChangeItem")

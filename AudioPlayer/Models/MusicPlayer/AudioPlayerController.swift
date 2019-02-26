@@ -30,7 +30,7 @@ class AudioPlayerController: ProvisionalInputProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(didChangePlayingItem), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: player)
         self.player.endGeneratingPlaybackNotifications()
         Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { [weak self] timer in
-            if self?.isSetOptions() {
+            if self?.isSetOptions() ?? true {
                 timer.invalidate()
             } else {
                 self?.player.repeatMode = .none

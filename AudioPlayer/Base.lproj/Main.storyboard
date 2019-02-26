@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lIU-AU-7YR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q5e-vG-ho4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -131,9 +131,48 @@
                     <view key="view" contentMode="scaleToFill" id="mmu-4K-Luf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I15-oG-o2G">
+                                <rect key="frame" x="164.5" y="462" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="aFO-8z-og5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="playback:" destination="lIU-AU-7YR" eventType="touchUpInside" id="hwO-XS-cVA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogj-wg-jq0">
+                                <rect key="frame" x="68.5" y="462" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="previous:" destination="lIU-AU-7YR" eventType="touchUpInside" id="xf5-9d-tlk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GC0-My-2GK">
+                                <rect key="frame" x="260.5" y="462" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="skip:" destination="lIU-AU-7YR" eventType="touchUpInside" id="t5Y-Vp-UO8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b1z-0O-CG0" firstAttribute="bottom" secondItem="I15-oG-o2G" secondAttribute="bottom" constant="175" id="2qb-vD-JGS"/>
+                            <constraint firstItem="GC0-My-2GK" firstAttribute="leading" secondItem="I15-oG-o2G" secondAttribute="trailing" constant="50" id="Cxw-5k-Z5D"/>
+                            <constraint firstItem="I15-oG-o2G" firstAttribute="leading" secondItem="Ogj-wg-jq0" secondAttribute="trailing" constant="50" id="FaM-9I-fJp"/>
+                            <constraint firstItem="I15-oG-o2G" firstAttribute="centerX" secondItem="mmu-4K-Luf" secondAttribute="centerX" id="S2O-Wc-TUs"/>
+                            <constraint firstItem="GC0-My-2GK" firstAttribute="bottom" secondItem="I15-oG-o2G" secondAttribute="bottom" id="n0g-pR-raZ"/>
+                            <constraint firstItem="Ogj-wg-jq0" firstAttribute="bottom" secondItem="I15-oG-o2G" secondAttribute="bottom" id="yyC-G9-vgE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b1z-0O-CG0"/>
                     </view>
+                    <connections>
+                        <outlet property="playBackButton" destination="I15-oG-o2G" id="iod-rh-UU7"/>
+                        <outlet property="previousButton" destination="Ogj-wg-jq0" id="gHo-Xb-Ef8"/>
+                        <outlet property="skipButton" destination="GC0-My-2GK" id="Smm-G8-khg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Hc-cA-sfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

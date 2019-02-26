@@ -28,13 +28,13 @@ protocol MediaPlayerQueueControllerOutputProtocol {
 }
 
 class AudioQueueController: MediaPlayerOutputQueueProtocol {
+    
     static let sharedQueueController = AudioQueueController()
     
     private var query: MPMediaQuery? = nil
     private var playingItem: MPMediaItem? = nil
     private var currentQueue: [MPMediaItem] = []
     private var index: Int? = nil
-    
     private var shuffled: Bool = false {
         didSet {
             updateQueue()
@@ -49,22 +49,19 @@ class AudioQueueController: MediaPlayerOutputQueueProtocol {
             self.shuffled = value
         }
     }
-    
     var nowPlayingItem: MPMediaItem? {
         return self.playingItem
     }
-    
     var indexOfNowPlayingItem: Int? {
         return self.index
     }
-    
     var queue: [MPMediaItem] {
         return self.currentQueue
     }
-    
     var queueCount: Int {
         return self.currentQueue.count
     }
+    
     private func nextIndex() -> Int? {
         guard var index: Int = self.index else {
             return nil
@@ -77,6 +74,7 @@ class AudioQueueController: MediaPlayerOutputQueueProtocol {
         self.index = 0
         return 0
     }
+    
     private func previousIndex() -> Int? {
         guard var index: Int = self.index else {
             return nil
@@ -102,6 +100,7 @@ class AudioQueueController: MediaPlayerOutputQueueProtocol {
             self.currentQueue = self.query?.items ?? []
         }
     }
+    
     private func shuffleQueue(items: [MPMediaItem]) -> [MPMediaItem] {
         var swapedItems = items
         let n = items.count
@@ -127,8 +126,16 @@ extension AudioQueueController: MediaPlayerQueueControllerInputProtocol {
         self.query?.removeFilterPredicate(filter)
         updateQueue()
     }
+    
+    func setQueue(index: Int) -> Bool {
+        guard setSelectItem(index: index) != nil else {
+            return false
+        }
+        return true
+    }
 }
 extension AudioQueueController: MediaPlayerQueueControllerOutputProtocol {
+    
     func setPlayItem() -> MPMediaItem? {
         guard self.index == nil else {
             return self.currentQueue[index!]
